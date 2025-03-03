@@ -1,1 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url("/fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+@theme{
+    --color-primary: #FAC6F7;
+    --color-secondary: #ffffff;
+    --color-background: #000000;
+    --font-Raleway: "Raleway", sans-serif;
+    --font-heading: "VCR OSD Mono";
+}
+
+  
+
+
+/* 
+:root {
+  --color-primary: #ff6b9d;
+  --color-secondary: #ffffff; 
+  --color-background: #000000; 
+}
+
+
+@font-face {
+  font-family: "VCR OSD Mono";
+  src: url("/fonts/vcr-osd-mono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-secondary);
+}
+ */

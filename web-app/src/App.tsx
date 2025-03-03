@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <div className='bg-gray-100 text-red-500 p-4'>
+      <div className=' text-red-500 bg-background font-heading'>
         hello
       </div>
     </>
