@@ -17,7 +17,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
       {/* Pink highlighter that appears when accordion is open */}
       {isOpen && (
         <motion.div
-          className="absolute inset-0 bg-pink-400 opacity-30 -z-10"
+          className="absolute inset-0  opacity-30 -z-10"
           style={{ mixBlendMode: "multiply" }}
           initial={{ width: 0 }}
           animate={{ width: "100%" }}

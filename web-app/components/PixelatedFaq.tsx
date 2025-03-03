@@ -1,28 +1,34 @@
-import React from "react"
+"use client"
+
+import type React from "react"
 import { motion } from "framer-motion"
 
 interface PixelatedFaqProps {
-    highlightRef: React.RefObject<HTMLDivElement | null>
-  }
+  highlightRef: React.RefObject<HTMLDivElement | null>
+}
+
 const PixelatedFaq: React.FC<PixelatedFaqProps> = ({ highlightRef }) => {
   return (
-    <div className="flex items-start">
-      <span className="text-gray-400 text-sm mr-4 mt-2">[ WHO ASKS THESE QUESTIONS? ]</span>
+    <>
+    
+    <div className="flex flex-col items-center relative">
+      
 
-      <div className="relative flex items-start" ref={highlightRef}>
+      <div className="relative flex items-center" ref={highlightRef}>
         {/* Pixelated FAQs text */}
         <div
-          className="relative border-2 border-[#FAC6F7] bg-[#FAC6F7]/20 px-4 py-2"
+          className="relative border-2 border-[#FAC6F7] bg-[#FAC6F7]/20 px-6 py-3"
           style={{
             fontFamily: "monospace",
             letterSpacing: "0.2em",
+            boxShadow: "0 0 15px rgba(250, 198, 247, 0.2)",
           }}
         >
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-[40px] font-bold text-[#FAC6F7]"
+            className="text-3xl md:text-4xl xl:text-6xl font-bold text-primary font-heading"
           >
             FAQs
           </motion.span>
@@ -51,6 +57,7 @@ const PixelatedFaq: React.FC<PixelatedFaqProps> = ({ highlightRef }) => {
         </motion.div>
       </div>
     </div>
+    </>
   )
 }
 
