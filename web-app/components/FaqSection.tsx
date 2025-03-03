@@ -1,9 +1,7 @@
-"use client";
-
 import type React from "react";
 import { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import Accordion from "../components/accordion";
+import Accordion from "../components/Accordion";
 import PixelatedFaq from "../components/PixelatedFaq";
 import AtomIcon from "../components/AtomIcon";
 import DiamondShapes from "../components/DiamondShapes";
