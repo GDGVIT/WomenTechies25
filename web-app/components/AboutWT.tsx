@@ -1,131 +1,216 @@
-import React from "react"
-import { useRef, useState, useEffect } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+"use client"
 
-export default function ScrollAnimationSection() {
+import { useRef, useState, useEffect, useCallback } from "react"
+import { motion, useTransform, useMotionValue, useSpring } from "framer-motion"
+
+interface HorizontalRevealSectionProps {
+  onAnimationComplete?: () => void
+  id: string
+  nextSectionId?: string
+  prevSectionId?: string
+}
+
+export default function HorizontalRevealSection({
+  onAnimationComplete,
+  id,
+  nextSectionId,
+  prevSectionId,
+}: HorizontalRevealSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const [animationComplete, setAnimationComplete] = useState(false)
-  const [initialLoad, setInitialLoad] = useState(true)
+  const [isInView, setIsInView] = useState(false)
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null)
+  const lastScrollY = useRef(0)
+  const [hasNavigated, setHasNavigated] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false)
+  const initialScrollY = useRef(0)
+  const wheelEvents = useRef<WheelEvent[]>([])
+  const accumulatedDelta = useRef(0)
 
-  // Track scroll position
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
+  // Animation progress value (0-100)
+  const scrollProgress = useMotionValue(0)
+
+  // Create a spring-based animation for smoother transitions
+  const smoothProgress = useSpring(scrollProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
   })
 
-  // Update local scroll progress state
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((value) => {
-      setScrollProgress(value)
-    })
-    return () => unsubscribe()
-  }, [scrollYProgress])
+  // Map animation progress to element properties
+  // Center character stays in place but fades in first
+  const centerCharOpacity = useTransform(smoothProgress, [0, 10], [1, 1]) // Always visible
 
-  // Handle initial load animation
-  useEffect(() => {
-    if (initialLoad) {
-      const timer = setTimeout(() => {
-        setInitialLoad(false)
-      }, 1000)
-      return () => clearTimeout(timer)
+  // Left characters move from left to right
+  const leftChar1X = useTransform(smoothProgress, [10, 40], [-300, 0])
+  const leftChar1Opacity = useTransform(smoothProgress, [10, 30], [0, 1])
+
+  const leftChar2X = useTransform(smoothProgress, [20, 50], [-300, 0])
+  const leftChar2Opacity = useTransform(smoothProgress, [20, 40], [0, 1])
+
+  // Right characters move from right to left
+  const rightChar1X = useTransform(smoothProgress, [10, 40], [300, 0])
+  const rightChar1Opacity = useTransform(smoothProgress, [10, 30], [0, 1])
+
+  const rightChar2X = useTransform(smoothProgress, [20, 50], [300, 0])
+  const rightChar2Opacity = useTransform(smoothProgress, [20, 40], [0, 1])
+
+  // Mesh ground fades in
+  const meshOpacity = useTransform(smoothProgress, [5, 25], [0, 1])
+
+  // Text fades in last
+  const textY = useTransform(smoothProgress, [60, 80], [30, 0])
+  const textOpacity = useTransform(smoothProgress, [60, 80], [0, 1])
+
+  // Determine scroll direction
+  const updateScrollDirection = useCallback(() => {
+    const currentScrollY = window.scrollY
+
+    if (currentScrollY > lastScrollY.current) {
+      setScrollDirection("down")
+    } else if (currentScrollY < lastScrollY.current) {
+      setScrollDirection("up")
     }
-  }, [initialLoad])
 
-  // Determine when animation is complete
+    lastScrollY.current = currentScrollY
+  }, [])
+
+  // Set up intersection observer to detect when section is visible
   useEffect(() => {
-    if (scrollProgress >= 0.95 && !animationComplete) {
-      setAnimationComplete(true)
-    }
-  }, [scrollProgress, animationComplete])
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const wasInView = isInView
+        setIsInView(entry.isIntersecting)
 
-  // Lock body scroll during animation
-  useEffect(() => {
-    if (!animationComplete && !initialLoad) {
-      document.body.style.overflow = "hidden"
+        // Reset navigation state when section comes back into view
+        if (entry.isIntersecting) {
+          setHasNavigated(false)
 
-      // Force scroll position to stay at the section
-      const handleScroll = () => {
-        if (sectionRef.current) {
-          window.scrollTo(0, sectionRef.current.offsetTop)
+          // If we're newly entering the view, start animation and lock scroll
+          if (!wasInView) {
+            setIsAnimating(true)
+            initialScrollY.current = window.scrollY
+            document.body.style.overflow = "hidden"
+            document.body.style.height = "100vh"
+          }
+        } else if (wasInView && !entry.isIntersecting && isAnimationComplete) {
+          // If we're leaving the view and animation is complete, unlock scroll
+          setIsAnimating(false)
+          document.body.style.overflow = ""
+          document.body.style.height = ""
         }
-      }
-
-      window.addEventListener("scroll", handleScroll)
-      return () => {
-        window.removeEventListener("scroll", handleScroll)
-      }
-    } else {
-      document.body.style.overflow = ""
-    }
-  }, [animationComplete, initialLoad])
-
-  // Animation progress mapped to scroll
-  const animationProgress = useTransform(scrollYProgress, [0, 0.95], [0, 1])
-
-  // Map different elements to different parts of the animation sequence
-  const leftChar1X = useTransform(animationProgress, [0.2, 0.5], [-200, 0])
-  const leftChar1Opacity = useTransform(animationProgress, [0.2, 0.4], [0, 1])
-
-  const leftChar2X = useTransform(animationProgress, [0.3, 0.6], [-200, 0])
-  const leftChar2Opacity = useTransform(animationProgress, [0.3, 0.5], [0, 1])
-
-  const rightChar1X = useTransform(animationProgress, [0.2, 0.5], [200, 0])
-  const rightChar1Opacity = useTransform(animationProgress, [0.2, 0.4], [0, 1])
-
-  const rightChar2X = useTransform(animationProgress, [0.3, 0.6], [200, 0])
-  const rightChar2Opacity = useTransform(animationProgress, [0.3, 0.5], [0, 1])
-
-  const meshOpacity = useTransform(animationProgress, [0.1, 0.3], [0, 1])
-
-  const centerCharY = useTransform(animationProgress, [0, 0.2], [20, 0])
-  const centerCharOpacity = useTransform(animationProgress, [0, 0.15], [0, 1])
-
-  const textY = useTransform(animationProgress, [0.6, 0.8], [30, 0])
-  const textOpacity = useTransform(animationProgress, [0.6, 0.8], [0, 1])
-
-  // Star animation variants
-  const starVariants = {
-    animate: (i: number) => ({
-      opacity: [0.4, 1, 0.4],
-      scale: [1, 1.2, 1],
-      transition: {
-        repeat: Number.POSITIVE_INFINITY,
-        duration: 2 + i * 0.5,
-        ease: "easeInOut",
-        delay: i * 0.2,
       },
-    }),
-  }
+      {
+        threshold: 0.8, // Trigger when most of the section is visible
+        rootMargin: "-10% 0px", // Slightly reduce the effective viewport
+      },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+      // Clean up scroll lock if component unmounts
+      document.body.style.overflow = ""
+      document.body.style.height = ""
+    }
+  }, [isInView, isAnimationComplete])
+
+  // Handle wheel events to control animation progress
+  const handleWheel = useCallback(
+    (e: WheelEvent) => {
+      if (!isInView || isAnimationComplete) return
+
+      e.preventDefault()
+
+      // Store wheel events for smoother animation
+      wheelEvents.current.push(e)
+
+      // Process wheel events in animation frame for better performance
+      if (wheelEvents.current.length === 1) {
+        requestAnimationFrame(() => {
+          const events = [...wheelEvents.current]
+          wheelEvents.current = []
+
+          // Calculate total delta
+          let totalDelta = 0
+          events.forEach((event) => {
+            totalDelta += event.deltaY
+          })
+
+          // Accumulate delta for smoother progress
+          accumulatedDelta.current += totalDelta * 0.05
+
+          // Clamp accumulated delta
+          accumulatedDelta.current = Math.max(0, Math.min(100, accumulatedDelta.current))
+
+          // Update progress
+          scrollProgress.set(accumulatedDelta.current)
+
+          // Check if animation is complete
+          if (accumulatedDelta.current >= 95) {
+            setIsAnimationComplete(true)
+
+            if (onAnimationComplete) {
+              onAnimationComplete()
+            }
+
+            // Navigate to next section
+            if (nextSectionId && !hasNavigated) {
+              setHasNavigated(true)
+              setTimeout(() => {
+                document.body.style.overflow = ""
+                document.body.style.height = ""
+                setIsAnimating(false)
+
+                const nextSection = document.getElementById(nextSectionId)
+                if (nextSection) {
+                  nextSection.scrollIntoView({ behavior: "smooth" })
+                }
+              }, 300)
+            }
+          }
+        })
+      }
+    },
+    [isInView, isAnimationComplete, scrollProgress, onAnimationComplete, nextSectionId, hasNavigated],
+  )
+
+  // Set up wheel event listener with passive: false to allow preventDefault
+  useEffect(() => {
+    const options = { passive: false }
+
+    if (isAnimating && !isAnimationComplete) {
+      window.addEventListener("wheel", handleWheel, options)
+    }
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel as EventListener)
+    }
+  }, [handleWheel, isAnimating, isAnimationComplete])
+
+  // Reset scroll position when animation starts
+  useEffect(() => {
+    if (isAnimating && !isAnimationComplete && sectionRef.current) {
+      window.scrollTo({
+        top: initialScrollY.current,
+        behavior: "instant",
+      })
+    }
+  }, [isAnimating, isAnimationComplete])
 
   return (
-    <div ref={sectionRef} className="relative w-full h-[100vh] overflow-hidden bg-[#121212]">
-      {/* Progress indicator */}
-      {!animationComplete && !initialLoad && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
-          Scroll to reveal all characters ({Math.round(animationProgress.get() * 100)}%)
+    <div ref={sectionRef} id={id} className="relative w-full h-[100vh] overflow-hidden bg-[#121212]">
+      {/* Progress indicator (only visible during development) */}
+      {process.env.NODE_ENV === "development" && (
+        <div className="fixed top-4 left-4 z-50 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
+          Progress: {Math.round(scrollProgress.get())}%{isAnimating ? " (Locked)" : ""}
         </div>
       )}
-
-      {/* Stars background */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            custom={i}
-            variants={starVariants}
-            animate="animate"
-            className="absolute rounded-full bg-white"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-            }}
-          />
-        ))}
-      </div>
 
       {/* Text content */}
       <motion.div
@@ -140,10 +225,7 @@ export default function ScrollAnimationSection() {
       </motion.div>
 
       {/* Main container for illustrations */}
-      <div
-        ref={containerRef}
-        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1600px] h-[60vh] flex items-end justify-center"
-      >
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1600px] h-[60vh] flex items-end justify-center">
         {/* Mesh ground */}
         <motion.div className="absolute bottom-0 w-full h-[40%] z-10" style={{ opacity: meshOpacity }}>
           <div className="w-full h-full bg-[url('/placeholder.svg?height=400&width=1920')] bg-no-repeat bg-cover bg-center"></div>
@@ -160,7 +242,7 @@ export default function ScrollAnimationSection() {
           {/* Girl with hat */}
           <div className="relative w-[120px] sm:w-[150px] md:w-[200px] h-[180px] sm:h-[225px] md:h-[300px]">
             <img
-              src="/placeholder.svg?height=300&width=200"
+              src="/tempImages/girl1left.png"
               alt="Girl with hat"
               className="w-full h-full object-contain"
             />
@@ -177,7 +259,7 @@ export default function ScrollAnimationSection() {
           {/* Lady standing */}
           <div className="relative w-[110px] sm:w-[140px] md:w-[180px] h-[220px] sm:h-[270px] md:h-[350px]">
             <img
-              src="/placeholder.svg?height=350&width=180"
+              src="/tempImages/girl2left.png"
               alt="Lady standing"
               className="w-full h-full object-contain"
             />
@@ -188,13 +270,12 @@ export default function ScrollAnimationSection() {
         <motion.div
           className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-30 h-[25%] sm:h-[30%] md:h-[40%]"
           style={{
-            y: centerCharY,
             opacity: centerCharOpacity,
           }}
         >
           <div className="relative w-[150px] sm:w-[200px] md:w-[250px] h-[120px] sm:h-[160px] md:h-[200px]">
             <img
-              src="/placeholder.svg?height=200&width=250"
+              src="/tempImages/girllaptop.png"
               alt="Little girl with laptop"
               className="w-full h-full object-contain"
             />
@@ -220,7 +301,7 @@ export default function ScrollAnimationSection() {
         </motion.div>
 
         <motion.div
-          className="absolute bottom-0 right-[5%] sm:right-[10%] z-20 h-[35%] sm:h-[45%] md:h-[60%]"
+          className="absolute bottom-10 right-[5%] sm:right-[10%] z-20 h-[35%] sm:h-[45%] md:h-[60%]"
           style={{
             x: rightChar2X,
             opacity: rightChar2Opacity,
@@ -229,38 +310,13 @@ export default function ScrollAnimationSection() {
           {/* Woman sitting at desk with laptop */}
           <div className="relative w-[150px] sm:w-[200px] md:w-[250px] h-[180px] sm:h-[240px] md:h-[300px]">
             <img
-              src="/placeholder.svg?height=300&width=250"
+              src="/tempImages/womenlaptop.png"
               alt="Woman at desk"
               className="w-full h-full object-contain"
             />
           </div>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <AnimatePresence>
-        {!initialLoad && !animationComplete && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center"
-          >
-            <p className="text-sm mb-2">Scroll to continue</p>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-              className="w-6 h-10 border-2 border-white rounded-full mx-auto flex justify-center"
-            >
-              <motion.div
-                animate={{ y: [0, 15, 0] }}
-                transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-                className="w-1.5 h-3 bg-white rounded-full mt-1"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   )
 }
