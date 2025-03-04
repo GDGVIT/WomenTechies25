@@ -45,25 +45,25 @@ export default function HorizontalRevealSection({
   const centerCharOpacity = useTransform(smoothProgress, [0, 10], [1, 1]) // Always visible
 
   // Left characters move from left to right
-  const leftChar1X = useTransform(smoothProgress, [10, 40], [-300, 0])
-  const leftChar1Opacity = useTransform(smoothProgress, [10, 30], [0, 1])
+  const leftChar1X = useTransform(smoothProgress, [0, 10, 40, 100], [-300, -300, 0, 0])
+  const leftChar1Opacity = useTransform(smoothProgress, [0, 10, 30, 70], [0, 0, 1, 1])
 
-  const leftChar2X = useTransform(smoothProgress, [20, 50], [-300, 0])
-  const leftChar2Opacity = useTransform(smoothProgress, [20, 40], [0, 1])
+  const leftChar2X = useTransform(smoothProgress, [0, 20, 50, 100], [-300, -300, 0, 0])
+  const leftChar2Opacity = useTransform(smoothProgress, [0, 20, 40, 70], [0, 0, 1, 1])
 
   // Right characters move from right to left
-  const rightChar1X = useTransform(smoothProgress, [10, 40], [300, 0])
-  const rightChar1Opacity = useTransform(smoothProgress, [10, 30], [0, 1])
+  const rightChar1X = useTransform(smoothProgress, [0, 10, 40, 100], [300, 300, 0, 0])
+  const rightChar1Opacity = useTransform(smoothProgress, [0, 10, 30, 70], [0, 0, 1, 1])
 
-  const rightChar2X = useTransform(smoothProgress, [20, 50], [300, 0])
-  const rightChar2Opacity = useTransform(smoothProgress, [20, 40], [0, 1])
+  const rightChar2X = useTransform(smoothProgress, [0, 20, 50, 100], [300, 300, 0, 0])
+  const rightChar2Opacity = useTransform(smoothProgress, [0, 20, 40, 70], [0, 0, 1, 1])
 
   // Mesh ground fades in
-  const meshOpacity = useTransform(smoothProgress, [5, 25], [0, 1])
+  const meshOpacity = useTransform(smoothProgress, [0, 5, 25, 75], [0, 0, 1, 1])
 
   // Text fades in last
-  const textY = useTransform(smoothProgress, [60, 80], [30, 0])
-  const textOpacity = useTransform(smoothProgress, [60, 80], [0, 1])
+  const textY = useTransform(smoothProgress, [0, 60, 80, 100], [30, 30, 0, 0])
+  const textOpacity = useTransform(smoothProgress, [0, 60, 80], [0, 0, 1])
 
   // Function to lock scroll
   const lockScroll = useCallback(() => {
@@ -125,10 +125,34 @@ export default function HorizontalRevealSection({
         }
       }, 300)
     } else {
-      unlockScroll()
+      // Don't unlock scroll if there's no next section
+      // This keeps the animation visible
       setIsAnimating(false)
     }
   }, [isAnimationComplete, hasNavigated, onAnimationComplete, nextSectionId, unlockScroll])
+
+  // Add this function after the completeAnimationAndNavigate function
+  const navigateToPreviousSection = useCallback(() => {
+    if (hasNavigated) return
+
+    setHasNavigated(true)
+
+    // Navigate to previous section
+    if (prevSectionId) {
+      setTimeout(() => {
+        unlockScroll()
+        setIsAnimating(false)
+
+        const prevSection = document.getElementById(prevSectionId)
+        if (prevSection) {
+          prevSection.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 300)
+    } else {
+      unlockScroll()
+      setIsAnimating(false)
+    }
+  }, [hasNavigated, prevSectionId, unlockScroll])
 
   // Set up intersection observer to detect when section is visible
   useEffect(() => {
@@ -137,25 +161,25 @@ export default function HorizontalRevealSection({
         const wasInView = isInView
         setIsInView(entry.isIntersecting)
 
-        // Reset navigation state when section comes back into view
         if (entry.isIntersecting) {
-          if (isAnimationComplete) {
-            // If animation was already completed, just make sure scroll is unlocked
-            unlockScroll()
-          } else {
-            // Reset state for new animation
+          // Reset navigation state when section comes back into view
+          if (!wasInView) {
             setHasNavigated(false)
-            accumulatedDelta.current = 0
-            scrollProgress.set(0)
 
-            // If we're newly entering the view, start animation and lock scroll
-            if (!wasInView) {
+            // Only reset animation state if we're not already animating
+            if (!isAnimating) {
+              // If animation was already completed, don't reset progress
+              if (!isAnimationComplete) {
+                accumulatedDelta.current = 0
+                scrollProgress.set(0)
+              }
+
               setIsAnimating(true)
               lockScroll()
             }
           }
-        } else if (wasInView && !entry.isIntersecting && isAnimationComplete) {
-          // If we're leaving the view and animation is complete, unlock scroll
+        } else if (wasInView && !entry.isIntersecting && !hasNavigated) {
+          // If we're leaving the view without explicit navigation, unlock scroll
           setIsAnimating(false)
           unlockScroll()
         }
@@ -177,7 +201,7 @@ export default function HorizontalRevealSection({
       // Clean up scroll lock if component unmounts
       unlockScroll()
     }
-  }, [isInView, isAnimationComplete, lockScroll, unlockScroll, scrollProgress.set])
+  }, [isInView, isAnimating, isAnimationComplete, lockScroll, unlockScroll, hasNavigated, scrollProgress.set])
 
   // Process accumulated wheel/touch events
   const processEvents = useCallback(() => {
@@ -188,7 +212,7 @@ export default function HorizontalRevealSection({
     animationFrameId.current = requestAnimationFrame(() => {
       animationFrameId.current = null
 
-      if (!isAnimating || isAnimationComplete) return
+      if (!isAnimating) return
 
       const events = [...wheelEvents.current]
       wheelEvents.current = []
@@ -209,19 +233,39 @@ export default function HorizontalRevealSection({
       // Update progress
       scrollProgress.set(accumulatedDelta.current)
 
-      // Check if animation is complete
-      if (accumulatedDelta.current >= 95) {
+      // Check if animation is complete (forward direction)
+      if (accumulatedDelta.current >= 95 && !isAnimationComplete && scrollDirection === "down") {
         completeAnimationAndNavigate()
       }
+
+      // Check if we should navigate to previous section (reverse direction)
+      if (accumulatedDelta.current <= 5 && scrollDirection === "up" && prevSectionId) {
+        navigateToPreviousSection()
+      }
     })
-  }, [isAnimating, isAnimationComplete, scrollProgress, completeAnimationAndNavigate])
+  }, [
+    isAnimating,
+    isAnimationComplete,
+    scrollDirection,
+    scrollProgress,
+    completeAnimationAndNavigate,
+    navigateToPreviousSection,
+    prevSectionId,
+  ])
 
   // Handle wheel events to control animation progress
   const handleWheel = useCallback(
     (e: WheelEvent) => {
-      if (!isInView || !isAnimating || isAnimationComplete) return
+      if (!isInView || !isAnimating) return
 
       e.preventDefault()
+
+      // Update scroll direction based on wheel delta
+      if (e.deltaY < 0) {
+        setScrollDirection("up")
+      } else {
+        setScrollDirection("down")
+      }
 
       // Store wheel events for smoother animation
       wheelEvents.current.push(e)
@@ -231,7 +275,7 @@ export default function HorizontalRevealSection({
         processEvents()
       }
     },
-    [isInView, isAnimating, isAnimationComplete, processEvents],
+    [isInView, isAnimating, processEvents],
   )
 
   // Handle touch events for mobile
@@ -245,12 +289,19 @@ export default function HorizontalRevealSection({
 
   const handleTouchMove = useCallback(
     (e: TouchEvent) => {
-      if (!isInView || !isAnimating || isAnimationComplete || touchStartY.current === null) return
+      if (!isInView || !isAnimating || touchStartY.current === null) return
 
       e.preventDefault()
 
       const touchY = e.touches[0].clientY
       const deltaY = touchStartY.current - touchY
+
+      // Update scroll direction based on touch movement
+      if (deltaY < 0) {
+        setScrollDirection("up")
+      } else {
+        setScrollDirection("down")
+      }
 
       // Create a synthetic wheel event
       const syntheticEvent = {
@@ -265,7 +316,7 @@ export default function HorizontalRevealSection({
         processEvents()
       }
     },
-    [isInView, isAnimating, isAnimationComplete, processEvents],
+    [isInView, isAnimating, processEvents],
   )
 
   const handleTouchEnd = useCallback(() => {
@@ -276,7 +327,8 @@ export default function HorizontalRevealSection({
   useEffect(() => {
     const options = { passive: false }
 
-    if (isAnimating && !isAnimationComplete) {
+    // Add listeners when in view and animating
+    if (isInView && isAnimating) {
       // Wheel events for desktop
       window.addEventListener("wheel", handleWheel, options)
 
@@ -296,27 +348,35 @@ export default function HorizontalRevealSection({
         cancelAnimationFrame(animationFrameId.current)
       }
     }
-  }, [handleWheel, handleTouchStart, handleTouchMove, handleTouchEnd, isAnimating, isAnimationComplete])
+  }, [handleWheel, handleTouchStart, handleTouchMove, handleTouchEnd, isAnimating, isInView])
 
   // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isInView || !isAnimating || isAnimationComplete) return
+      if (!isInView) return
+      if (!isAnimating && !isAnimationComplete) return
+      if (isAnimationComplete && (e.key === "ArrowDown" || e.key === "PageDown" || e.key === "Space")) return
 
       if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === "Space") {
         e.preventDefault()
+        setScrollDirection("down")
         accumulatedDelta.current += 5
         accumulatedDelta.current = Math.min(100, accumulatedDelta.current)
         scrollProgress.set(accumulatedDelta.current)
 
-        if (accumulatedDelta.current >= 95) {
+        if (accumulatedDelta.current >= 95 && !isAnimationComplete) {
           completeAnimationAndNavigate()
         }
       } else if (e.key === "ArrowUp" || e.key === "PageUp") {
         e.preventDefault()
+        setScrollDirection("up")
         accumulatedDelta.current -= 5
         accumulatedDelta.current = Math.max(0, accumulatedDelta.current)
         scrollProgress.set(accumulatedDelta.current)
+
+        if (accumulatedDelta.current <= 5 && prevSectionId) {
+          navigateToPreviousSection()
+        }
       }
     }
 
@@ -325,10 +385,18 @@ export default function HorizontalRevealSection({
     return () => {
       window.removeEventListener("keydown", handleKeyDown)
     }
-  }, [isInView, isAnimating, isAnimationComplete, scrollProgress, completeAnimationAndNavigate, scrollProgress.set])
+  }, [
+    isInView,
+    isAnimating,
+    isAnimationComplete,
+    scrollProgress,
+    completeAnimationAndNavigate,
+    navigateToPreviousSection,
+    prevSectionId,
+  ])
 
   return (
-    <div ref={sectionRef} id={id} className="relative w-full h-[100vh] overflow-hidden bg-[#121212]">
+    <div ref={sectionRef} id={id} className="relative w-full h-[100vh] overflow-hidden bg-background">
       {/* Progress indicator (only visible during development) */}
       {process.env.NODE_ENV === "development" && (
         <div className="fixed top-4 left-4 z-50 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
