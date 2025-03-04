@@ -6,16 +6,16 @@ import { motion } from "framer-motion"
 const AtomIcon: React.FC = () => {
   return (
     <motion.div
-      className="absolute right-4 lg:right-10 top-1/3 z-10 opacity-80 hidden md:block"
-      initial={{ opacity: 0, rotate: 0 }}
-      animate={{ opacity: 0.8, rotate: 360 }}
+      className="absolute right-[10vw] lg:right-10 top-1/6 z-10 opacity-80 hidden md:block"
+      initial={{ opacity: 0.6, rotate: 0 }}
+      animate={{ opacity: 0.6, rotate: 360 }}
       transition={{
-        duration: 30,
+        duration: 3,
         repeat: Number.POSITIVE_INFINITY,
         ease: "linear",
       }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="172" height="172" viewBox="0 0 172 172" fill="none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="122" height="122" viewBox="0 0 172 172" fill="none">
         <path
           d="M96.8992 78.5952C109.278 97.4021 119.243 115.239 125.348 128.873C128.4 135.691 130.483 141.448 131.422 145.743C131.892 147.892 132.071 149.66 131.951 151.006C131.83 152.357 131.413 153.231 130.742 153.673C130.07 154.115 129.102 154.153 127.814 153.729C126.53 153.308 124.977 152.443 123.189 151.162C119.615 148.601 115.151 144.413 110.095 138.912C99.9868 127.914 87.5434 111.709 75.1642 92.9019C62.785 74.095 52.8203 56.2577 46.7159 42.6243C43.6629 35.8057 41.5805 30.0494 40.6416 25.7541C40.1719 23.605 39.992 21.837 40.1123 20.4911C40.2332 19.1404 40.6507 18.2659 41.3219 17.8241C41.9931 17.3823 42.9614 17.3446 44.2499 17.7677C45.5336 18.1893 47.0864 19.0537 48.8746 20.3349C52.4486 22.8956 56.9124 27.0846 61.968 32.5849C72.0766 43.5826 84.52 59.7884 96.8992 78.5952Z"
           stroke="#FDFAF8"

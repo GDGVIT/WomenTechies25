@@ -1,5 +1,4 @@
-import React from "react"
-import { useRef, useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 
 interface HighlightTextProps {
@@ -21,7 +20,7 @@ const HighlightText: React.FC<HighlightTextProps> = ({
           setIsInView(true)
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.5 }
     )
 
     if (textRef.current) {
@@ -36,19 +35,28 @@ const HighlightText: React.FC<HighlightTextProps> = ({
   }, [])
 
   return (
-    <div className="relative" ref={textRef}>
-      {/* Text */}
+    <div 
+      className="relative inline-block overflow-hidden" 
+      ref={textRef}
+    >
+      {/* Actual text */}
       <span className={className}>{text}</span>
 
-      {/* Highlight background */}
+      {/* Animated highlight */}
       <motion.div
-        className="absolute inset-0 bg-[#FAC6F7] -z-10"
-        initial={{ width: 0 }}
-        animate={{ width: isInView ? "100%" : 0 }}
+        className="absolute left-0 top-0 h-full bg-[#FAC6F7] -z-10"
+        initial={{ width: "0%" }}
+        animate={
+          isInView
+            ? { width: ["0%", "75%", "100%"] } 
+            : { width: "0%" }
+        }
         transition={{
-          duration: 1.5,
+          duration: 2,
           ease: "easeInOut",
-          delay: 0.2,
+          times: [0, 0.8, 1], 
+          // ^ 80% of the animation is spent going from 0% to 75%, 
+          // then the final 20% goes from 75% to 100%.
         }}
       />
     </div>
@@ -56,4 +64,3 @@ const HighlightText: React.FC<HighlightTextProps> = ({
 }
 
 export default HighlightText
-
