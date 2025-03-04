@@ -31,7 +31,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="text-white text-xl font-medium font-Raleway">{question}</span>
+        <span className="text-white text-lg xl:text-xl font-medium font-Raleway">{question}</span>
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3, ease: "easeInOut" }}>
           <ChevronIcon className="w-6 h-4" />
         </motion.div>
