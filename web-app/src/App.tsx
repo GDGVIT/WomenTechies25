@@ -2,6 +2,7 @@
 import './App.css'
 import FaqSection from "../components/FaqSection"
 import  ScrollAnimationSection  from "../components/AboutWT"
+import Dummy from '../components/dummy'
 function App() {
   return (
     <>
@@ -9,7 +10,8 @@ function App() {
         Blah blah blah
       </div>
       <FaqSection />
-      <ScrollAnimationSection />
+      <ScrollAnimationSection id="scroll-animation-section" />
+      <Dummy />
     </>
   )
 }
