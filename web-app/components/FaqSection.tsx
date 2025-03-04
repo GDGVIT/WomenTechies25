@@ -1,15 +1,16 @@
-import type React from "react";
-import { useRef, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import Accordion from "../components/Accordion";
-import PixelatedFaq from "../components/PixelatedFaq";
-import AtomIcon from "../components/AtomIcon";
-import DiamondShapes from "../components/DiamondShapes";
+"use client"
+
+import type React from "react"
+import { useRef } from "react"
+import Accordion from "./Accordion"
+import PixelatedFaq from "./PixelatedFaq"
+import AtomIcon from "./AtomIcon"
+import DiamondShapes from "./DiamondShapes"
+import HighlightText from "./HighlightText"
 
 const FaqSection: React.FC = () => {
-  const faqRef = useRef<HTMLDivElement>(null);
-  const highlightRef = useRef<HTMLDivElement>(null);
-  const highlighterControls = useAnimation();
+  const faqRef = useRef<HTMLDivElement>(null)
+  const highlightRef = useRef<HTMLDivElement>(null)
 
   const faqItems = [
     {
@@ -19,8 +20,7 @@ const FaqSection: React.FC = () => {
     },
     {
       question: "WHAT ARE THE TEAM REQUIREMENTS?",
-      answer:
-        "Teams can consist of 1-4 members. All team members should be registered individually on our platform.",
+      answer: "Teams can consist of 1-4 members. All team members should be registered individually on our platform.",
     },
     {
       question: "DO I NEED TO HAVE ANY SPECIFIC QUALIFICATIONS TO PARTICIPATE?",
@@ -33,60 +33,11 @@ const FaqSection: React.FC = () => {
         "Don't worry! We have a team formation event at the beginning of the hackathon where you can meet other participants and form teams.",
     },
     {
-      question:
-        "ARE THERE ANY RESTRICTIONS ON USING SEVERAL PRE-BUILT LIBRARIES?",
+      question: "ARE THERE ANY RESTRICTIONS ON USING SEVERAL PRE-BUILT LIBRARIES?",
       answer:
         "You're free to use pre-built libraries and frameworks. However, make sure to properly attribute them in your project submission.",
     },
-  ];
-
-  // Handle intersection observer for scroll animations and trigger on load
-  useEffect(() => {
-    // Trigger animation on initial load
-    setTimeout(() => {
-      highlighterControls.start("visible");
-    }, 1000);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          highlighterControls.start("visible");
-        } else {
-          highlighterControls.start("hidden");
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (faqRef.current) {
-      observer.observe(faqRef.current);
-    }
-
-    return () => {
-      if (faqRef.current) {
-        observer.unobserve(faqRef.current);
-      }
-    };
-  }, [highlighterControls]);
-
-  // Pink highlighter animation variants
-  const highlighterVariants = {
-    hidden: {
-      width: 0,
-      opacity: 0,
-      x: "-50%",
-    },
-    visible: {
-      width: "100%",
-      opacity: 0.7,
-      x: "0%",
-      transition: {
-        width: { duration: 0.8, ease: "easeInOut" },
-        opacity: { duration: 0.3, ease: "easeIn" },
-        x: { duration: 0.5, ease: "easeOut" },
-      },
-    },
-  };
+  ]
 
   return (
     <div
@@ -121,37 +72,21 @@ const FaqSection: React.FC = () => {
       <AtomIcon />
 
       <div className="max-w-6xl mx-auto">
-        <span className="absolute top-[5vh] right-[10vw]  text-gray-400 text-sm   ">
-          [ WHO ASKS THESE QUESTIONS? ]
-        </span>
-        {/* Header section - centered layout */}
+        
+       
         <div className="flex flex-col items-center text-center mb-20">
-          <h2 className="text-white text-lg lg:text-xl absolute left-0 top-10 leading-tight max-w-[90vw] md:max-w-[30vw] font-Raleway break-words">
-            WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE.
-          </h2>
+          <div className="text-white text-lg lg:text-xl absolute left-0 top-10 leading-tight max-w-[90vw] md:max-w-[30vw] font-Raleway break-words">
+            <HighlightText
+              text="WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE."
+              className="text-lg lg:text-xl font-Raleway"
+            />
+          </div>
 
           <div className="relative w-full flex justify-center">
             <PixelatedFaq highlightRef={highlightRef} />
           </div>
         </div>
-
-        {/* Pink highlighter for FAQ text when scrolled - improved animation */}
-        <motion.div
-          className="absolute "
-          style={{
-            top: highlightRef.current?.offsetTop || 0,
-            left: highlightRef.current?.offsetLeft || 0,
-            height: highlightRef.current?.offsetHeight || 0,
-            mixBlendMode: "multiply",
-            zIndex: -1,
-            borderRadius: "2px",
-          }}
-          initial="hidden"
-          animate={highlighterControls}
-          variants={highlighterVariants}
-        />
-
-        {/* Add noise overlay specifically for this section */}
+{/* noise */}
         <div
           className="absolute inset-0 pointer-events-none opacity-20 mix-blend-overlay -z-5"
           style={{
@@ -160,11 +95,12 @@ const FaqSection: React.FC = () => {
           }}
         />
 
-        {/* FAQ accordion */}
+       
         <Accordion items={faqItems} highlightRef={highlightRef} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FaqSection;
+export default FaqSection
+
