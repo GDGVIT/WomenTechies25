@@ -40,7 +40,7 @@ const FaqSection: React.FC = () => {
 
   return (
     <div
-      className="relative min-h-screen bg-black text-white px-8 py-24 overflow-hidden"
+      className="relative min-h-screen bg-background text-white px-8 py-24 overflow-hidden"
       ref={faqRef}
       style={{
         background: "linear-gradient(to bottom right, #0a1a1c, #000000)",
@@ -72,15 +72,13 @@ const FaqSection: React.FC = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center text-center mb-20">
-          <div className="text-white text-lg lg:text-xl absolute left-0 top-10 leading-tight max-w-[90vw] md:max-w-[30vw] font-Raleway break-words">
-            <span className="text-lg lg:text-xl font-Raleway">
-              WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE.
-              
-              </span>
-          </div>
+        <span className=" absolute top-10 left-10 text-[12px] md:text-lg lg:text-xl font-Raleway text-left w-full max-w-[300px]  lg:max-w-[400px]">
+  WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE.
+</span>
+
 
           <div className="relative w-full flex justify-center">
-            <h1 className="text-3xl md:text-4xl xl:text-6xl font-bold font-heading">
+            <h1 className="text-5xl  xl:text-7xl font-bold font-heading">
               <HighlightText text="FAQs" />
             </h1>
           </div>
