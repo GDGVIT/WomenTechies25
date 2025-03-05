@@ -1,6 +1,4 @@
-"use client"
-
-import type React from "react"
+import React from "react"
 import { motion } from "framer-motion"
 
 const DiamondShapes: React.FC = () => {

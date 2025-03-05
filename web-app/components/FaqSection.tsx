@@ -1,6 +1,4 @@
-"use client"
-
-import type React from "react"
+import React, { useState } from "react"
 import { useRef } from "react"
 import Accordion from "./Accordion"
 import AtomIcon from "./AtomIcon"
@@ -10,6 +8,19 @@ import HighlightText from "./HighlightText"
 const FaqSection: React.FC = () => {
   const faqRef = useRef<HTMLDivElement>(null)
   const highlightRef = useRef<HTMLDivElement>(null)
+  const isLaptop = useState(false)
+
+  if(typeof window !== "undefined"){
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1367) {
+        isLaptop[1](true)
+      } else {
+        isLaptop[1](false)
+      }
+    }
+  )
+  }
+    
 
   const faqItems = [
     {
@@ -42,18 +53,18 @@ const FaqSection: React.FC = () => {
     <div
       className="relative min-h-screen bg-background text-white px-8 py-24 overflow-hidden"
       ref={faqRef}
-      style={{
-        background: "linear-gradient(to bottom right, #0a1a1c, #000000)",
-      }}
+      // style={{
+      //   background: "linear-gradient(to bottom right, #0a1a1c, #000000)",
+      // }}
     >
       {/* Background shapes */}
       <div
-        className="absolute -top-64 -left-64 w-[300px] h-[300px] rounded-[703px] bg-[rgba(101,158,162,0.60)] -z-10"
+        className="absolute -top-6 -left-1  0 w-[200px] h-[300px] rounded-[703px] bg-[rgba(101,158,162,0.60)] -z-10"
         style={{ filter: "blur(120px)" }}
       />
 
       <div
-        className="absolute -top-32 -right-32 w-[300px] h-[400px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
+        className="absolute -top-32 right-0 w-[300px] h-[300px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
         style={{ filter: "blur(72.55px)" }}
       />
 
@@ -66,8 +77,8 @@ const FaqSection: React.FC = () => {
         className="absolute -bottom-32 -left-32 w-[300px] h-[400px] rounded-full bg-[rgba(101,158,162,0.60)] -z-10"
         style={{ filter: "blur(100px)" }}
       />
-
-      <DiamondShapes />
+    {isLaptop[0] && <DiamondShapes />}
+      {/* <DiamondShapes /> */}
       <AtomIcon />
 
       <div className="max-w-6xl mx-auto">
