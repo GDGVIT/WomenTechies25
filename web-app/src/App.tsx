@@ -1,14 +1,17 @@
 
 import './App.css'
 import FaqSection from "../components/FaqSection"
-import HorizontalRevealSection from '../components/AboutWT'
+// import AnimatedSection from '../components/AboutWT'
 import Dummy from '../components/dummy'
+import AboutSection from '../components/AboutWT'
 function App() {
   return (
     <>
     <div className=" bg-background">
       <FaqSection />
-       <HorizontalRevealSection id="animation-section" />
+      <div className="App">
+      <AboutSection />
+    </div>
       <Dummy />
       </div>
       </>
