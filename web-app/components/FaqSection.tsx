@@ -3,7 +3,6 @@
 import type React from "react"
 import { useRef } from "react"
 import Accordion from "./Accordion"
-import PixelatedFaq from "./PixelatedFaq"
 import AtomIcon from "./AtomIcon"
 import DiamondShapes from "./DiamondShapes"
 import HighlightText from "./HighlightText"
@@ -72,21 +71,22 @@ const FaqSection: React.FC = () => {
       <AtomIcon />
 
       <div className="max-w-6xl mx-auto">
-        
-       
         <div className="flex flex-col items-center text-center mb-20">
           <div className="text-white text-lg lg:text-xl absolute left-0 top-10 leading-tight max-w-[90vw] md:max-w-[30vw] font-Raleway break-words">
-            <HighlightText
-              text="WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE."
-              className="text-lg lg:text-xl font-Raleway"
-            />
+            <span className="text-lg lg:text-xl font-Raleway">
+              WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE.
+              
+              </span>
           </div>
 
           <div className="relative w-full flex justify-center">
-            <PixelatedFaq highlightRef={highlightRef} />
+            <h1 className="text-3xl md:text-4xl xl:text-6xl font-bold font-heading">
+              <HighlightText text="FAQs" />
+            </h1>
           </div>
         </div>
-{/* noise */}
+
+        {/* noise */}
         <div
           className="absolute inset-0 pointer-events-none opacity-20 mix-blend-overlay -z-5"
           style={{
@@ -95,7 +95,6 @@ const FaqSection: React.FC = () => {
           }}
         />
 
-       
         <Accordion items={faqItems} highlightRef={highlightRef} />
       </div>
     </div>
