@@ -6,7 +6,7 @@ const dummy = () => {
     {[...Array(6)].map((_, index) => (
         <div key={index} className="card">
             <h2>Card {index + 1}</h2>
-            <p>This is a sample card.</p>
+            <p>This is a sample card. hahaha</p>
         </div>
     ))}
     </div>
