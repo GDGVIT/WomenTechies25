@@ -1,0 +1,12 @@
+.thugdino{
+    background-image: url(../../public/dino-bike/thug-dino.png);
+    background-size: contain;
+    width: 100px;
+    background-repeat: no-repeat;
+    height: 100px;
+    
+}
+
+.flip-vertical {
+    --transform-scale-y: -1;
+}

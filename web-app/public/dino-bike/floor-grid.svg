@@ -1,0 +1,38 @@
+<svg width="1728" height="696" viewBox="0 0 1728 696" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1041_1324)">
+<mask id="mask0_1041_1324" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-98" y="0" width="1826" height="696">
+<path d="M1728 0H-98V696H1728V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_1041_1324)">
+<mask id="mask1_1041_1324" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-295" y="0" width="2319" height="696">
+<path d="M2023.8 347.993C2023.8 539.95 1504.72 695.561 864.402 695.561C224.086 695.561 -294.994 539.95 -294.994 347.993C-294.994 156.036 224.086 0.424316 864.402 0.424316C1504.72 0.424316 2023.8 156.036 2023.8 347.993Z" fill="url(#paint0_radial_1041_1324)"/>
+</mask>
+<g mask="url(#mask1_1041_1324)">
+<path opacity="0.5" d="M190.941 621.937C195.983 612.809 571.679 247.469 758.902 65.9395" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M1576.43 621.937C1571.39 612.809 1195.7 247.469 1008.48 65.9395" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M443.372 617.79L796.788 64.9048" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M1324.03 617.79L970.613 64.9048" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M676.866 616.749C678.138 610.111 785.731 246.777 839.373 65.9395" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M1090.53 616.749C1089.26 610.111 981.664 246.777 928.022 65.9395" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M-146.7 614.678C-141.644 607.21 420.247 245.051 700.555 64.9048" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M1914.08 614.678C1909.03 607.21 1347.14 245.051 1066.83 64.9048" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M544.275 64.9048C782.853 64.9048 1260.02 64.9048 1260.02 64.9048" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M-147.947 118.319C619.138 118.319 2153.31 118.319 2153.31 118.319" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M-147.947 178.854C619.138 178.854 2153.31 178.854 2153.31 178.854" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M-147.947 271.44C619.138 271.44 2153.31 271.44 2153.31 271.44" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M-147.947 396.071C619.138 396.071 2153.31 396.071 2153.31 396.071" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M-147.947 533.526C619.138 533.526 2153.31 533.526 2153.31 533.526" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+<path opacity="0.5" d="M883.697 64.9048V644.217" stroke="#FAC6F7" stroke-width="5" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1041_1324" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(864.402 347.993) rotate(90) scale(292.101 974.369)">
+<stop stop-color="#0E1111"/>
+<stop offset="1" stop-color="#0E1111" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip0_1041_1324">
+<rect width="1728" height="696" fill="white"/>
+</clipPath>
+</defs>
+</svg>
