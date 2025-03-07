@@ -1,3 +1,4 @@
+import React from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import Text from "./Text.tsx";
@@ -8,7 +9,7 @@ import './wheel.css'
 
 const DinoScroll = () => {
     return (
-        <div className="bg-neutral-800">
+        <div className="bg-background">
             
             <HorizontalScrollDino />
             

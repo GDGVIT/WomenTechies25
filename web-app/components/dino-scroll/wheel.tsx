@@ -1,3 +1,4 @@
+import React from 'react';
 import './wheel.css'
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";

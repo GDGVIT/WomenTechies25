@@ -1,6 +1,4 @@
-"use client"
-
-import type React from "react"
+import React from "react"
 import { useRef, useState, useEffect } from "react"
 import { easeInOut, motion, useScroll, useTransform } from "framer-motion"
 
