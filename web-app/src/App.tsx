@@ -1,5 +1,6 @@
 
 import './App.css'
+import Navbar from '../components/Navbar'
 import FaqSection from "../components/FaqSection"
 // import AnimatedSection from '../components/AboutWT'
 import Dummy from '../components/dummy'
@@ -10,13 +11,15 @@ function App() {
   return (
     <>
     <div className=" bg-background">
+      <Navbar />
+      <Dummy />
       <FaqSection />
       <div className="App">
       <AboutSection />
       <DinoScroll/>
     </div>
     <ContactSection/>
-      <Dummy />
+      
       </div>
       </>
   )
