@@ -166,7 +166,7 @@ const AboutSection: React.FC = () => {
               mass: 1.2,
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "mirror",
-              repeatDelay: 2.5,
+              repeatDelay: 0.5,
             },
           }}
         />

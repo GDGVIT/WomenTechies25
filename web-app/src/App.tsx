@@ -5,6 +5,7 @@ import FaqSection from "../components/FaqSection"
 import Dummy from '../components/dummy'
 import AboutSection from '../components/AboutWT'
 import DinoScroll from '../components/dino-scroll/horizontal-scroll-dino'
+import ContactSection from "../components/Contact"
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <AboutSection />
       <DinoScroll/>
     </div>
+    <ContactSection/>
       <Dummy />
       </div>
       </>
