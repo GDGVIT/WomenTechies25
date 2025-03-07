@@ -1,45 +1,38 @@
 import React from "react"
 import { useRef, useState, useEffect } from "react"
 import { easeInOut, motion, useScroll, useTransform } from "framer-motion"
-
+import AtomIcon from "./AtomAboutWT"
 const AboutSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
-
-  // Check for mobile/tablet on mount and window resize
+ 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768)
       setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024)
     }
-
-    // Initial check
+ 
     checkScreenSize()
-
-    // Add event listener
+ 
     window.addEventListener("resize", checkScreenSize)
-
-    // Cleanup
+ 
     return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
-
-  // Function to calculate responsive sizes based on screen width
+ 
   const getResponsiveSize = (baseSize: number) => {
-    if (isMobile) return baseSize * 0.5 // Increased from 0.4
-    if (isTablet) return baseSize * 0.7 // Increased from 0.6
-    return baseSize * 0.85 // Increased from 0.75
+    if (isMobile) return baseSize * 0.5  
+    if (isTablet) return baseSize * 0.7  
+    return baseSize * 0.85  
   }
-
-  // Track scroll progress within the entire container (section + buffer)
+ 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   })
-
-  // Set up scroll detection
+ 
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((value) => {
       setIsScrolling(value > 0.01)
@@ -50,32 +43,32 @@ const AboutSection: React.FC = () => {
 
   const leftFillOpacity = useTransform(
     scrollYProgress,
-    [0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3],
-    [0, 0.066, 0.133, 0.2, 0.266, 0.333, 0.4, 0.466, 0.533, 0.6, 0.666, 0.733, 0.8, 0.866, 0.933, 1],
+    [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1], 
+    [0, 0.05, 0.11, 0.18, 0.26, 0.35, 0.42, 0.49, 0.56, 0.63, 0.69, 0.75, 0.81, 0.86, 0.91, 0.95, 0.98, 0.99, 1, 1, 1], 
     { ease: easeInOut }
   );
   
   const rightFillOpacity = useTransform(
     scrollYProgress,
-    [0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3],
-    [0, 0.066, 0.133, 0.2, 0.266, 0.333, 0.4, 0.466, 0.533, 0.6, 0.666, 0.733, 0.8, 0.866, 0.933, 1],
+    [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1], 
+    [0, 0.05, 0.11, 0.18, 0.26, 0.35, 0.42, 0.49, 0.56, 0.63, 0.69, 0.75, 0.81, 0.86, 0.91, 0.95, 0.98, 0.99, 1, 1, 1], 
     { ease: easeInOut }
   );
   
   const textOpacity = useTransform(
     scrollYProgress,
-    [0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3],
-    [0, 0.066, 0.133, 0.2, 0.266, 0.333, 0.4, 0.466, 0.533, 0.6, 0.666, 0.733, 0.8, 0.866, 0.933, 1],
+    [0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3], 
+    [0, 0.066, 0.133, 0.2, 0.266, 0.333, 0.4, 0.466, 0.533, 0.6, 0.666, 0.733, 0.8, 0.866, 0.933, 1], 
     { ease: easeInOut }
   );
-
+  
   return (
     <div
       ref={containerRef}
       className="about-section-container"
       style={{
         position: "relative",
-        height: "200vh", // Main section (100vh) + buffer section (100vh)
+        height: "225vh", 
       }}
     >
       <div
@@ -90,21 +83,26 @@ const AboutSection: React.FC = () => {
           overflow: "hidden",
         }}
       >
+        <div
+        className="absolute left-[10%] top-[30%] xl:left-[35%] xl:top-[30%] w-[300px] h-[400px] rounded-full -z-10">
+          <AtomIcon />
+        </div>
         {/* Stars/sparkles */}
         <div className="stars" style={{ position: "absolute", width: "100%", height: "100%", zIndex: 1 }}>
-          {[...Array(isMobile ? 6 : 10)].map((_, i) => (
-            <div
-              key={i}
-              style={{
-                position: "absolute",
-                width: Math.random() * 10 + 5 + "px",
-                height: Math.random() * 10 + 5 + "px",
-                backgroundColor: "white",
-                borderRadius: "50%",
-                left: Math.random() * 100 + "%",
-                top: Math.random() * 100 + "%",
-                opacity: Math.random() * 0.5 + 0.5,
-              }}
+          {[
+            { top: "55%", left: "5%" },
+            { top: "23%", left: "25%" },
+            { top: "35%", left: "35%" },
+            { top: "21%", right: "15%" },
+            { top: "10%", right: "25%" },
+            { top: "30%", right: "35%" },
+            { top: "15%", left: "50%", transform: "translateX(-50%)" },
+          ].map((style, index) => (
+            <img
+              key={index}
+              src="/aboutWT/star.svg"
+              alt="Star"
+              style={{ position: "absolute", width: "30px", height: "30px", objectFit: "cover", ...style }}
             />
           ))}
         </div>
@@ -139,6 +137,7 @@ const AboutSection: React.FC = () => {
             },
           }}
         />
+         
 
         {/* Bookshelf SVG */}
         <motion.img
@@ -193,20 +192,20 @@ const AboutSection: React.FC = () => {
               style={{
                 position: "absolute",
                 left: "7%",
-                bottom: "12%", // Adjusted for better spacing
+                bottom: "12%",  
                 height: getResponsiveSize(600) + "px",
                 zIndex: 3,
               }}
             />
 
-            {/* Left SVG (filled with animated opacity) */}
+            {/* Left SVG */}
             <motion.img
               src="/aboutWT/left1filled.svg"
               alt="Left filled"
               style={{
                 position: "absolute",
                 left: "7%",
-                bottom: "12%", // Adjusted for better spacing
+                bottom: "12%",  
                 height: getResponsiveSize(600) + "px",
                 zIndex: 4,
                 opacity: leftFillOpacity,
@@ -227,7 +226,7 @@ const AboutSection: React.FC = () => {
               }}
             />
 
-            {/* Center 2 SVG (girl with laptop and woman behind) */}
+            {/* Center 2 SVG  */}
             <img
               src="/aboutWT/centre2.svg"
               alt="Center 2"
@@ -247,20 +246,20 @@ const AboutSection: React.FC = () => {
               style={{
                 position: "absolute",
                 right: "7%",
-                bottom: "12%", // Adjusted for better spacing
+                bottom: "12%",  
                 height: getResponsiveSize(550) + "px",
                 zIndex: 3,
               }}
             />
 
-            {/* Right SVG (filled with animated opacity) */}
+            {/* Right SVG   */}
             <motion.img
               src="/aboutWT/right1filled.svg"
               alt="Right filled"
               style={{
                 position: "absolute",
                 right: "7%",
-                bottom: "12%", // Adjusted for better spacing
+                bottom: "12%",  
                 height: getResponsiveSize(550) + "px",
                 zIndex: 4,
                 opacity: rightFillOpacity,
@@ -269,7 +268,7 @@ const AboutSection: React.FC = () => {
             />
           </>
         ) : (
-          // Mobile layout with better spacing
+          // Mobile layout 
           <>
             <img
               src="/aboutWT/left1.svg"
@@ -277,8 +276,8 @@ const AboutSection: React.FC = () => {
               style={{
                 position: "absolute",
                 left: "2%",
-                bottom: "18%", // Increased to prevent overlap
-                height: getResponsiveSize(450) + "px",
+                bottom: "10%", 
+                height: getResponsiveSize(600) + "px",
                 zIndex: 3,
               }}
             />
@@ -288,8 +287,8 @@ const AboutSection: React.FC = () => {
               style={{
                 position: "absolute",
                 left: "2%",
-                bottom: "18%", // Increased to prevent overlap
-                height: getResponsiveSize(450) + "px",
+                bottom: "10%", 
+                height: getResponsiveSize(600) + "px",
                 zIndex: 4,
                 opacity: leftFillOpacity,
               }}
@@ -301,8 +300,8 @@ const AboutSection: React.FC = () => {
               style={{
                 position: "absolute",
                 right: "2%",
-                bottom: "18%", // Increased to prevent overlap
-                height: getResponsiveSize(450) + "px",
+                bottom: "10%", 
+                height: getResponsiveSize(500) + "px",
                 zIndex: 3,
               }}
             />
@@ -312,8 +311,8 @@ const AboutSection: React.FC = () => {
               style={{
                 position: "absolute",
                 right: "2%",
-                bottom: "18%", // Increased to prevent overlap
-                height: getResponsiveSize(450) + "px",
+                bottom: "10%",
+                height: getResponsiveSize(500) + "px",
                 zIndex: 4,
                 opacity: rightFillOpacity,
               }}
@@ -352,57 +351,9 @@ const AboutSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          style={{
-            position: "absolute",
-            bottom: "5%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            color: "white",
-            zIndex: 5,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-          animate={{
-            y: [0, 10, 0],
-          }}
-          transition={{
-            y: { repeat: Number.POSITIVE_INFINITY, duration: 1.5, ease: "easeInOut" },
-          }}
-        >
-          <p style={{ fontSize: isMobile ? "0.9rem" : "1rem" }}>Scroll to reveal</p>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 5V19M12 19L5 12M12 19L19 12"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </motion.div>
+      
 
-        {/* Animation indicator */}
-        <motion.div
-          style={{
-            position: "absolute",
-            top: "5%",
-            right: "5%",
-            backgroundColor: "rgba(255, 255, 255, 0.2)",
-            padding: "8px 12px",
-            borderRadius: "4px",
-            color: "white",
-            zIndex: 10,
-            fontSize: isMobile ? "0.8rem" : "1rem",
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isScrolling ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          Scroll to reveal the scene
-        </motion.div>
+       
       </div>
     </div>
   )
