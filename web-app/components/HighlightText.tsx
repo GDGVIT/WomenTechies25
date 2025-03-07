@@ -1,6 +1,4 @@
-"use client"
-
-import type React from "react"
+import React from "react"
 import { useRef, useEffect } from "react"
 import { motion, useInView, useAnimation } from "framer-motion"
 
@@ -39,7 +37,7 @@ const HighlightText: React.FC<HighlightTextProps> = ({
   }
 
   return (
-    <div ref={containerRef} className={`relative inline-block px-3 ${className}`}>
+    <div ref={containerRef} className={`relative inline-block px-1 ${className}`}>
       {/* SVG highlight background */}
       <motion.div
         className="absolute inset-0 z-0"

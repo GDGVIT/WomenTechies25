@@ -26,7 +26,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className={`fixed top-10 left-0 right-0 z-9999 w-[90vw] mx-auto
       }  bg-[#191C1C] transition-all duration-300 border-[2px] border-[#99728D] rounded-sm`}
     >
@@ -36,7 +36,7 @@ export default function Navbar() {
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="flex items-center gap-3"
           >
             <div className="flex-shrink-0">
