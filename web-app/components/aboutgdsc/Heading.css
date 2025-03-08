@@ -1,0 +1,21 @@
+.heading{
+    font-family: "VCR OSD Mono";
+    font-size: 5rem;
+    color: #F3C3F0;
+    max-height: 100px;
+    /* display: flex; */
+    width: 400px;
+    align-items: left;
+    z-index: 10;
+    white-space: nowrap; 
+    src: url("../../public/fonts/VCR_OSD_MONO_1.001.ttf");
+}
+
+.container{
+    width: full;
+    height: 400px;
+    
+    align-items: center;
+    justify-items: center;
+
+}

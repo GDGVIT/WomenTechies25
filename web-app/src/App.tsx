@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import FaqSection from "../components/FaqSection"
 // import AnimatedSection from '../components/AboutWT'
 import HeroSection from '../components/Hero'
-
+import AboutVIT from '../components/aboutgdsc/AboutVIT'
 import AboutSection from '../components/AboutWT'
 import DinoScroll from '../components/dino-scroll/horizontal-scroll-dino'
 import ContactSection from "../components/Contact"
@@ -14,9 +14,11 @@ function App() {
     <div className=" bg-background">
       <Navbar />
       <HeroSection/>
+      <AboutVIT/>
       <FaqSection />
-      <div className="App">
       <AboutSection />
+      <div className="App">
+      
       <DinoScroll/>
     </div>
     <ContactSection/>

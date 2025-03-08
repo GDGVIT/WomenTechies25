@@ -1,0 +1,61 @@
+.body2 #id10{
+    z-index: 99;
+    background-image: url(../../public/aboutgdsc/body2.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:400px;
+    width:100px;
+    visibility: visible;
+    position: relative;
+    top: 55px;
+    left:20px;
+    
+    
+    
+}
+
+.body3 #id11{
+    z-index: 99;
+    background-image: url(../../public/aboutgdsc/body3.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:400px;
+    width:100px;
+    
+    position: relative;
+    top: 86px;
+    left:230px;
+    visibility: visible;
+    
+    
+}
+
+.body4 #id12{
+    z-index: 99;
+    background-image: url(../../public/aboutgdsc/body4.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:400px;
+    width:100px;
+    visibility: visible;
+    position: relative;
+    top: 115px;
+    left:220px;
+    
+    
+    
+}
+
+.body {
+    
+    max-width: 450px;
+    max-height: 200px;
+    z-index: 10;
+    overflow-y: hidden;
+    align-items: center;
+    justify-content: center;
+   visibility: visible;
+    position:absolute
+    
+   
+}
