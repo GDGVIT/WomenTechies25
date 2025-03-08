@@ -1,144 +1,97 @@
 import React from "react"
-import { useEffect, useState } from "react"
+import { useEffect, useRef } from "react"
 import HighlightText from "./HighlightText"
 
-const ContactSection = () => {
-  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1920)
-  const [windowHeight, setWindowHeight] = useState(typeof window !== "undefined" ? window.innerHeight : 1080)
+export default function ContactSection() {
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  // Calculate scaling factors based on screen size
-  const widthRatio = windowWidth / 1920
-  const heightRatio = windowHeight / 1080
-
+  // This effect ensures the SVGs maintain their relative positions
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-      setWindowHeight(window.innerHeight)
+      const container = containerRef.current
+      if (!container) return
+
+      // Get viewport dimensions
+      const vw = window.innerWidth
+      const vh = window.innerHeight
+
+      // Base scale on the smaller dimension to ensure it fits
+      let scale = Math.min(vw / 1920, vh / 1080) * 0.9
+
+      // Ensure minimum scale for very small screens
+      scale = Math.max(scale, 0.3)
+
+      // Apply the scale transformation
+      container.style.transform = `scale(${scale})`
     }
 
+    // Initial call
+    handleResize()
+
+    // Add resize listener
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  // Responsive style calculations
-  const getResponsiveStyles = () => {
-    // For exact 1920x1080 screens, use the original values
-    if (windowWidth === 1920 && windowHeight === 1080) {
-      return {
-        leftLaptop: {
-          left: "20%",
-          bottom: "300px",
-          width: "40vw",
-        },
-        rightLaptop: {
-          right: "20%",
-          top: "7%",
-          width: "30vw",
-        },
-        contactCard: {
-          right: "18%",
-          bottom: "43vh",
-          width: "25vw",
-        },
-        headingText: {
-          left: "100px",
-          top: "150px",
-          fontSize: "4rem", // text-6xl equivalent
-        },
-      }
-    }
-
-    // For other screen sizes, calculate proportional values
-    return {
-      leftLaptop: {
-        left: `${Math.max(5, 20 * widthRatio)}%`,
-        bottom: `${Math.max(50, 300 * heightRatio)}px`,
-        width: `${Math.min(60, Math.max(30, 40 * widthRatio))}vw`,
-      },
-      rightLaptop: {
-        right: `${Math.max(5, 20 * widthRatio)}%`,
-        top: `${Math.max(3, 7 * heightRatio)}%`,
-        width: `${Math.min(50, Math.max(20, 30 * widthRatio))}vw`,
-      },
-      contactCard: {
-        right: `${Math.max(5, 18 * widthRatio)}%`,
-        bottom: `${Math.max(20, 43 * heightRatio)}vh`,
-        width: `${Math.min(40, Math.max(20, 25 * widthRatio))}vw`,
-      },
-      headingText: {
-        left: `${Math.max(20, 100 * widthRatio)}px`,
-        top: `${Math.max(50, 150 * heightRatio)}px`,
-        fontSize: `${Math.max(1.5, Math.min(4, 4 * Math.min(widthRatio, heightRatio)))}rem`,
-      },
-    }
-  }
-
-  const styles = getResponsiveStyles()
-
   return (
-    <section className="relative w-full h-screen bg-black overflow-hidden">
-      <div className="max-w-[1920px] h-full mx-auto relative">
-        {/* Background grid pattern - optional */}
-        <div className="absolute inset-0 opacity-20 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-center bg-no-repeat"></div>
+    <section className="relative w-full overflow-hidden bg-background py-16 md:py-24 min-h-[100vh] xl:h-[120vh]">
+  
+      <div className="absolute -bottom-[100vh] inset-0 z-0  ">
+        <img src="/contact/grid.svg" alt="Background grid" className="h-full w-full object-contain" />
+      </div>
 
-        {/* Left laptop */}
-        <div
-          className="absolute z-20"
-          style={{
-            left: styles.leftLaptop.left,
-            bottom: styles.leftLaptop.bottom,
-            width: styles.leftLaptop.width,
-          }}
-        >
-          <img src="/contact/left.svg" alt="Laptop" className="object-contain w-full" />
-        </div>
+      <div
+        className="absolute -top-14 -left-80 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-[607px] bg-[rgba(101,158,162,0.32)]"
+        style={{ filter: "blur(120px)" }}
+      ></div>
 
-        {/* Right laptop */}
-        <div
-          className="absolute"
-          style={{
-            right: styles.rightLaptop.right,
-            top: styles.rightLaptop.top,
-            width: styles.rightLaptop.width,
-          }}
-        >
-          <img src="/contact/right.svg" alt="Laptop" className="object-contain w-full" />
-        </div>
+      <div
+        className="absolute -top-28 -right-80 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-[607px] bg-[rgba(101,158,162,0.32)]"
+        style={{ filter: "blur(120px)" }}
+      ></div>
 
-        {/* Contact card */}
-        <div
-          className="absolute z-10"
-          style={{
-            right: styles.contactCard.right,
-            bottom: styles.contactCard.bottom,
-            width: styles.contactCard.width,
-          }}
-        >
-          <img src="/contact/tag.svg" alt="Contact card" className="object-contain w-full" />
-        </div>
+      <div
+        className="absolute -bottom-80 -right-80 w-[350px] h-[350px] md:w-[550px] md:h-[550px] rounded-[607px] bg-[rgba(101,158,162,0.32)]"
+        style={{ filter: "blur(120px)" }}
+      ></div>
 
-        {/* Heading text */}
-        <div
-          className="absolute text-white font-bold font-heading tracking-wider"
-          style={{
-            left: styles.headingText.left,
-            top: styles.headingText.top,
-          }}
-        >
-          <div className="flex items-center space-x-4">
-            <span style={{ fontSize: styles.headingText.fontSize }}>GET</span>
-            <span style={{ fontSize: styles.headingText.fontSize }}>IN</span>
-            <HighlightText text="TOUCH" className="font-bold"/>
-          </div>
-          <div className="flex items-center space-x-4 mt-4">
-            <HighlightText text="WITH" className="font-bold"  />
-            <span style={{ fontSize: styles.headingText.fontSize }}>US.</span>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col">
+        <h2 className="mb-16 mt-20 xl:mt-48 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+          <span>GET IN </span>
+          <HighlightText text="TOUCH" className="text-black" animationDuration={1.5} />
+          <br />
+          <HighlightText text="WITH" className="text-black" animationDuration={1.5} />
+          <span> US.</span>
+        </h2>
+
+        {/* SVG Container - This is the wrapper that centers the content */}
+        <div className="relative flex-grow flex items-center justify-center">
+          {/* Fixed size container that will be scaled as a unit */}
+          <div
+            ref={containerRef}
+            className="absolute origin-center"
+            style={{
+              width: "1920px",
+              height: "1080px",
+              transformOrigin: "center center",
+            }}
+          >
+            {/* SVG Group - Positioned exactly as on 1920x1080 screen */}
+            <div className="absolute" style={{ left: "250px", top: "350px" }}>
+              <img src="/contact/left.svg" alt="Laptop with left hand and thread" className="h-auto w-[800px]" />
+            </div>
+
+            <div className="absolute" style={{ right: "400px", top: "50px" }}>
+              <img src="/contact/right.svg" alt="Right hand with laptop" className="h-auto w-[600px]" />
+            </div>
+
+            <div className="absolute" style={{ right: "540px", top: "585px", zIndex: -1 }}>
+              <img src="/contact/tag.svg" alt="Contact information tag" className="h-auto w-[400px]" />
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-export default ContactSection
 

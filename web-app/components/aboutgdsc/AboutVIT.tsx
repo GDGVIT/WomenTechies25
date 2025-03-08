@@ -1,5 +1,4 @@
-"use client";
-
+import React from 'react';
 import './AboutVIT.css';
 import Heading from './Heading.tsx';
 import "./Body.css";

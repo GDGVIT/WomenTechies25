@@ -1,5 +1,5 @@
 import "./images.css";
-
+import React from "react";
 
 interface BodyProps {
     className?: string; // Optional prop for additional class names
