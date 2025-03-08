@@ -36,9 +36,16 @@ export default function ContactSection() {
   return (
     <section className="relative w-full overflow-hidden bg-background py-16 md:py-24 min-h-[100vh] xl:h-[120vh]">
   
-      <div className="absolute -bottom-[100vh] inset-0 z-0  ">
+      <div className="absolute -bottom-[90vh] xl:-bottom-[100vh] inset-0 z-0  ">
         <img src="/contact/grid.svg" alt="Background grid" className="h-full w-full object-contain" />
       </div>
+      <div className="absolute -left-48 top-[40vh] z-0">
+        <img src="/contact/cloud_left.jpg" alt="Background grid" className="h-full max-w-[20vw] object-contain" />
+      </div>
+      <div className="absolute -right-28 top-[30vh] z-0">
+        <img src="/contact/cloud_right.jpg" alt="Background grid" className="h-full max-w-[20vw] object-contain" />
+      </div>
+
 
       <div
         className="absolute -top-14 -left-80 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-[607px] bg-[rgba(101,158,162,0.32)]"
@@ -58,14 +65,14 @@ export default function ContactSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col">
         <h2 className="mb-16 mt-20 xl:mt-48 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
           <span>GET IN </span>
-          <HighlightText text="TOUCH" className="text-black" animationDuration={1.5} />
+          <HighlightText text="TOUCH" className="font-heading" animationDuration={1.5} />
           <br />
-          <HighlightText text="WITH" className="text-black" animationDuration={1.5} />
+          <HighlightText text="WITH" className="font-heading" animationDuration={1.5} />
           <span> US.</span>
         </h2>
 
         {/* SVG Container - This is the wrapper that centers the content */}
-        <div className="relative flex-grow flex items-center justify-center">
+        <div className="relative flex-grow flex items-center justify-center mt-[30vh] xl:mt-0">
           {/* Fixed size container that will be scaled as a unit */}
           <div
             ref={containerRef}
@@ -77,16 +84,16 @@ export default function ContactSection() {
             }}
           >
             {/* SVG Group - Positioned exactly as on 1920x1080 screen */}
-            <div className="absolute" style={{ left: "250px", top: "350px" }}>
-              <img src="/contact/left.svg" alt="Laptop with left hand and thread" className="h-auto w-[800px]" />
+            <div className="absolute" style={{ left: "100px", top: "300px" }}>
+              <img src="/contact/left.svg" alt="Laptop with left hand and thread" className="h-auto w-[1152px]" />
             </div>
 
-            <div className="absolute" style={{ right: "400px", top: "50px" }}>
-              <img src="/contact/right.svg" alt="Right hand with laptop" className="h-auto w-[600px]" />
+            <div className="absolute" style={{ right: "100px", top: "-350px" }}>
+              <img src="/contact/right.svg" alt="Right hand with laptop" className="h-auto w-[960px]" />
             </div>
 
-            <div className="absolute" style={{ right: "540px", top: "585px", zIndex: -1 }}>
-              <img src="/contact/tag.svg" alt="Contact information tag" className="h-auto w-[400px]" />
+            <div className="absolute" style={{ right: "255px", top: "645px", zIndex: -1 }}>
+              <img src="/contact/tag.svg" alt="Contact information tag" className="h-auto w-[518px]" />
             </div>
           </div>
         </div>
