@@ -63,7 +63,7 @@ export default function ContactSection() {
       ></div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col">
-        <h2 className="mb-16 mt-20 xl:mt-48 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+        <h2 className="mb-16 mt-20 xl:mt-48 text-4xl font-bold font-heading text-white md:text-5xl lg:text-6xl">
           <span>GET IN </span>
           <HighlightText text="TOUCH" className="font-heading" animationDuration={1.5} />
           <br />
@@ -71,9 +71,8 @@ export default function ContactSection() {
           <span> US.</span>
         </h2>
 
-        {/* SVG Container - This is the wrapper that centers the content */}
         <div className="relative flex-grow flex items-center justify-center mt-[30vh] xl:mt-0">
-          {/* Fixed size container that will be scaled as a unit */}
+
           <div
             ref={containerRef}
             className="absolute origin-center"
@@ -83,7 +82,6 @@ export default function ContactSection() {
               transformOrigin: "center center",
             }}
           >
-            {/* SVG Group - Positioned exactly as on 1920x1080 screen */}
             <div className="absolute" style={{ left: "100px", top: "300px" }}>
               <img src="/contact/left.svg" alt="Laptop with left hand and thread" className="h-auto w-[1152px]" />
             </div>
