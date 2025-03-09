@@ -8,12 +8,14 @@ import AboutVIT from '../components/aboutgdsc/AboutVIT'
 import AboutSection from '../components/AboutWT'
 import DinoScroll from '../components/dino-scroll/horizontal-scroll-dino'
 import ContactSection from "../components/Contact"
+import SwipeAnimation from "../components/swipe"
 function App() {
   return (
     <>
     <div className=" bg-background">
       <Navbar />
       <HeroSection/>
+      <SwipeAnimation/>
       <AboutVIT/>
       <FaqSection />
       <AboutSection />
