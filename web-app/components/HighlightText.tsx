@@ -37,7 +37,7 @@ const HighlightText: React.FC<HighlightTextProps> = ({
   }
 
   return (
-    <div ref={containerRef} className={`relative inline-block px-1 ${className}`}>
+    <div ref={containerRef} className={`relative inline-block mx-auto px-4 ${className}`}>
       {/* SVG highlight background */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -45,8 +45,8 @@ const HighlightText: React.FC<HighlightTextProps> = ({
         animate={controls}
         variants={highlightVariants}
         style={{
-          width: "110%",
-          height: "110%",
+          width: "100%",
+          height: "100%",
           transformOrigin: "left",
         }}
       >
