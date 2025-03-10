@@ -2,7 +2,6 @@
 import './App.css'
 import Navbar from '../components/Navbar'
 import FaqSection from "../components/FaqSection"
-// import AnimatedSection from '../components/AboutWT'
 import HeroSection from '../components/Hero'
 import AboutVIT from '../components/aboutgdsc/AboutVIT'
 import AboutSection from '../components/AboutWT'
