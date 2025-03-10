@@ -192,7 +192,7 @@ const HeroSection: React.FC = () => {
 
         {isDesktop && (
           <div className="absolute bottom-[5vh] right-[5%] z-20">
-            <img src="/hero/flowers.svg" alt="Flowers" className="w-[12vw] h-auto" />
+            <img src="/hero/Flowers.svg" alt="Flowers" className="w-[12vw] h-auto" />
           </div>
         )}
       </div>
