@@ -32,11 +32,20 @@ function Content(){
 
       return (
         <section ref={TargetRef} className="relative h-[300vh]">
-        <div className="absolute top-0 left-0 h-full w-full overflow-x-hidden">
+        <div className="absolute top-0 left-0 h-full w-full overflow-hidden">
                 <div className="sticky top-0 h-full w-full">      
                         <div className=" gradient absolute top-0 right-[50vh] h-full w-full"></div>
                         <div className="gradient absolute top-[20vh] left-[60vw] h-full w-full"></div>
                 </div> 
+                <div
+        className="absolute -bottom-60 -left-1  0 w-[200px] h-[300px] rounded-[703px] bg-[rgba(101,158,162,0.60)] -z-10"
+        style={{ filter: "blur(120px)" }}
+      />
+      <div
+        className="absolute -bottom-36 right-0 w-[300px] h-[300px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
+        style={{ filter: "blur(72.55px)" }}
+      />
+                
         </div>   
         <div className="sticky top-0 flex h-[100vh] align-center items-center justify-center overflow-hidden "> 
             

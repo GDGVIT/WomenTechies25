@@ -2,8 +2,8 @@
     background-image: url(../../spons/devfolio-card.svg);
     background-size: contain;
     background-repeat: no-repeat;
-   height: 70vh;
-   width: 20vw;
+   height: 60vh;
+   width: 16vw;
     
 }
 
@@ -12,7 +12,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 70vh;
-   width: 20vw;
+   width: 16vw;
     
 }
 
@@ -21,7 +21,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 70vh;
-    width: 20vw;
+    width: 16vw;
     
 }
 
@@ -33,7 +33,7 @@
    align-items: center;
    justify-content: center;
    height: 50vh;
-   width: 15vw;
+   width: 12vw;
     
 }
 
@@ -42,7 +42,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 50vh;
-   width: 15vw;
+   width: 12vw;
     
 }
 
@@ -51,6 +51,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 50vh;
-   width: 15vw;
+   width: 12vw;
     
 }

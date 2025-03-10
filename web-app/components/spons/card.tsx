@@ -31,7 +31,7 @@ const Card = () => {
         //   Hover Me
         // </motion.div>
         
-        <div className='sticky top-0 flex gap-10 h-fit w-full m-10 justify-evenly '>
+        <div className='sticky top-0 flex gap-0 h-fit w-[80vw] m-8 justify-evenly '>
                 
              
                 {/* <div className='flex top-0 gap-10   border-2 h-fit w-fit align-center justify-center'> */}
