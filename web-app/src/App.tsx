@@ -3,7 +3,8 @@ import './App.css'
 import Navbar from '../components/Navbar'
 import FaqSection from "../components/FaqSection"
 import HeroSection from '../components/Hero'
-import AboutVIT from '../components/aboutgdsc/AboutVIT'
+// import AboutVIT from '../components/aboutgdsc/AboutVIT'
+import AboutGDSC from '../components/AboutGDSC'
 import AboutSection from '../components/AboutWT'
 import DinoScroll from '../components/dino-scroll/horizontal-scroll-dino'
 import ContactSection from "../components/Contact"
@@ -12,11 +13,12 @@ import Spons from "../components/spons/Spons"
 function App() {
   return (
     <>
-    <div className=" bg-[#191C1C]">
+    <div className=" bg-background">
       <Navbar />
       <HeroSection/>
       <SwipeAnimation/>
-      <AboutVIT/>
+      {/* <AboutVIT/> */}
+      <AboutGDSC/>
       <Spons/>
       <FaqSection />
       <AboutSection />

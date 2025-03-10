@@ -68,7 +68,7 @@ const AboutSection: React.FC = () => {
       className="about-section-container"
       style={{
         position: "relative",
-        height: "225vh", 
+        height: "250vh",  
       }}
     >
       <div

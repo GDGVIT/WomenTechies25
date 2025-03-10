@@ -86,8 +86,7 @@ export default function Navbar() {
               ))}
             </div>
           </motion.div>
-
-          {/* Mobile menu button */}
+ 
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
