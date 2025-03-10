@@ -44,23 +44,74 @@ const AboutSection: React.FC = () => {
   const leftFillOpacity = useTransform(
     scrollYProgress,
     [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1], 
-    [0, 0.05, 0.11, 0.18, 0.26, 0.35, 0.42, 0.49, 0.56, 0.63, 0.69, 0.75, 0.81, 0.86, 0.91, 0.95, 0.98, 0.99, 1, 1, 1], 
+    [0, 0.03, 0.08, 0.15, 0.23, 0.32, 0.40, 0.48, 0.55, 0.62, 0.68, 0.74, 0.80, 0.85, 0.90, 0.94, 0.97, 0.99, 1, 1, 1], 
     { ease: easeInOut }
   );
   
   const rightFillOpacity = useTransform(
     scrollYProgress,
     [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1], 
-    [0, 0.05, 0.11, 0.18, 0.26, 0.35, 0.42, 0.49, 0.56, 0.63, 0.69, 0.75, 0.81, 0.86, 0.91, 0.95, 0.98, 0.99, 1, 1, 1], 
+    [0, 0.03, 0.08, 0.15, 0.23, 0.32, 0.40, 0.48, 0.55, 0.62, 0.68, 0.74, 0.80, 0.85, 0.90, 0.94, 0.97, 0.99, 1, 1, 1], 
     { ease: easeInOut }
   );
   
   const textOpacity = useTransform(
     scrollYProgress,
     [0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3], 
-    [0, 0.066, 0.133, 0.2, 0.266, 0.333, 0.4, 0.466, 0.533, 0.6, 0.666, 0.733, 0.8, 0.866, 0.933, 1], 
+    [0, 0.05, 0.12, 0.19, 0.26, 0.33, 0.4, 0.47, 0.54, 0.61, 0.68, 0.75, 0.82, 0.89, 0.96, 1], 
     { ease: easeInOut }
   );
+  
+  useEffect(() => {
+    let rafId: number;
+    let lastScrollY = window.scrollY;
+    
+    const handleScroll = () => {
+      // Only update if we've scrolled by a significant amount
+      if (Math.abs(window.scrollY - lastScrollY) > 5) {
+        lastScrollY = window.scrollY;
+        // Use requestAnimationFrame to limit updates
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          // Scroll handling logic here if needed
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Element is in view, enable animations
+            setIsScrolling(true);
+          } else {
+            // Element is out of view, disable animations to save resources
+            setIsScrolling(false);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    observer.observe(containerRef.current);
+    
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
   
   return (
     <div
@@ -68,7 +119,7 @@ const AboutSection: React.FC = () => {
       className="about-section-container"
       style={{
         position: "relative",
-        height: "250vh",  
+        height: "350vh",  
       }}
     >
       <div
@@ -102,6 +153,8 @@ const AboutSection: React.FC = () => {
               key={index}
               src="/aboutWT/star.svg"
               alt="Star"
+              loading="lazy"
+              decoding="async"
               style={{ position: "absolute", width: "30px", height: "30px", objectFit: "cover", ...style }}
             />
           ))}
@@ -111,6 +164,8 @@ const AboutSection: React.FC = () => {
         <motion.img
           src="/aboutWT/ceilinglights.svg"
           alt="Ceiling Lights"
+          loading="lazy"
+          decoding="async"
           style={{
             position: "absolute",
             top: 0,
@@ -143,6 +198,8 @@ const AboutSection: React.FC = () => {
         <motion.img
           src="/aboutWT/bookshelf.svg"
           alt="Bookshelf"
+          loading="lazy"
+          decoding="async"
           style={{
             position: "absolute",
             top: "10%",
@@ -173,6 +230,8 @@ const AboutSection: React.FC = () => {
         <img
           src="/aboutWT/floor.svg"
           alt="Floor"
+          loading="lazy"
+          decoding="async"
           style={{
             position: "absolute",
             bottom: 0,
@@ -186,6 +245,8 @@ const AboutSection: React.FC = () => {
             <img
               src="/aboutWT/left1.svg"
               alt="Left outline"
+              loading="lazy"
+              decoding="async"
               style={{
                 position: "absolute",
                 left: "7%",
@@ -206,6 +267,7 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(600) + "px",
                 zIndex: 4,
                 opacity: leftFillOpacity,
+                willChange: "opacity",
               }}
               initial={{ opacity: 0 }}
             />
@@ -213,6 +275,8 @@ const AboutSection: React.FC = () => {
             <img
               src="/aboutWT/centre1.svg"
               alt="Center 1"
+              loading="lazy"
+              decoding="async"
               style={{
                 position: "absolute",
                 left: isTablet ? "22%" : "21%",
@@ -225,6 +289,8 @@ const AboutSection: React.FC = () => {
             <img
               src="/aboutWT/centre2.svg"
               alt="Center 2"
+              loading="lazy"
+              decoding="async"
               style={{
                 position: "absolute",
                 right: isTablet ? "22%" : "30%",
@@ -237,6 +303,8 @@ const AboutSection: React.FC = () => {
             <img
               src="/aboutWT/right1.svg"
               alt="Right outline"
+              loading="lazy"
+              decoding="async"
               style={{
                 position: "absolute",
                 right: "7%",
@@ -256,6 +324,7 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(550) + "px",
                 zIndex: 4,
                 opacity: rightFillOpacity,
+                willChange: "opacity",
               }}
               initial={{ opacity: 0 }}
             />
@@ -265,6 +334,8 @@ const AboutSection: React.FC = () => {
             <img
               src="/aboutWT/left1.svg"
               alt="Left outline"
+              loading="lazy"
+              decoding="async"
               style={{
                 position: "absolute",
                 left: "2%",
@@ -283,12 +354,15 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(600) + "px",
                 zIndex: 4,
                 opacity: leftFillOpacity,
+                willChange: "opacity",
               }}
               initial={{ opacity: 0 }}
             />
             <img
               src="/aboutWT/right1.svg"
               alt="Right outline"
+              loading="lazy"
+              decoding="async"
               style={{
                 position: "absolute",
                 right: "2%",
@@ -307,6 +381,7 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(500) + "px",
                 zIndex: 4,
                 opacity: rightFillOpacity,
+                willChange: "opacity",
               }}
               initial={{ opacity: 0 }}
             />
@@ -351,4 +426,3 @@ const AboutSection: React.FC = () => {
 }
 
 export default AboutSection
-
