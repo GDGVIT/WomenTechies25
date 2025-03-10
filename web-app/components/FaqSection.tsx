@@ -4,6 +4,7 @@ import Accordion from "./Accordion"
 import AtomIcon from "./AtomIcon"
 import DiamondShapes from "./DiamondShapes"
 import HighlightText from "./HighlightText"
+import { section } from "framer-motion/client"
 
 const FaqSection: React.FC = () => {
   const faqRef = useRef<HTMLDivElement>(null)
@@ -50,6 +51,8 @@ const FaqSection: React.FC = () => {
   ]
 
   return (
+    <section className="relative h-[200vh] bg-191C1C">
+            <div className="sticky top-0 flex-col h-screen items-center justify-center overflow-hidden ">
     <div
       className="relative min-h-screen bg-background text-white px-8 py-24 overflow-hidden"
       ref={faqRef}
@@ -107,6 +110,8 @@ const FaqSection: React.FC = () => {
         <Accordion items={faqItems} highlightRef={highlightRef} />
       </div>
     </div>
+    </div>
+    </section>
   )
 }
 
