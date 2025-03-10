@@ -38,26 +38,26 @@ const HeroSection: React.FC = () => {
   }, [textboxX, textboxY])
 
   const { RiveComponent: Mushroom } = useRive({
-    src: "/public/hero/mushroom.riv",
+    src: "/hero/mushroom.riv",
     autoplay: true,
   })
 
   const { RiveComponent: Plant } = useRive({
-    src: "/public/hero/plant.riv",
+    src: "/hero/plant.riv",
     autoplay: true,
   })
 
   return (
     <div className="relative w-full h-screen bg-background overflow-hidden">
       <div className="absolute inset-0 -z-10 flex items-end">
-        <img src="/public/hero/grid.svg" alt="Background Grid" className="w-full h-auto object-cover opacity-50" />
+        <img src="/hero/grid.svg" alt="Background Grid" className="w-full h-auto object-cover opacity-50" />
         <img
-          src="/public/hero/bottomshape.svg"
+          src="/hero/bottomshape.svg"
           alt="Background Grid"
           className="absolute bottom-0 right-0 w-[40vw] h-auto object-cover transform scale-x-[-1]"
         />
         <img
-          src="/public/hero/bottomshape.svg"
+          src="/hero/bottomshape.svg"
           alt="Background Grid"
           className="absolute top-0 left-0 w-[25vw] h-auto object-cover"
         />
@@ -99,7 +99,7 @@ const HeroSection: React.FC = () => {
 
         <div className="absolute bottom-[0.5vh] left-0 w-full md:w-[90vw] lg:w-[80vw] h-[15vh]">
           <img
-            src="/public/hero/water.svg"
+            src="/hero/water.svg"
             alt="Water base"
             className="absolute bottom-0   z-9999  object-contain mx-auto"
           />
@@ -110,12 +110,12 @@ const HeroSection: React.FC = () => {
 
         <div className="absolute top-0 left-0 right-0 w-full">
           <img
-            src="/public/hero/moon.svg"
+            src="/hero/moon.svg"
             alt="Moon"
             className="absolute top-[5vh] right-[15%] w-[25vw] xl:w-[15vw] max-w-[150px] h-auto"
           />
-          <img src="/public/hero/cloud.svg" alt="Cloud 1" className="absolute top-[20vh] left-1/3 w-[7vw]   h-[3vh]" />
-          <img src="/public/hero/cloud.svg" alt="Cloud 2" className="absolute top-[30vh] right-[25%] w-[7vw] h-[3vh]" />
+          <img src="/hero/cloud.svg" alt="Cloud 1" className="absolute top-[20vh] left-1/3 w-[7vw]   h-[3vh]" />
+          <img src="/hero/cloud.svg" alt="Cloud 2" className="absolute top-[30vh] right-[25%] w-[7vw] h-[3vh]" />
         </div>
       </div>
       <div className="absolute top-[15vh] md:top-[15vh] left-[8%] z-20">
@@ -151,14 +151,14 @@ const HeroSection: React.FC = () => {
       >
         <div className="relative w-[50vw] sm:w-[40vw] md:w-[35vw] lg:w-[30vw] flex items-center justify-center ">
           <img
-            src="/public/hero/girl.svg"
+            src="/hero/girl.svg"
             alt="Girl with VR headset"
             className="w-[70vw] xl:w-[18vw] z-99999 object-contain"
           />
 
           {/* Textbox overlay with parallax effect */}
           <motion.img
-            src="/public/hero/textbox.svg"
+            src="/hero/textbox.svg"
             alt="Text scrolls"
             className="absolute -top-[20%] xl:-top-[40%] left-1/2 -translate-x-1/2 w-[70vw] xl:w-[40vw] object-contain"
             style={{
@@ -192,7 +192,7 @@ const HeroSection: React.FC = () => {
 
         {isDesktop && (
           <div className="absolute bottom-[5vh] right-[5%] z-20">
-            <img src="/public/hero/flowers.svg" alt="Flowers" className="w-[12vw] h-auto" />
+            <img src="/hero/flowers.svg" alt="Flowers" className="w-[12vw] h-auto" />
           </div>
         )}
       </div>
