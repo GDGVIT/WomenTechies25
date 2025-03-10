@@ -11,20 +11,18 @@ interface HighlightTextProps {
 const HighlightText: React.FC<HighlightTextProps> = ({
   text,
   className = "",
-  animationDuration = 2, // Default 2 seconds
+  animationDuration = 2, //   2 seconds
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, amount: 0.3 })
   const controls = useAnimation()
-
-  // Start animation when in view
+ 
   useEffect(() => {
     if (isInView) {
       controls.start("animate")
     }
   }, [isInView, controls])
-
-  // Animation variants - continuous animation from 0 to 100%
+ 
   const highlightVariants = {
     initial: { scaleX: 0, originX: 0 },
     animate: {
