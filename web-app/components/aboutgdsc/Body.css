@@ -14,81 +14,20 @@
     font-family: 'Raleway', sans-serif;
     visibility: visible;
     color: #8080807d;
-    font-size: 1.2rem;
-    width: 400px;
-    max-height: 200px;
-    z-index: 10;
-    overflow-y: hidden;
+    font-size: 2rem;
+    min-width: 28%;
+    width: 70%;
+    min-height:100%;
+    height: 100%;
+
+    margin-top:50px;
     align-items: center;
     justify-content: center;
+   
     
    
 }
-.body1{
-    font-family: 'Raleway', sans-serif;
-    
-    color: #8080807d;
-    font-size: 1.2rem;
-    width: 400px;
-    max-height: 200px;
-    z-index: 10;
-    overflow-y: hidden;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-}
-.body2{
-    font-family: 'Raleway', sans-serif;
-    
-    color: #8080807d;
-    font-size: 1.2rem;
-    width: 400px;
-    max-height: 200px;
-    z-index: 10;
-    overflow-y: hidden;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-}
-.body3{
-    font-family: 'Raleway', sans-serif;
-    
-    color: #8080807d;
-    font-size: 1.2rem;
-    width: 400px;
-    max-height: 200px;
-    z-index: 10;
-    overflow-y: hidden;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-}
-.body4{
-    font-family: 'Raleway', sans-serif;
-    
-    color: #8080807d;
-    font-size: 1.2rem;
-    width: 400px;
-    max-height: 200px;
-    z-index: 10;
-    overflow-y: hidden;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-}
-.body5{
-    font-family: 'Raleway', sans-serif;
-    
-    color: #8080807d;
-    font-size: 1.2rem;
-    width: 400px;
-    max-height: 200px;
-    z-index: 10;
-    overflow-y: hidden;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-}
+
 .body1 #id1{
     visibility: visible;
     color: white; 

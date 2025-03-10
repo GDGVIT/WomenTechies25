@@ -11,11 +11,11 @@ import Images from './images.tsx';
 const AboutVIT = () => {
   return (
     <div className="relative bg-neutral-800 z-10">
-      <div className='bg-amber-100'>hiiiii</div>
+      
 
       <Content />
 
-      <div className='bg-amber-100'>hiiiii</div>
+      
     </div>
   );
 };
@@ -42,22 +42,21 @@ function Content() {
 
   return (
     <section ref={TargetRef} className="relative h-[500vh]">
-      <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
-        <div className='absolute flex-col z-19 content-center justify-center'>
-          <div className="sticky top-0 content-center justify-center items-center h-[100vh]">
+      <div className="sticky  top-0  h-screen w-full items-center justify-center overflow-hidden">
+        <div className='flex-col z-19 content-center justify-center h-full w-full'>
+          <center>
+          <div className="flex h-full w-full justify-center align-center  ">
+            
             <Heading />
           </div>
-
-          <div className='absolute top-200 left-120 w-full h-full'>
+          </center>
+      <div className='flex h-[50vh] w-full '>
+          <div className='relative top-0 left-0 w-[20vw] h-full '>
             <div className='yellow'></div>
           </div>
-
-          <div className='absolute top-150 right-120 w-full h-full'>
-            <div className='pink'></div>
-          </div>
-
+  
           <motion.div
-            className="flex items-center justify-center w-full h-[100vh]"
+            className="flex w-full h-full justify-center "
             key={selectedClass.get()}
               initial={{ opacity: 0.5 }}
               animate={{ opacity: 1 }}
@@ -65,20 +64,26 @@ function Content() {
               transition={{ duration: 1, ease: "easeInOut", }} // Made transition smoother
           >
             
-              <div className="absolute top-180 left-0 justify-center">
-              <Body className={"body"} />
+            
+              <Body className={"body "} />
                 <Body className={`${activeClass}`} />
-                <Images className={`${activeClass} absolute top-0`} />
-              </div>
-              
-              
+                <Images className={`${activeClass}`} />
+             
+            
+                
               
 
               
             
           </motion.div>
-        </div>
 
+          <div className='relative top-0 right-0 w-[20vw] h-full'>
+            <div className='pink'></div>
+          </div>
+
+          
+        </div>
+        </div>
         <div className='absolute bottom-0 z-1 w-full h-full opacity-70'>
           <div className='grid'></div>
         </div>

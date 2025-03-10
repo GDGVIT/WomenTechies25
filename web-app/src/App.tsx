@@ -9,6 +9,7 @@ import AboutSection from '../components/AboutWT'
 import DinoScroll from '../components/dino-scroll/horizontal-scroll-dino'
 import ContactSection from "../components/Contact"
 import SwipeAnimation from "../components/swipe"
+import Spons from "../components/Spons/Spons"
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
       <HeroSection/>
       <SwipeAnimation/>
       <AboutVIT/>
+      <Spons/>
       <FaqSection />
       <AboutSection />
       <div className="App">

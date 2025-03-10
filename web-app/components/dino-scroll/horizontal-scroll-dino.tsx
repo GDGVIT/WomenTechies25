@@ -28,14 +28,14 @@ const HorizontalScrollDino = () => {
 
     return (
         <section ref={targetRef} className="relative h-[300vh] bg-191C1C">
-            <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden ">
-                <div className="absolute left-12 top-21 h-fit w-fit z-10"> 
+            <div className="sticky top-0 flex-col h-screen items-center justify-center overflow-hidden ">
+                <div className="absolute left-12 top-55 h-fit w-fit z-10"> 
                                     <Thugdinofront/>
                 </div>
-                <div className="absolute left-12 top-21 h-fit w-fit z-0"> 
+                <div className="absolute left-12 top-55 h-fit w-fit z-0"> 
                                     <Thugdino/>
                 </div>
-                <div className="absolute left-10 top-40 h-fit w-fit "> 
+                <div className="absolute left-10 top-74 h-fit w-fit"> 
                     
                     <section className='flex h-fit w-fit items-center justify-items-center '>
                     
@@ -53,12 +53,18 @@ const HorizontalScrollDino = () => {
                     
                     </section>
                 </div>
-                    <motion.div style={{ x }} className="flex h-fit items-center justify-center ">
+                    <motion.div style={{ x }} className="absolute right-0 w-[100vw] h-full">
                     
-                        <Text />
+                    <div className="absolute -left-580  h-full w-[300vw] flex items-center justify-center">
+  <h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-10xl xl:text-[12rem] font-heading font-pixel text-white">
+    DO CRAZY THINGS THAT MATTER
+  </h1>
+</div>
+
+
                         
                     </motion.div>
-                    <div className="absolute right-10 bottom-40 h-fit w-fit"> 
+                    <div className="absolute right-10 bottom-74 h-fit w-fit"> 
                     <section className='flex h-fit w-fit items-center justify-items-center'>
                     
                         <motion.div ref={targetRef} style={{ rotate }} className="flex h-fit w-fit items-center justify-items-center z-5 scale-y-[-1]">
@@ -73,10 +79,10 @@ const HorizontalScrollDino = () => {
                     
                     </section>
                 </div>
-                <div className="absolute right-12 bottom-21 h-fit w-fit z-10 scale-y-[-1] scale-x-[-1]"> 
+                <div className="absolute right-12 bottom-55 h-fit w-fit z-10 scale-y-[-1] scale-x-[-1]"> 
                                     <Thugdinofront/>
                 </div>
-                <div className="absolute right-12 bottom-21 h-fit w-fit z-0 scale-y-[-1] scale-x-[-1]"> 
+                <div className="absolute right-12 bottom-55 h-fit w-fit z-0 scale-y-[-1] scale-x-[-1]"> 
                                     <Thugdino/>
                 </div>
             </div>
