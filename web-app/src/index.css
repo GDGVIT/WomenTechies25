@@ -10,7 +10,7 @@
 }
 
 @theme {
-    --color-primary: #FAC6F7;
+    --color-primary: #191C1C;
     --color-secondary: #ffffff;
     --color-background: #000000;
     --font-Raleway: "Raleway", sans-serif;
@@ -18,7 +18,7 @@
 }
 
 .bg-background {
-  background-color: #0b0b0bdf;
+  background-color: #191C1C;
   background-image: url("/noise.svg");
   background-blend-mode: overlay;
   background-size: 100vw;

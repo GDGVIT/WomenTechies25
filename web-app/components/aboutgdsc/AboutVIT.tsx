@@ -10,7 +10,7 @@ import Images from './images.tsx';
 
 const AboutVIT = () => {
   return (
-    <div className="relative bg-neutral-800 z-10">
+    <div className="relative bg-[#191C1C]">
       
 
       <Content />
