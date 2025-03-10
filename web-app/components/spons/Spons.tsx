@@ -1,4 +1,5 @@
 import Card from "./card";
+import React from "react";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 import { useRef, useState } from "react";
 import './gradient.css';
@@ -7,7 +8,7 @@ import './gradient.css';
 const  Spons=()=>{
     
         return (
-            <div className="relative bg-neutral-800 z-10">
+            <div className="relative bg-[#191C1C] z-10">
               
         
               <Content />

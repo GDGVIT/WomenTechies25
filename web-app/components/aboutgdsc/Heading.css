@@ -9,7 +9,7 @@
     align-items: left;
     z-index: 10;
     white-space: nowrap; 
-    src: url("../../public/fonts/VCR_OSD_MONO_1.001.ttf");
+    src: url("../../fonts/VCR_OSD_MONO_1.001.ttf");
 }
 
 .container{
