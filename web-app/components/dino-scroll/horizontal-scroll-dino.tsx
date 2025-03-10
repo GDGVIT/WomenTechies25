@@ -23,12 +23,12 @@ const HorizontalScrollDino = () => {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
     const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "360deg"]);
 
     return (
         <section ref={targetRef} className="relative h-[300vh] bg-191C1C">
-            <div className="sticky top-0 flex-col h-screen items-center justify-center overflow-hidden ">
+            <div className="sticky top-0 flex-col h-screen w-[full] items-center justify-center overflow-hidden ">
             <div
         className="absolute -bottom-134 -left-80 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-[607px] bg-[rgba(101,158,162,0.32)]"
         style={{ filter: "blur(120px)" }}
@@ -47,13 +47,15 @@ const HorizontalScrollDino = () => {
         className="absolute -top-55 -left-32 w-[300px] h-[400px] rounded-full bg-[rgba(101,158,162,0.60)] -z-10"
         style={{ filter: "blur(100px)" }}
       />
-                <div className="absolute left-12 top-55 h-fit w-fit z-10"> 
+      <div className="relative  w-full h-[35vh]">
+        
+                <div className="absolute left-12 bottom-19 h-fit w-fit z-10"> 
                                     <Thugdinofront/>
                 </div>
-                <div className="absolute left-12 top-55 h-fit w-fit z-0"> 
+                <div className="absolute left-12 bottom-19 h-fit w-fit z-0"> 
                                     <Thugdino/>
                 </div>
-                <div className="absolute left-10 top-74 h-fit w-fit"> 
+                <div className="absolute left-10 bottom-0 h-fit w-fit"> 
                     
                     <section className='flex h-fit w-fit items-center justify-items-center '>
                     
@@ -71,18 +73,25 @@ const HorizontalScrollDino = () => {
                     
                     </section>
                 </div>
-                    <motion.div style={{ x }} className="absolute right-0 w-[100vw] h-full">
+                
+
+            </div>
+                    <motion.div style={{ x }} className="relative w-[200vw] h-[30vh]  flex justify-left items-center content-center p-20">
                     
-                    <div className="absolute -left-[100vw]  h-full w-[300vw] flex items-center justify-center">
-  <h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-10xl xl:text-[12rem] font-heading font-pixel text-white">
-    DO CRAZY THINGS THAT MATTER
-  </h1>
-</div>
+                    
+                        <h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-10xl xl:text-[12rem] font-heading font-pixel text-white">
+                            
+                            
+                            DO 
+                            <span className="text-[#FAC2F7]"> CRAZY</span> THINGS <span className="text-[#FAC2F7]">THAT MATTER</span> 
+                        </h1>
+
 
 
                         
                     </motion.div>
-                    <div className="absolute right-10 bottom-74 h-fit w-fit"> 
+                <div className="relative w-full h-[35vh]">
+                    <div className="absolute right-10 top-0 h-fit w-fit"> 
                     <section className='flex h-fit w-fit items-center justify-items-center'>
                     
                         <motion.div ref={targetRef} style={{ rotate }} className="flex h-fit w-fit items-center justify-items-center z-5 scale-y-[-1]">
@@ -97,11 +106,12 @@ const HorizontalScrollDino = () => {
                     
                     </section>
                 </div>
-                <div className="absolute right-12 bottom-55 h-fit w-fit z-10 scale-y-[-1] scale-x-[-1]"> 
+                <div className="absolute right-12 top-19 h-fit w-fit z-10 scale-y-[-1] scale-x-[-1]"> 
                                     <Thugdinofront/>
                 </div>
-                <div className="absolute right-12 bottom-55 h-fit w-fit z-0 scale-y-[-1] scale-x-[-1]"> 
+                <div className="absolute right-12 top-19 h-fit w-fit z-0 scale-y-[-1] scale-x-[-1]"> 
                                     <Thugdino/>
+                </div>
                 </div>
             </div>
         </section>
