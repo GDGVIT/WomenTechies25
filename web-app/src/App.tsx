@@ -16,19 +16,20 @@ function App() {
     <div className=" bg-background">
       <Navbar />
       <HeroSection/>
+      <AboutSection />
+      <AboutGDSC/>
       <SwipeAnimation/>
       {/* <AboutVIT/> */}
-      <AboutGDSC/>
+      
       <Spons/>
       <FaqSection />
-      <AboutSection />
-      <div className="App">
+      
       
       <DinoScroll/>
-    </div>
+
     <ContactSection/>
-      
-      </div>
+    </div>
+    
       </>
   )
 }
