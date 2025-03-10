@@ -13,8 +13,7 @@ interface AccordionItemProps {
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen, onToggle, highlightRef }) => {
   return (
-    <div className="relative border-b border-gray-700">
-      {/* Pink highlighter that appears when accordion is open */}
+    <div className="relative border-b border-gray-700"> 
       {isOpen && (
         <motion.div
           className="absolute inset-0  opacity-30 -z-10"
@@ -24,8 +23,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
           transition={{ duration: 0.8, ease: "easeInOut" }}
         />
       )}
-
-      {/* Accordion header */}
+ 
       <button
         className="w-full py-6 flex justify-between items-center text-left focus:outline-none"
         onClick={onToggle}
@@ -37,7 +35,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
         </motion.div>
       </button>
 
-      {/* Accordion content */}
+      {/*   content */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

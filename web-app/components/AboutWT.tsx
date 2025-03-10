@@ -139,7 +139,7 @@ const AboutSection: React.FC = () => {
         />
          
 
-        {/* Bookshelf SVG */}
+        {/* Bookshelf   */}
         <motion.img
           src="/aboutWT/bookshelf.svg"
           alt="Bookshelf"
@@ -169,8 +169,7 @@ const AboutSection: React.FC = () => {
             },
           }}
         />
-
-        {/* Floor SVG */}
+ 
         <img
           src="/aboutWT/floor.svg"
           alt="Floor"
@@ -181,11 +180,9 @@ const AboutSection: React.FC = () => {
             zIndex: 2,
           }}
         />
-
-        {/* Conditional rendering based on mobile/desktop */}
+ 
         {!isMobile ? (
-          <>
-            {/* Left SVG (outline) */}
+          <> 
             <img
               src="/aboutWT/left1.svg"
               alt="Left outline"
@@ -212,8 +209,7 @@ const AboutSection: React.FC = () => {
               }}
               initial={{ opacity: 0 }}
             />
-
-            {/* Center 1 SVG */}
+ 
             <img
               src="/aboutWT/centre1.svg"
               alt="Center 1"
@@ -225,8 +221,7 @@ const AboutSection: React.FC = () => {
                 zIndex: 3,
               }}
             />
-
-            {/* Center 2 SVG  */}
+ 
             <img
               src="/aboutWT/centre2.svg"
               alt="Center 2"
@@ -238,8 +233,7 @@ const AboutSection: React.FC = () => {
                 zIndex: 3,
               }}
             />
-
-            {/* Right SVG (outline) */}
+ 
             <img
               src="/aboutWT/right1.svg"
               alt="Right outline"
@@ -251,8 +245,7 @@ const AboutSection: React.FC = () => {
                 zIndex: 3,
               }}
             />
-
-            {/* Right SVG   */}
+ 
             <motion.img
               src="/aboutWT/right1filled.svg"
               alt="Right filled"
@@ -267,8 +260,7 @@ const AboutSection: React.FC = () => {
               initial={{ opacity: 0 }}
             />
           </>
-        ) : (
-          // Mobile layout 
+        ) : ( 
           <>
             <img
               src="/aboutWT/left1.svg"
@@ -320,12 +312,11 @@ const AboutSection: React.FC = () => {
             />
           </>
         )}
-
-        {/* Text content */}
+ 
         <motion.div
           style={{
             position: "absolute",
-            top: isMobile ? "22%" : "20%", // Reduced top position on mobile
+            top: isMobile ? "22%" : "20%",  
             left: "50%",
             transform: "translateX(-50%)",
             minWidth: isMobile ? "90%" : isTablet ? "80%" : "40%",
@@ -333,8 +324,8 @@ const AboutSection: React.FC = () => {
             zIndex: 5,
             textAlign: "center",
             padding: "0 20px",
-            height: isMobile ? "auto" : "auto", // Auto height
-            maxHeight: isMobile ? "20vh" : "auto", // Limit height on mobile
+            height: isMobile ? "auto" : "auto",  
+            maxHeight: isMobile ? "20vh" : "auto", 
             opacity: textOpacity,
           }}
           initial={{ opacity: 0 }}

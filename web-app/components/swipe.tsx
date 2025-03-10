@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 const ScrollAnimation: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Get scroll progress for the entire section
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -57,7 +56,7 @@ const ScrollAnimation: React.FC = () => {
               style={{ rotate: card1Rotate }}
             >
               <img 
-                src="/public/swipe/devjams.svg" 
+                src="/swipe/devjams.svg" 
                 alt="DevJams 2024" 
                 className="w-full h-full object-cover" 
               />
@@ -67,7 +66,7 @@ const ScrollAnimation: React.FC = () => {
               style={{ rotate: card2Rotate }}
             >
               <img 
-                src="/public/swipe/hexathon.svg" 
+                src="/swipe/hexathon.svg" 
                 alt="Hexathon" 
                 className="w-full h-full object-cover" 
               />
@@ -77,7 +76,7 @@ const ScrollAnimation: React.FC = () => {
               style={{ rotate: card3Rotate }}
             >
               <img 
-                src="/public/swipe/wt.svg" 
+                src="/swipe/wt.svg" 
                 alt="Women Techies 2025" 
                 className="w-full h-full object-cover" 
               />
@@ -92,7 +91,7 @@ const ScrollAnimation: React.FC = () => {
             }}
           >
             <img 
-              src="/public/swipe/hand.svg" 
+              src="/swipe/hand.svg" 
               alt="Hand swiping" 
               className="w-full h-full object-contain origin-bottom-left" 
             />

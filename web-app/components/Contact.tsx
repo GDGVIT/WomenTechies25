@@ -4,31 +4,24 @@ import HighlightText from "./HighlightText"
 
 export default function ContactSection() {
   const containerRef = useRef<HTMLDivElement>(null)
-
-  // This effect ensures the SVGs maintain their relative positions
+ 
   useEffect(() => {
     const handleResize = () => {
       const container = containerRef.current
       if (!container) return
-
-      // Get viewport dimensions
+ 
       const vw = window.innerWidth
       const vh = window.innerHeight
-
-      // Base scale on the smaller dimension to ensure it fits
+ 
       let scale = Math.min(vw / 1920, vh / 1080) * 0.9
-
-      // Ensure minimum scale for very small screens
+ 
       scale = Math.max(scale, 0.3)
-
-      // Apply the scale transformation
+ 
       container.style.transform = `scale(${scale})`
     }
-
-    // Initial call
+ 
     handleResize()
-
-    // Add resize listener
+ 
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
