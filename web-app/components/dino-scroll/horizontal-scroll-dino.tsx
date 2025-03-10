@@ -55,7 +55,7 @@ const HorizontalScrollDino = () => {
                 </div>
                     <motion.div style={{ x }} className="absolute right-0 w-[100vw] h-full">
                     
-                    <div className="absolute -left-580  h-full w-[300vw] flex items-center justify-center">
+                    <div className="absolute -left-[100vw]  h-full w-[300vw] flex items-center justify-center">
   <h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-10xl xl:text-[12rem] font-heading font-pixel text-white">
     DO CRAZY THINGS THAT MATTER
   </h1>

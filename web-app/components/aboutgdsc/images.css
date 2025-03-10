@@ -1,6 +1,6 @@
 .body2 #id10{
     z-index: 99;
-    background-image: url(../../public/aboutgdsc/body2.svg);
+    background-image: url(../../aboutgdsc/body2.svg);
     background-size: contain;
     background-repeat: no-repeat;
     height:400px;
@@ -16,7 +16,7 @@
 
 .body3 #id11{
     z-index: 99;
-    background-image: url(../../public/aboutgdsc/body3.svg);
+    background-image: url(../../aboutgdsc/body3.svg);
     background-size: contain;
     background-repeat: no-repeat;
     height:400px;
@@ -32,7 +32,7 @@
 
 .body4 #id12{
     z-index: 99;
-    background-image: url(../../public/aboutgdsc/body4.svg);
+    background-image: url(../aboutgdsc/body4.svg);
     background-size: contain;
     background-repeat: no-repeat;
     height:400px;

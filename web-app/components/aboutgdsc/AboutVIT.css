@@ -46,13 +46,13 @@
     left: 20px;
     width: 100px;
     height: 100px;
-    background-image: url(../../public/aboutgdsc/Ellipse-31.png);
+    background-image: url(../../aboutgdsc/Ellipse-31.png);
     background-size: contain;
     z-index: 2;
 }
 
 .grid {
-    background-image: url(../../public/aboutgdsc/grid.svg);
+    background-image: url(../../aboutgdsc/grid.svg);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -64,7 +64,7 @@
 }
 
 .cloud_left {
-    background-image: url(../../public/aboutgdsc/cloud_left.jpg);
+    background-image: url(../../aboutgdsc/cloud_left.jpg);
     background-size: contain;
     position: absolute;
     opacity: 0.6;
@@ -77,7 +77,7 @@
 }
 
 .cloud_right {
-    background-image: url(../../public/aboutgdsc/cloud_right.jpg);
+    background-image: url(../../aboutgdsc/cloud_right.jpg);
     background-size: contain;
     opacity: 0.2;
     position: absolute;
@@ -90,7 +90,7 @@
 }
 
 .star {
-    background-image: url(../../public/aboutgdsc/star.svg);
+    background-image: url(../../aboutgdsc/star.svg);
     background-size: contain;
     position: absolute;
     width: 150px;
@@ -101,7 +101,7 @@
     
 }
 .circle {
-    background-image: url(../../public/aboutgdsc/circle.svg);
+    background-image: url(../../aboutgdsc/circle.svg);
     background-size: contain;
     position: absolute;
     width: 150px;
@@ -112,7 +112,7 @@
     
 }
 .yellow {
-    background-image: url(../../public/aboutgdsc/yellowdiamonds.svg);
+    background-image: url(../../aboutgdsc/yellowdiamonds.svg);
     background-size: contain;
     position: absolute;
     right:70%;
@@ -126,7 +126,7 @@
     
 }
 .pink {
-    background-image: url(../../public/aboutgdsc/pinkdiamonds.svg);
+    background-image: url(../../aboutgdsc/pinkdiamonds.svg);
     background-size: contain;
     position: absolute;
     left:50%;
@@ -139,7 +139,7 @@
 }
 
 .square {
-    background-image: url(../../public/aboutgdsc/square_left.jpg);
+    background-image: url(../../aboutgdsc/square_left.jpg);
     background-size: contain;
     position: absolute;
     width: 100px;
@@ -149,7 +149,7 @@
 }
 
 .diamonds-left {
-    background-image: url(../../public/aboutgdsc//diamonds.png);
+    background-image: url(../../aboutgdsc//diamonds.png);
     background-size: contain;
     position: absolute; /* Change to absolute positioning */
     width: 50px;
@@ -162,7 +162,7 @@
 }
 
 .diamonds-right {
-    background-image: url(../../public/aboutgdsc/diamonds.png);
+    background-image: url(../../aboutgdsc/diamonds.png);
     background-size: contain;
     position: absolute; /* Change to absolute positioning */
     width: 50px;
@@ -175,7 +175,7 @@
 }
 
 .rects {
-    background-image: url(../../public/aboutgdsc/rects.png);
+    background-image: url(../../aboutgdsc/rects.png);
     background-size: contain;
     position: absolute; /* Change to absolute positioning */
     width: 30px;
@@ -184,7 +184,7 @@
 }
 
 .comb {
-    background-image: url(../../public/aboutgdsc/diamonds_right.png);
+    background-image: url(../../aboutgdsc/diamonds_right.png);
     background-size: contain;
     position: absolute; /* Change to absolute positioning */
     width: 50px;
