@@ -1,0 +1,7 @@
+.gradient{
+    background-image: url(../../public/spons/gradient.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* border: 1px solid beige; */
+    opacity: 30%;
+}

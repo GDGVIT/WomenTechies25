@@ -196,8 +196,3 @@
     z-index: 3; /* Ensure same z-index as text */
 }
 
-.heading {
-    position: relative;
-    z-index: 3;
-}
-
