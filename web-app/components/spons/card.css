@@ -1,0 +1,56 @@
+.card1{
+    background-image: url(../../public/spons/devfolio-card.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+   height: 70vh;
+   width: 20vw;
+    
+}
+
+.card2{
+    background-image: url(../../public/spons/polygon-card.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 70vh;
+   width: 20vw;
+    
+}
+
+.card3{
+    background-image: url(../../public/spons/ethindia-card.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 70vh;
+    width: 20vw;
+    
+}
+
+.inner-card1{
+    background-image: url(../../public/spons/devfolio.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+   
+   align-items: center;
+   justify-content: center;
+   height: 50vh;
+   width: 15vw;
+    
+}
+
+.inner-card2{
+    background-image: url(../../public/spons/polygon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50vh;
+   width: 15vw;
+    
+}
+
+.inner-card3{
+    background-image: url(../../public/spons/ethindia.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50vh;
+   width: 15vw;
+    
+}
