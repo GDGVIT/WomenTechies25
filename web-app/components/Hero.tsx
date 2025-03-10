@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
   })
 
   return (
-    <div className="relative w-full h-screen bg-background overflow-hidden">
+    <div className="relative w-full h-[100vh] bg-background overflow-hidden">
       <div className="absolute inset-0 -z-10 flex items-end">
         <img src="/hero/grid.svg" alt="Background Grid" className="w-full h-auto object-cover opacity-50" />
         <img
