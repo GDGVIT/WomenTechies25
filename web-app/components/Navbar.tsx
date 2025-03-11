@@ -31,7 +31,7 @@ export default function Navbar() {
         ease: [0.25, 0.1, 0.25, 1], // Cubic bezier for smoother easing
         opacity: { duration: 0.6 },
       }}
-      className={`fixed ${hasScrolled ? "top-4" : "top-10"} left-0 right-0 z-9999 w-[90vw] mx-auto
+      className={`fixed ${hasScrolled ? "top-4" : "top-10"} left-0 right-0 z-999999 w-[90vw] mx-auto
         bg-[rgba(25,28,28,0.80)] backdrop-blur-sm transition-all duration-300 
         border-[2px] border-[#99728D] rounded-[10px]`}
     >
