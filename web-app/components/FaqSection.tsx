@@ -87,7 +87,7 @@ const FaqSection: React.FC = () => {
 
           <div className="max-w-6xl mx-auto md:mt-10 xl:mt-12">
             <div className="flex flex-col items-center text-center mb-20">
-              <span className=" absolute top-14 md:top-20 xl:top-32 left-10 text-[12px] md:text-sm lg:text-lg font-Raleway text-left w-full max-w-[300px]  lg:max-w-[400px]">
+              <span className="hidden xl:block absolute top-14 md:top-20 xl:top-32 left-10 text-[12px] md:text-sm lg:text-lg font-Raleway text-left w-full max-w-[300px]  lg:max-w-[400px]">
                 WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE.
               </span>
 

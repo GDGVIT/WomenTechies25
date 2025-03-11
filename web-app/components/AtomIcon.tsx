@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 const AtomIcon: React.FC = () => {
   return (
     <motion.div
-      className="absolute right-[10vw] lg:right-10 top-1/6 z-10 opacity-80 hidden md:block"
+      className="absolute right-[10vw] lg:right-10 top-1/6 z-10 opacity-80  md:block"
       initial={{ opacity: 0.6, rotate: 0 }}
       animate={{ opacity: 0.6, rotate: 360 }}
       transition={{
