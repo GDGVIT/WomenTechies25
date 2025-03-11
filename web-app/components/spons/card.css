@@ -46,6 +46,14 @@
     
 }
 
+.pin{
+    background-image: url(../../spons/pin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 10vh;
+   width: 5vw;
+}
+
 .inner-card3{
     background-image: url(../../spons/ethindia.svg);
     background-size: contain;

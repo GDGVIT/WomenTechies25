@@ -36,21 +36,36 @@ const Card = () => {
              
                 {/* <div className='flex top-0 gap-10   border-2 h-fit w-fit align-center justify-center'> */}
                 
-                <div className='card1 flex  justify-center'>
-                <motion.div 
-                whileHover={{ rotate: 5 }}
-                className='inner-card1 flex  justify-center'></motion.div>
-                </div>
-                <div className='card2 flex  w-fit  justify-center'>
+                <div className='card1 relative w-fit h-fit justify-center '>
+                <div className='pin absolute left-20 -top-5 z-10'></div>
+                <div className='flex w-full h-full  justify-center'>
                 <motion.div 
                 whileHover={{ rotate: -5 }}
-                className='inner-card2 flex  justify-center'></motion.div>
+                className='inner-card1 absolute top-5 justify-center '>
+                    
+                </motion.div></div>
                 </div>
-                <div className='card3 flex  w-fit justify-center'>
+
+                <div className='card2 relative w-fit h-fit justify-center '>
+                <div className='pin absolute right-20 -top-5 z-10'></div>
+                <div className='flex w-full h-full  justify-center'>
                 <motion.div 
-                whileHover={{ rotate: 10 }}
-                className='inner-card3 flex  justify-center'></motion.div>
+                whileHover={{ rotate: -5 }}
+                className='inner-card2 absolute top-5 justify-center '>
+                    
+                </motion.div></div>
                 </div>
+                <div className='card3 relative w-fit h-fit justify-center '>
+                <div className='pin absolute left-20 -top-10 z-10'></div>
+                <div className='flex w-full h-full  justify-center'>
+                <motion.div 
+                whileHover={{ rotate: -5 }}
+                className='inner-card3 absolute top-5 justify-center '>
+                    
+                </motion.div></div>
+                </div>
+
+                
                
 
                 
