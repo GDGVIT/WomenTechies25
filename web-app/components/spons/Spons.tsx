@@ -49,7 +49,7 @@ function Content(){
         </div>   
         <div className="sticky top-0 flex h-[100vh] align-center items-center justify-center overflow-hidden "> 
             
-            <div className="sticky top-0 flex-col justify-center h-full w-full align-center items-center">
+            <div className="sticky top-0 flex-col justify-center h-full w-full align-center items-center ">
                 <div className="absolute top-30 flex-col justify-center align-center w-full items-center">
                     <div className="flex gap-10 justify-center m-10 align-center items-center w-full h-full">
                         
@@ -92,7 +92,7 @@ transition={{ delay: 0.5, duration: 1,
                         
                         
                     </div>
-                    <div className="relative flex h-fit w-full justify-center  items-center"> 
+                    <div className="relative flex h-fit w-full justify-center  items-center p-10"> 
                     <Card/>
                     </div> 
                     
