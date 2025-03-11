@@ -225,7 +225,7 @@ const AboutSection: React.FC = () => {
         />
 
         <img
-          src="/aboutWT/floor.svg"
+          src="/aboutWT/grid.svg"
           alt="Floor"
           loading="lazy"
           decoding="async"
@@ -403,7 +403,7 @@ const AboutSection: React.FC = () => {
           initial={{ opacity: 0 }}
         >
          <p
-  className="font-Raleway ie"
+  className="font-Raleway"
   style={{
     fontSize: isMobile ? "0.9rem" : isTablet ? "1.1rem" : "1.2rem",
     lineHeight: isMobile ? 1.4 : 1.6,
