@@ -27,7 +27,7 @@ const HorizontalScrollDino = () => {
     const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "360deg"]);
 
     return (
-        <section ref={targetRef} className="relative h-[400vh] bg-191C1C">
+        <section ref={targetRef} className="relative h-[300vh] bg-191C1C">
             <div className="sticky top-0 flex-col h-screen w-[full] items-center justify-center overflow-hidden ">
             <div
         className="absolute -bottom-134 -left-80 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-[607px] bg-[rgba(101,158,162,0.32)]"

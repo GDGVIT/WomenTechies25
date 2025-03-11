@@ -31,7 +31,7 @@ const Card = () => {
         //   Hover Me
         // </motion.div>
         
-        <div className='sticky top-0 flex gap-0 h-fit w-[80vw] m-8 justify-evenly '>
+        <motion.div className='sticky top-0 flex gap-0 h-fit w-[80vw] m-8 justify-evenly z-10'>
                 
              
                 {/* <div className='flex top-0 gap-10   border-2 h-fit w-fit align-center justify-center'> */}
@@ -57,10 +57,10 @@ const Card = () => {
                 </div>
                 <div className='card3 relative w-fit h-fit justify-center '>
                 <div className='pin absolute left-14 -top-10 z-10'></div>
-                <div className='flex w-full h-full  justify-center'>
+                <div className='flex w-full h-full  justify-center z-10'>
                 <motion.div 
                 whileHover={{ rotate: 5 }}
-                className='inner-card3 absolute -top- justify-center '>
+                className='inner-card3 absolute -top- justify-center  '>
                     
                 </motion.div></div>
                 </div>
@@ -72,7 +72,7 @@ const Card = () => {
             {/* </div> */}
 
             
-        </div>
+        </motion.div>
         
 
       );
