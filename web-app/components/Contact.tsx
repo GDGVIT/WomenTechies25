@@ -84,7 +84,7 @@ export default function ContactSection() {
             </div>
 
             <div className="absolute" style={{ right: "255px", top: "645px", zIndex: -1 }}>
-              <img src="/contact/tag.svg" alt="Contact information tag" className="h-auto w-[518px]" />
+              <img src="/contact/tag.png" alt="Contact information tag" className="h-auto w-[518px]" />
             </div>
           </div>
         </div>

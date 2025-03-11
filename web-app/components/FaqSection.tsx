@@ -13,7 +13,7 @@ const FaqSection: React.FC = () => {
 
   if (typeof window !== "undefined") {
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 1367) {
+      if (window.innerWidth > 1600) {
         isLaptop[1](true);
       } else {
         isLaptop[1](false);
@@ -81,12 +81,13 @@ const FaqSection: React.FC = () => {
             style={{ filter: "blur(100px)" }}
           />
           {isLaptop[0] && <DiamondShapes />}
+          
           {/* <DiamondShapes /> */}
           <AtomIcon />
 
           <div className="max-w-6xl mx-auto md:mt-10 xl:mt-12">
             <div className="flex flex-col items-center text-center mb-20">
-              <span className=" absolute top-10 md:top-20 xl:top-32 left-10 text-[12px] md:text-lg lg:text-xl font-Raleway text-left w-full max-w-[300px]  lg:max-w-[400px]">
+              <span className=" absolute top-14 md:top-20 xl:top-32 left-10 text-[12px] md:text-sm lg:text-lg font-Raleway text-left w-full max-w-[300px]  lg:max-w-[400px]">
                 WE KNOW YOU HAVE QUESTIONS. WE PROBABLY HAVE THE ANSWERS. MAYBE.
               </span>
 
