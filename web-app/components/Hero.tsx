@@ -97,9 +97,16 @@ const HeroSection: React.FC = () => {
           }}
         />
 
-        <div className="absolute bottom-[0.5vh] left-0 w-full md:w-[90vw] lg:w-[80vw] h-[15vh]">
+        <div className="absolute bottom-[2vh] left-[17%] w-full md:w-[90vw] lg:w-[80vw] h-[15vh]">
           <img
             src="/hero/water.svg"
+            alt="Water base"
+            className="absolute bottom-0   z-9999  object-contain mx-auto"
+          />
+        </div>
+        <div className="absolute bottom-[3vh] left-0 w-full md:w-[90vw] lg:w-[80vw] h-[15vh]">
+          <img
+            src="/hero/waterleft.svg"
             alt="Water base"
             className="absolute bottom-0   z-9999  object-contain mx-auto"
           />
@@ -120,28 +127,32 @@ const HeroSection: React.FC = () => {
       </div>
       <div className="absolute top-[15vh] md:top-[15vh] left-[8%] z-20">
         <h1 className="font-mono">
-          <span className="block text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-pink-200">
+          <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-pink-200">
             WOMEN
           </span>
           <div className="flex items-center">
             <HighlightText
               text="TECHIES"
-              className="font-heading text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-pink-200"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-pink-200"
               animationDuration={1.5}
             />  
-            <span className="text-5xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-pink-200 ml-2">
+            <span className="text-5xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-pink-200 ml-2">
               '25
             </span>
           </div>
         </h1>
 
         <a
-          href="#register"
-          className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border border-[#7CFFC4] text-[#7CFFC4] hover:bg-[#7CFFC4]/10 transition-colors duration-300 font-heading text-lg xl:text-2xl md:text-lg"
-        >
-          REGISTER NOW
-          <span className="ml-2 md:ml-24">-&gt;</span>
-        </a>
+  href="#register"
+  className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border text-[#7CFFC4] hover:bg-[#7CFFC4]/10 transition-colors duration-300 font-heading text-lg xl:text-2xl md:text-lg"
+  style={{
+    borderWidth: "2px",
+    borderImage: "linear-gradient(to right, #FFE29D, #78BFC2) 1",
+  }}
+>
+  REGISTER NOW
+  <span className="ml-2 md:ml-24">-&gt;</span>
+</a>
       </div>
 
       <div
@@ -174,7 +185,7 @@ const HeroSection: React.FC = () => {
           {isDesktop ? (
             <>
               <div className="relative">
-                <div className="absolute bottom-[10vh] left-0">
+                <div className="absolute bottom-[3vh] xl:bottom-[6vh] left-0">
                   <Mushroom className="w-[25vw] h-[25vw]" />
                 </div>
                 <div className="absolute -bottom-[20vw] left-[15vw]">
@@ -191,9 +202,14 @@ const HeroSection: React.FC = () => {
         </div>
 
         {isDesktop && (
+          <>
           <div className="absolute bottom-[5vh] right-[5%] z-20">
             <img src="/hero/Flowers.svg" alt="Flowers" className="w-[12vw] h-auto" />
           </div>
+            <div className="absolute bottom-[0vh] right-[30%] z-20">
+            <img src="/hero/plantright.svg" alt="Flowers" className="w-[5vw] h-auto" />
+          </div>
+          </>
         )}
       </div>
     </div>
