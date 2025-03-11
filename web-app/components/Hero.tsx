@@ -1,56 +1,59 @@
-import React from "react"
-import { useEffect, useState } from "react"
-import { useRive } from "@rive-app/react-canvas"
-import { motion, useSpring } from "framer-motion"
-import HighlightText from "./HighlightText"
-import AtomIcon from "./AtomIcon"
+import React from "react";
+import { useEffect, useState } from "react";
+import { useRive } from "@rive-app/react-canvas";
+import { motion, useSpring } from "framer-motion";
+import HighlightText from "./HighlightText";
+import AtomIcon from "./AtomIcon";
 
 const HeroSection: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState(false)
-  
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
- 
-  const textboxX = useSpring(0, { stiffness: 50, damping: 30 })
-  const textboxY = useSpring(0, { stiffness: 50, damping: 30 })
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const textboxX = useSpring(0, { stiffness: 50, damping: 30 });
+  const textboxY = useSpring(0, { stiffness: 50, damping: 30 });
 
   useEffect(() => {
     const checkIfDesktop = () => {
-      setIsDesktop(window.innerWidth >= 1024)
-    }
-    checkIfDesktop()
-    window.addEventListener("resize", checkIfDesktop)
-    return () => window.removeEventListener("resize", checkIfDesktop)
-  }, []) 
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkIfDesktop();
+    window.addEventListener("resize", checkIfDesktop);
+    return () => window.removeEventListener("resize", checkIfDesktop);
+  }, []);
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
- 
-      const x = e.clientX / window.innerWidth - 0.5
-      const y = e.clientY / window.innerHeight - 0.5
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
 
-      setMousePosition({ x, y })
- 
-      textboxX.set(x * 50) 
-      textboxY.set(y * 50)
-    }
+      setMousePosition({ x, y });
 
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [textboxX, textboxY])
+      textboxX.set(x * 50);
+      textboxY.set(y * 50);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [textboxX, textboxY]);
 
   const { RiveComponent: Mushroom } = useRive({
     src: "/hero/mushroom.riv",
     autoplay: true,
-  })
+  });
 
   const { RiveComponent: Plant } = useRive({
     src: "/hero/plant.riv",
     autoplay: true,
-  })
+  });
 
   return (
-    <div className="relative w-full h-[100vh] bg-background overflow-hidden">
+    <div className="relative w-full h-[100vh]  overflow-hidden">
       <div className="absolute inset-0 -z-10 flex items-end">
-        <img src="/hero/grid.svg" alt="Background Grid" className="w-full h-auto object-cover opacity-50" />
+        <img
+          src="/hero/grid.svg"
+          alt="Background Grid"
+          className="w-full h-auto object-cover opacity-50"
+        />
         <img
           src="/hero/bottomshape.svg"
           alt="Background Grid"
@@ -61,6 +64,19 @@ const HeroSection: React.FC = () => {
           alt="Background Grid"
           className="absolute top-0 left-0 w-[25vw] h-auto object-cover"
         />
+         <img
+          src="/hero/pixelleft.svg"
+          alt="Background Grid"
+          className="absolute top-[60%] left-10 w-[23px] h-auto object-cover"
+        />
+         <img
+          src="/hero/pixelright.svg"
+          alt="Background Grid"
+          className="absolute top-[60%] right-10 w-[15px] h-auto object-cover"
+        />
+         <div className="absolute top-[30vh] right-0 w-[25vw] h-[25vw]">
+          <AtomIcon />
+        </div>
 
         {/* Gradient Blurs */}
         <div
@@ -111,9 +127,7 @@ const HeroSection: React.FC = () => {
             className="absolute bottom-0   z-9999  object-contain mx-auto"
           />
         </div>
-        <div className="absolute top-[30vh] right-0 w-[25vw] h-[25vw]">
-          <AtomIcon />
-        </div>
+       
 
         <div className="absolute top-0 left-0 right-0 w-full">
           <img
@@ -121,8 +135,16 @@ const HeroSection: React.FC = () => {
             alt="Moon"
             className="absolute top-[5vh] right-[15%] w-[25vw] xl:w-[15vw] max-w-[150px] h-auto"
           />
-          <img src="/hero/cloud.svg" alt="Cloud 1" className="absolute top-[20vh] left-1/3 w-[7vw]   h-[3vh]" />
-          <img src="/hero/cloud.svg" alt="Cloud 2" className="absolute top-[30vh] right-[25%] w-[7vw] h-[3vh]" />
+          <img
+            src="/hero/cloud.svg"
+            alt="Cloud 1"
+            className="absolute top-[20vh] left-1/3 w-[7vw]   h-[3vh]"
+          />
+          <img
+            src="/hero/cloud.svg"
+            alt="Cloud 2"
+            className="absolute top-[30vh] right-[25%] w-[7vw] h-[3vh]"
+          />
         </div>
       </div>
       <div className="absolute top-[15vh] md:top-[15vh] left-[8%] z-20">
@@ -135,7 +157,7 @@ const HeroSection: React.FC = () => {
               text="TECHIES"
               className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-pink-200"
               animationDuration={1.5}
-            />  
+            />
             <span className="text-5xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-pink-200 ml-2">
               '25
             </span>
@@ -143,16 +165,16 @@ const HeroSection: React.FC = () => {
         </h1>
 
         <a
-  href="#register"
-  className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border text-[#7CFFC4] hover:bg-[#7CFFC4]/10 transition-colors duration-300 font-heading text-lg xl:text-2xl md:text-lg"
-  style={{
-    borderWidth: "2px",
-    borderImage: "linear-gradient(to right, #FFE29D, #78BFC2) 1",
-  }}
->
-  REGISTER NOW
-  <span className="ml-2 md:ml-24">-&gt;</span>
-</a>
+          href="#register"
+          className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border text-[#7CFFC4] hover:bg-[#7CFFC4]/10 transition-colors duration-300 font-heading text-lg xl:text-2xl md:text-lg"
+          style={{
+            borderWidth: "2px",
+            borderImage: "linear-gradient(to right, #FFE29D, #78BFC2) 1",
+          }}
+        >
+          REGISTER NOW
+          <span className="ml-2 md:ml-24">-&gt;</span>
+        </a>
       </div>
 
       <div
@@ -203,18 +225,25 @@ const HeroSection: React.FC = () => {
 
         {isDesktop && (
           <>
-          <div className="absolute bottom-[5vh] right-[5%] z-20">
-            <img src="/hero/Flowers.svg" alt="Flowers" className="w-[12vw] h-auto" />
-          </div>
+            <div className="absolute bottom-[5vh] right-[5%] z-20">
+              <img
+                src="/hero/Flowers.svg"
+                alt="Flowers"
+                className="w-[12vw] h-auto"
+              />
+            </div>
             <div className="absolute bottom-[0vh] right-[30%] z-20">
-            <img src="/hero/plantright.svg" alt="Flowers" className="w-[5vw] h-auto" />
-          </div>
+              <img
+                src="/hero/plantright.svg"
+                alt="Flowers"
+                className="w-[5vw] h-auto"
+              />
+            </div>
           </>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroSection
-
+export default HeroSection;
