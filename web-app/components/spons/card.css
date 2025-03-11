@@ -3,7 +3,7 @@
     background-size: contain;
     background-repeat: no-repeat;
    height: 60vh;
-   width: 16vw;
+   width: 18vw;
     
 }
 
@@ -12,7 +12,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 70vh;
-   width: 16vw;
+   width: 18vw;
     
 }
 
@@ -21,7 +21,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 70vh;
-    width: 16vw;
+    width: 18vw;
     
 }
 
@@ -33,7 +33,7 @@
    align-items: center;
    justify-content: center;
    height: 50vh;
-   width: 12vw;
+   width: 15.5vw;
     
 }
 
@@ -42,7 +42,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 50vh;
-   width: 12vw;
+   width: 16vw;
     
 }
 
@@ -50,8 +50,8 @@
     background-image: url(../../spons/pin.png);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 10vh;
-   width: 5vw;
+    height: 9vh;
+   width: 4vw;
 }
 
 .inner-card3{
@@ -59,6 +59,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 50vh;
-   width: 12vw;
+   width: 14vw;
     
 }
