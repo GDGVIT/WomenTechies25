@@ -153,14 +153,14 @@ const HeroSection: React.FC = () => {
           <img
             src="/hero/girl.svg"
             alt="Girl with VR headset"
-            className="w-[70vw] xl:w-[18vw] z-99999 object-contain"
+            className="w-[70vw] xl:w-[18vw] z-999 object-contain"
           />
 
-          {/* Textbox overlay with parallax effect */}
+          {/* textbox overlay with parallax effect */}
           <motion.img
             src="/hero/textbox.svg"
             alt="Text scrolls"
-            className="absolute -top-[20%] xl:-top-[40%] left-1/2 -translate-x-1/2 w-[70vw] xl:w-[40vw] object-contain"
+            className="absolute -top-[20%] xl:-top-[40%] left-1/2 -translate-x-1/2 w-[70vw] xl:w-[40vw] object-contain z-9999"
             style={{
               x: textboxX,
               y: textboxY,

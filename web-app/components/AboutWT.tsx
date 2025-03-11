@@ -9,8 +9,7 @@ const AboutSection: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
-
-  // Use a more efficient resize handler with debounce
+ 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768)
@@ -18,8 +17,7 @@ const AboutSection: React.FC = () => {
     }
 
     checkScreenSize()
-
-    // Debounce resize handler to improve performance
+ 
     let timeoutId: ReturnType<typeof setTimeout>
     const handleResize = () => {
       clearTimeout(timeoutId)
@@ -38,12 +36,11 @@ const AboutSection: React.FC = () => {
     if (isTablet) return baseSize * 0.7
     return baseSize * 0.85
   }
-
-  // Optimize scroll progress tracking with more efficient settings
+ 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
-    // Removed smooth property as it is not valid
+ 
   })
 
   useEffect(() => {
@@ -53,9 +50,7 @@ const AboutSection: React.FC = () => {
 
     return () => unsubscribe()
   }, [scrollYProgress])
-
-  // Adjust transform values for smoother animation with 280vh height
-  // Use fewer keyframes for better performance
+ 
   const leftFillOpacity = useTransform(
     scrollYProgress,
     [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
@@ -75,22 +70,18 @@ const AboutSection: React.FC = () => {
     [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3],
     [0, 0.2, 0.4, 0.6, 0.8, 0.9, 1],
     { ease: easeInOut },
-  )
-
-  // Optimize scroll handler with throttling
+  ) 
+ 
   useEffect(() => {
     let rafId: number
     let lastScrollY = window.scrollY
     let ticking = false
 
     const handleScroll = () => {
-      if (!ticking) {
-        // Use requestAnimationFrame to limit updates
-        rafId = requestAnimationFrame(() => {
-          // Only update if we've scrolled by a significant amount
+      if (!ticking) { 
+        rafId = requestAnimationFrame(() => { 
           if (Math.abs(window.scrollY - lastScrollY) > 5) {
-            lastScrollY = window.scrollY
-            // Scroll handling logic here if needed
+            lastScrollY = window.scrollY 
           }
           ticking = false
         })
@@ -105,19 +96,16 @@ const AboutSection: React.FC = () => {
       cancelAnimationFrame(rafId)
     }
   }, [])
-
-  // Optimize intersection observer with better thresholds
+ 
   useEffect(() => {
     if (!containerRef.current) return
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Element is in view, enable animations
+          if (entry.isIntersecting) { 
             setIsScrolling(true)
-          } else {
-            // Element is out of view, disable animations to save resources
+          } else { 
             setIsScrolling(false)
           }
         })
@@ -143,8 +131,8 @@ const AboutSection: React.FC = () => {
       className="about-section-container"
       style={{
         position: "relative",
-        height: "280vh", // Reduced from 350vh to 280vh as requested
-        willChange: "transform", // Add will-change to optimize browser rendering
+        height: "280vh",  
+        willChange: "transform",  
       }}
     >
       <div
@@ -156,13 +144,13 @@ const AboutSection: React.FC = () => {
           height: "100vh",
           width: "100%",
           overflow: "hidden",
-          willChange: "opacity, transform", // Add will-change for better performance
+          willChange: "opacity, transform", 
         }}
       >
-        <div className="absolute left-[10%] top-[30%] xl:left-[35%] xl:top-[30%] w-[300px] h-[400px] rounded-full -z-10">
+        {/* <div className="absolute left-[10%] top-[30%] xl:left-[35%] xl:top-[30%] w-[300px] h-[400px] rounded-full -z-10">
           <AtomIcon />
-        </div>
-        {/* Stars/sparkles */}
+        </div> */}
+         
         <div className="stars" style={{ position: "absolute", width: "100%", height: "100%", zIndex: 1 }}>
           {[
             { top: "55%", left: "5%" },
@@ -179,12 +167,11 @@ const AboutSection: React.FC = () => {
               alt="Star"
               loading="lazy"
               decoding="async"
-              style={{ position: "absolute", width: "30px", height: "30px", objectFit: "cover", ...style }}
+              style={{ position: "absolute", width: "20px", height: "20px", objectFit: "cover", ...style }}
             />
           ))}
         </div>
-
-        {/* Ceiling lights SVG */}
+ 
         <motion.img
           src="/aboutWT/ceilinglights.svg"
           alt="Ceiling Lights"
@@ -197,7 +184,7 @@ const AboutSection: React.FC = () => {
             width: getResponsiveSize(400) + "px",
             zIndex: 1,
             opacity: textOpacity,
-            willChange: "opacity, transform", // Add will-change for better performance
+            willChange: "opacity, transform", 
           }}
           initial={{ opacity: 0, y: -10 }}
           animate={{
@@ -209,16 +196,15 @@ const AboutSection: React.FC = () => {
             y: {
               type: "spring",
               stiffness: 100,
-              damping: 10,
-              mass: 1,
+              damping: 5,
+              mass: 0.5,
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "mirror",
-              repeatDelay: 2,
+              repeatDelay: 1,
             },
           }}
         />
-
-        {/* Bookshelf */}
+ 
         <motion.img
           src="/aboutWT/bookshelf.svg"
           alt="Bookshelf"
@@ -231,25 +217,14 @@ const AboutSection: React.FC = () => {
             width: getResponsiveSize(360) + "px",
             zIndex: 1,
             opacity: textOpacity,
-            willChange: "opacity, transform", // Add will-change for better performance
+            willChange: "opacity, transform",  
           }}
           initial={{ opacity: 0, y: -10 }}
           animate={{
             opacity: 1,
             y: 0,
           }}
-          transition={{
-            opacity: { duration: 2, ease: "easeOut" },
-            y: {
-              type: "spring",
-              stiffness: 80,
-              damping: 12,
-              mass: 1.2,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "mirror",
-              repeatDelay: 0.5,
-            },
-          }}
+          
         />
 
         <img
@@ -280,8 +255,7 @@ const AboutSection: React.FC = () => {
                 zIndex: 3,
               }}
             />
-
-            {/* Left SVG */}
+ 
             <motion.img
               src="/aboutWT/left1filled.svg"
               alt="Left filled"
@@ -292,7 +266,7 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(600) + "px",
                 zIndex: 4,
                 opacity: leftFillOpacity,
-                willChange: "opacity", // Add will-change for better performance
+                willChange: "opacity",  
               }}
               initial={{ opacity: 0 }}
             />
@@ -349,7 +323,7 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(550) + "px",
                 zIndex: 4,
                 opacity: rightFillOpacity,
-                willChange: "opacity", // Add will-change for better performance
+                willChange: "opacity",  
               }}
               initial={{ opacity: 0 }}
             />
@@ -379,7 +353,7 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(600) + "px",
                 zIndex: 4,
                 opacity: leftFillOpacity,
-                willChange: "opacity", // Add will-change for better performance
+                willChange: "opacity", 
               }}
               initial={{ opacity: 0 }}
             />
@@ -406,7 +380,7 @@ const AboutSection: React.FC = () => {
                 height: getResponsiveSize(500) + "px",
                 zIndex: 4,
                 opacity: rightFillOpacity,
-                willChange: "opacity", // Add will-change for better performance
+                willChange: "opacity", 
               }}
               initial={{ opacity: 0 }}
             />
@@ -427,7 +401,7 @@ const AboutSection: React.FC = () => {
             height: isMobile ? "auto" : "auto",
             maxHeight: isMobile ? "20vh" : "auto",
             opacity: textOpacity,
-            willChange: "opacity", // Add will-change for better performance
+            willChange: "opacity", 
           }}
           initial={{ opacity: 0 }}
         >

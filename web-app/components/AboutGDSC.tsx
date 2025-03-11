@@ -25,14 +25,14 @@ export default function AboutGDSC() {
         <div className="relative z-10 flex flex-col justify-center h-full w-full px-4">
       <div className="max-w-2xl mx-auto   w-full">
        
-        <div className="mb-12">
-          <h1 className="font-['VCR_OSD_Mono'] text-[#F3C3F0] text-5xl md:text-7xl lg:text-8xl">ABOUT</h1>
+        <div className="mb-12 ">
+          <h1 className="font-['VCR_OSD_Mono'] text-[#F3C3F0] text-6xl md:text-7xl lg:text-8xl">ABOUT</h1>
           <HighlightText
             text="GDSC-VIT"
-            className="font-['VCR_OSD_Mono'] text-[#F3C3F0] text-4xl md:text-6xl lg:text-7xl"
+            className="font-['VCR_OSD_Mono'] text-[#F3C3F0]  text-6xl md:text-7xl lg:text-8xl"
           />
         </div>
-        <div className="text-xl md:text-2xl lg:text-3xl text-gray-400 text-left relative">
+        <div className="text-xl md:text-2xl lg:text-3xl text-gray-400 text-left font-Raleway relative">
           <TextSection
             activeSection={activeSection}
             sectionIndex={0}
@@ -59,7 +59,7 @@ export default function AboutGDSC() {
             emphasisColor="#78BFC2"
             afterText=" who love to push limits,"
             imageUrl="/aboutgdsc/body2.svg"
-            imagePosition="right-0 top-0 -mt-16"
+            imagePosition=" left-[30%] md:left-16 -top-3 md:top-3 mt-16"
           />
 
           <TextSection
@@ -79,7 +79,7 @@ export default function AboutGDSC() {
             emphasisColor="#FFE29D"
             afterText=", and"
             imageUrl="/aboutgdsc/body3.svg"
-            imagePosition="left-0 top-0 -mt-8"
+            imagePosition="left-4 md:left-[40%] top-36 -mt-8"
           />
 
           <TextSection
@@ -99,7 +99,7 @@ export default function AboutGDSC() {
             emphasisColor="#F0C0ED"
             afterText="."
             imageUrl="/aboutgdsc/body4.svg"
-            imagePosition="right-0 bottom-0 -mb-16"
+            imagePosition="right-[45%] top-[70%] -mt-8"
           />
 
           <div className="mt-8">
@@ -207,7 +207,7 @@ function BackgroundElements() {
         <div className="absolute top-0 right-[-100px] w-[500px] h-[400px] bg-[url('/aboutgdsc/cloud_right.jpg')] bg-contain bg-no-repeat opacity-20"></div>
       </div>
 
-      <div className="absolute top-64 z-[5] w-[100vw] h-[100vh]">
+      <div className="hidden lg:block absolute top-64 z-[5] w-[100vw] h-[100vh]">
         <div className="absolute w-[100px] h-[100px] bg-[url('/aboutgdsc/square_left.jpg')] bg-contain bg-no-repeat"></div>
       </div>
 
@@ -215,7 +215,7 @@ function BackgroundElements() {
         <div className="w-[30px] h-[30px] bg-[url('/aboutgdsc/rects.png')] bg-contain bg-no-repeat"></div>
       </div>
 
-      <div className="absolute top-58 right-0 z-[6] w-fit h-fit">
+      <div className=" absolute top-58 right-0 z-[6] w-fit h-fit">
         <div className="absolute top-[10%] right-0 w-[50px] h-[50px] bg-[url('/aboutgdsc/diamonds_right.png')] bg-contain bg-no-repeat"></div>
       </div>
 
@@ -227,10 +227,10 @@ function BackgroundElements() {
         <div className="w-[150px] h-[200px] bg-[url('/aboutgdsc/circle.svg')] bg-contain bg-no-repeat"></div>
       </div>
 
-      <div className="absolute top-1/2 left-[10%] z-[2] w-fit h-fit">
+      <div className="hidden lg:block absolute top-1/2 left-[10%] z-[2] w-fit h-fit">
         <div className="w-[10px] h-[50px] bg-[url('/aboutgdsc/yellowdiamonds.svg')] bg-contain bg-no-repeat"></div>
       </div>
-      <div className="absolute top-1/2 right-[10%] z-[2] w-fit h-fit">
+      <div className="hidden lg:block absolute top-1/2 right-[10%] z-[2] w-fit h-fit">
         <div className="w-[10px] h-[50px] bg-[url('/aboutgdsc/pinkdiamonds.svg')] bg-contain bg-no-repeat"></div>
       </div>
     </>
