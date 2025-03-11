@@ -79,7 +79,7 @@ const HorizontalScrollDino = () => {
                     <motion.div style={{ x }} className="relative w-[200vw] h-[30vh]  flex justify-left items-center content-center p-20">
                     
                     
-                        <h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-10xl xl:text-[12rem] font-heading font-pixel text-white">
+                        <h1 className="text-center text-6xl sm:text-7xl md:text-8xl lg:text-10xl xl:text-[12rem] font-heading font-pixel text-white whitespace-nowrap">
                             
                             
                             DO 
