@@ -12,8 +12,8 @@ export default function AboutGDSC() {
   // Transform scroll progress to section indices (0-4)
   const activeSection = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.4, 0.6, 0.8],
-    [0, 1, 2, 3, 4]
+    [0, 0.15, 0.3, 0.45, 0.6,0.8],
+    [0, 1, 2, 3, 4, 5]
   );
 
   return (
@@ -32,19 +32,33 @@ export default function AboutGDSC() {
             className="font-['VCR_OSD_Mono'] text-[#F3C3F0]  text-6xl md:text-7xl lg:text-8xl"
           />
         </div>
-        <div className="text-xl md:text-2xl lg:text-3xl text-gray-400 text-left font-Raleway relative">
-          <TextSection
+        <div className="text-xl md:text-2xl lg:text-3xl text-[#8080807d] text-left font-Raleway relative">
+        <TextSection
             activeSection={activeSection}
             sectionIndex={0}
-            regularText="Fueled by "
-            emphasisText="curiosity"
+            regularText=""
+emphasisText=""
+            emphasisColor=""
+            afterText=""
+            
+          />
+          
+          
+          
+          
+          
+          <TextSection
+            activeSection={activeSection}
+            sectionIndex={1}
+            regularText=" "
+            emphasisText="Fueled by curiosity and a bit of chaos,"
             emphasisColor="white"
-            afterText=" and a bit of chaos,"
+            afterText=" "
           />
 
           <TextSection
             activeSection={activeSection}
-            sectionIndex={1}
+            sectionIndex={2}
             regularText=" we are a "
             emphasisText="community of"
             emphasisColor="white"
@@ -53,7 +67,7 @@ export default function AboutGDSC() {
 
           <TextSection
             activeSection={activeSection}
-            sectionIndex={1}
+            sectionIndex={2}
             regularText=""
             emphasisText="coders"
             emphasisColor="#78BFC2"
@@ -64,7 +78,7 @@ export default function AboutGDSC() {
 
           <TextSection
             activeSection={activeSection}
-            sectionIndex={2}
+            sectionIndex={3}
             regularText=""
             emphasisText="designers who"
             emphasisColor="white"
@@ -73,7 +87,7 @@ export default function AboutGDSC() {
 
           <TextSection
             activeSection={activeSection}
-            sectionIndex={2}
+            sectionIndex={3}
             regularText=""
             emphasisText="bring ideas to life"
             emphasisColor="#FFE29D"
@@ -84,7 +98,7 @@ export default function AboutGDSC() {
 
           <TextSection
             activeSection={activeSection}
-            sectionIndex={3}
+            sectionIndex={4}
             regularText=""
             emphasisText=" managers who turn"
             emphasisColor="white"
@@ -93,7 +107,7 @@ export default function AboutGDSC() {
 
           <TextSection
             activeSection={activeSection}
-            sectionIndex={3}
+            sectionIndex={4}
             regularText=""
             emphasisText="vision into reality"
             emphasisColor="#F0C0ED"
@@ -105,7 +119,7 @@ export default function AboutGDSC() {
           <div className="mt-8">
             <TextSection
               activeSection={activeSection}
-              sectionIndex={4}
+              sectionIndex={5}
               regularText="Through hackathons, sprints, and late-night builds,"
               emphasisText=""
               emphasisColor="white"
@@ -114,7 +128,7 @@ export default function AboutGDSC() {
 
             <TextSection
               activeSection={activeSection}
-              sectionIndex={4}
+              sectionIndex={5}
               regularText=""
               emphasisText="we build crazy things that matter."
               emphasisColor="#F0C0ED"
