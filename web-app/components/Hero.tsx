@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
 
         {/* Gradient Blurs */}
         <div
-          className="absolute -top-[10vh] -left-[17vw] w-[30vw] min-w-[400px] h-[40vw] max-w-[500px] max-h-[500px] opacity-80"
+          className="absolute -top-[10vh] -left-[17vw] w-[30vw] min-w-[400px] h-[40vw] max-w-[500px] max-h-[500px] opacity-35"
           style={{
             borderRadius: "447px",
             border: "19px solid #CCF193",
@@ -89,7 +89,7 @@ const HeroSection: React.FC = () => {
           }}
         />
         <div
-          className="absolute -top-[20vh] left-[7vw] w-[40vw] min-w-[300px] h-[40vw] min-h-[400px] max-w-[500px] max-h-[500px] opacity-80"
+          className="absolute -top-[20vh] left-[7vw] w-[40vw] min-w-[300px] h-[40vw] min-h-[400px] max-w-[500px] max-h-[500px] opacity-20"
           style={{
             borderRadius: "752px",
             background: "#659EA2",
@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
           }}
         />
         <div
-          className="absolute top-0 -right-[10vw] w-[10vw] min-w-[200px] h-[40vw] max-w-[500px] max-h-[500px] opacity-80"
+          className="absolute top-0 -right-[10vw] w-[10vw] min-w-[200px] h-[40vw] max-w-[500px] max-h-[500px] opacity-35"
           style={{
             borderRadius: "752px",
             background: "#FFFFFF",
@@ -105,7 +105,7 @@ const HeroSection: React.FC = () => {
           }}
         />
         <div
-          className="absolute -bottom-[30vh] left-0 w-[5vw] min-w-[100px] h-[40vw] max-w-[500px] max-h-[500px] opacity-80"
+          className="absolute -bottom-[30vh] left-0 w-[5vw] min-w-[100px] h-[40vw] max-w-[500px] max-h-[500px] opacity-35"
           style={{
             borderRadius: "352px",
             background: "#FFFFFF",
