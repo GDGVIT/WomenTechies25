@@ -2,7 +2,7 @@
 import './App.css'
 import Navbar from '../components/Navbar'
 import FaqSection from "../components/FaqSection"
-import HeroSection from '../components/Hero"
+import HeroSection from '../components/Hero'
 import AboutGDSC from '../components/AboutGDSC'
 import AboutSection from '../components/AboutWT'
 import DinoScroll from '../components/dino-scroll/horizontal-scroll-dino'
