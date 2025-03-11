@@ -33,10 +33,7 @@ function Content(){
       return (
         <section ref={TargetRef} className="relative h-[300vh]">
         <div className="absolute top-0 left-0 h-full w-full overflow-hidden">
-                <div className="sticky top-0 h-full w-full">      
-                        <div className=" gradient absolute top-0 right-[50vh] h-full w-full"></div>
-                        <div className="gradient absolute top-[20vh] left-[60vw] h-full w-full"></div>
-                </div> 
+                
                 <div
         className="absolute -bottom-60 -left-1  0 w-[200px] h-[300px] rounded-[703px] bg-[rgba(101,158,162,0.60)] -z-10"
         style={{ filter: "blur(120px)" }}
@@ -61,7 +58,7 @@ function Content(){
                             <svg 
                             viewBox="0 0 1007 270" 
                             fill="none" 
-                            className="absolute -top-10 -left-12 -bottom-10 -right-11"
+                            className="absolute -top-4 -left-3 -bottom-10 -right-5"
                             xmlns="http://www.w3.org/2000/svg">
 <motion.path 
 initial={{pathLength:0}}
@@ -75,7 +72,7 @@ d="M359.397 21.7752C420.99 13.1977 482.6 7.40486 544.186 4.74983C692.608 -1.6443
 <svg 
                             viewBox="0 0 1007 270" 
                             fill="none" 
-                            className="absolute -top-10 -left-10 -bottom-10 -right-10"
+                            className="absolute -top-5 -left-2 -bottom-10 -right-5"
                             xmlns="http://www.w3.org/2000/svg">
 <motion.path 
 initial={{pathLength:0}}
