@@ -10,7 +10,7 @@ const  Spons=()=>{
         return (
             <div className="relative bg-[#191C1C] z-10">
               
-        
+
               <Content />
         
               
@@ -42,11 +42,19 @@ function Content(){
         className="absolute -bottom-36 right-0 w-[300px] h-[300px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
         style={{ filter: "blur(72.55px)" }}
       />
+      
                 
         </div>   
         <div className="sticky top-0 flex h-[100vh] align-center items-center justify-center overflow-hidden "> 
-            
-            <div className="sticky top-0 flex-col justify-center h-full w-full align-center items-center ">
+        <div className="absolute -bottom-40 h-[70vh] w-full 
+         justify-center z-[-10]">
+                <div className="flex justify-center h-full w-full -z-10">
+                <div
+                className="grid "
+              />
+              </div>
+          </div>
+            <div className="sticky top-0 flex-col justify-center h-full w-full align-center items-center z-10">
                 <div className="absolute top-30 flex-col justify-center align-center w-full items-center">
                     <div className="flex gap-10 justify-center m-10 align-center items-center w-full h-full">
                         
@@ -89,12 +97,16 @@ transition={{ delay: 0.5, duration: 1,
                         
                         
                     </div>
-                    <div className="relative flex h-fit w-full justify-center  items-center p-10"> 
+                    <div className="relative flex h-fit w-full justify-center  items-center p-10 z-70"> 
+                    
                     <Card/>
+                    
                     </div> 
                     
                 </div>
+                
             </div>
+            
         </div>
         
 
