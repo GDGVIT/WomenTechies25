@@ -55,8 +55,8 @@ export default function ContactSection() {
         style={{ filter: "blur(120px)" }}
       ></div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex flex-col">
-        <h2 className="mb-16 mt-20 xl:mt-48 text-4xl font-bold font-heading text-white md:text-5xl lg:text-6xl">
+      <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 h-full flex flex-col">
+        <h2 className="mb-16 mt-20 xl:mt-48  font-bold font-heading text-white text-5xl sm:text-5xl lg:text-6xl xl:text-7xl">
           <span>GET IN </span>
           <HighlightText text="TOUCH" className="font-heading" animationDuration={1.5} />
           <br />
@@ -76,11 +76,11 @@ export default function ContactSection() {
             }}
           >
             <div className="absolute" style={{ left: "100px", top: "300px" }}>
-              <img src="/contact/left.svg" alt="Laptop with left hand and thread" className="h-auto w-[1152px]" />
+              <img src="/contact/left1.svg" alt="Laptop with left hand and thread" className="h-auto w-[900px]" />
             </div>
 
-            <div className="absolute" style={{ right: "100px", top: "-350px" }}>
-              <img src="/contact/right.svg" alt="Right hand with laptop" className="h-auto w-[960px]" />
+            <div className="absolute" style={{ right: "150px", top: "-270px" }}>
+              <img src="/contact/right1.svg" alt="Right hand with laptop" className="h-auto w-[900px]" />
             </div>
 
             <div className="absolute" style={{ right: "255px", top: "645px", zIndex: -1 }}>
