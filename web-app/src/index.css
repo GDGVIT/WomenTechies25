@@ -26,6 +26,23 @@
   z-index: 1000;
 }
 
+::-webkit-scrollbar {
+  width: 20px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f024; /* Scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ebc1df; /* Scrollbar thumb */
+  border-radius: 30px; /* Border radius */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; /* Hover effect */
+
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
