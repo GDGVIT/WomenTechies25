@@ -44,9 +44,9 @@ export default function SponsorsSection() {
           </div>
 
           {/* Mobile Title */}
-          <div className="w-full pt-16 pb-8">
+          <div className="w-full pt-16 pb-8 absolute left-0 top-0 z-10">
             <div className="flex flex-wrap gap-4 justify-center items-center">
-              <h1 className="text-4xl font-bold text-white">OUR</h1>
+              <h1 className="text-4xl font-bold text-white">PLATFORM</h1>
               <h1 className="text-4xl font-bold text-[#F3C3F0] relative">
                 SPONSORS
                 <svg
@@ -133,7 +133,7 @@ export default function SponsorsSection() {
               {/* Heading section */}
               <div className="absolute top-30 flex-col justify-center items-center w-full">
                 <div className="flex flex-wrap gap-10 justify-center m-10 items-center w-full">
-                  <h1 className="relative text-6xl font-heading md:text-7xl lg:text-8xl font-bold text-white">OUR</h1>
+                  <h1 className="relative text-6xl font-heading md:text-7xl lg:text-8xl font-bold text-white">PLATFORM</h1>
                   <h1 className="relative text-6xl font-heading md:text-7xl lg:text-8xl font-bold text-[#F3C3F0]">
                     SPONSORS
                     <svg
