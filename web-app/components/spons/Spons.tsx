@@ -8,7 +8,7 @@ import './gradient.css';
 const  Spons=()=>{
     
         return (
-            <div className="relative bg-[#191C1C] z-10">
+            <div className="relative bg-[#191c1c00] z-10">
               
 
               <Content />
