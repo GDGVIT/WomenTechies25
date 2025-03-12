@@ -1,0 +1,7 @@
+.custom-cursor {
+    cursor: url('../public/hero/cursor.svg'), auto;
+  }
+  
+  button, a, input[type="submit"], [role="button"] {
+    cursor: url('../public/hero/cursor-pointer.svg') , auto;
+}

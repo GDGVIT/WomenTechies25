@@ -12,7 +12,7 @@ import Spons from "../components/spons/Spons"
 function App() {
   return (
     <>
-    <div className=" bg-background">
+    <div className="custom-cursor bg-background">
       <Navbar />
       <HeroSection/>
       <AboutSection />
