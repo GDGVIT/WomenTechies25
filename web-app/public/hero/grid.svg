@@ -1,0 +1,27 @@
+<svg width="1728" height="699" viewBox="0 0 1728 699" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1373_1349" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-939" y="0" width="3606" height="1130">
+<path d="M2666.67 564.799C2666.67 876.73 1859.51 1129.6 863.833 1129.6C-131.844 1129.6 -939 876.73 -939 564.799C-939 252.869 -131.844 0 863.833 0C1859.51 0 2666.67 252.869 2666.67 564.799Z" fill="url(#paint0_radial_1373_1349)"/>
+</mask>
+<g mask="url(#mask0_1373_1349)">
+<path opacity="0.5" d="M-183.388 1009.96C-175.547 995.124 408.652 401.446 699.779 106.461" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M1971.02 1009.96C1963.18 995.124 1378.99 401.446 1087.86 106.461" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M209.135 1003.22L758.688 104.78" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M1578.55 1003.22L1028.99 104.78" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M572.219 1001.53C574.197 990.74 741.502 400.323 824.915 106.461" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M1215.45 1001.53C1213.47 990.74 1046.16 400.323 962.752 106.461" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M-708.414 998.163C-700.553 986.026 173.176 397.518 609.048 104.78" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M2496.05 998.163C2488.19 986.026 1614.47 397.518 1178.59 104.78" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M366.037 104.78C737.02 104.78 1479 104.78 1479 104.78" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M-710.349 191.579C482.449 191.579 2868.05 191.579 2868.05 191.579" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M-710.349 289.948C482.449 289.948 2868.05 289.948 2868.05 289.948" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M-710.349 440.4C482.449 440.4 2868.05 440.4 2868.05 440.4" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M-710.349 642.926C482.449 642.926 2868.05 642.926 2868.05 642.926" stroke="#FAC6F7" stroke-linecap="round"/>
+<path opacity="0.5" d="M893.833 104.78V1046.16" stroke="#FAC6F7" stroke-linecap="round"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1373_1349" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(863.833 564.799) rotate(90) scale(474.664 1515.12)">
+<stop stop-color="#0E1111"/>
+<stop offset="1" stop-color="#0E1111" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
