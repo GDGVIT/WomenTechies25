@@ -16,6 +16,9 @@
     --font-Raleway: "Raleway", sans-serif;
     --font-heading: "VCR OSD Mono";
 }
+.custom-cursor {
+  cursor: url('/cursor.svg'), auto;
+}
 
 .bg-background {
   background-color: #191C1C;
