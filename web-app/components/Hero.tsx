@@ -172,7 +172,7 @@ const HeroSection: React.FC = () => {
             borderImage: "linear-gradient(to right, #FFE29D, #78BFC2) 1",
           }}
         >
-          REGISTER NOW
+          REGISTRATIONS OPEN SOON
           <span className="ml-2 md:ml-24">-&gt;</span>
         </a>
       </div>

@@ -33,7 +33,7 @@ export default function Navbar() {
       }}
       className={`fixed ${hasScrolled ? "top-4" : "top-10"} left-0 right-0 z-999999 w-[90vw] mx-auto
         bg-[rgba(25,28,28,0.36)] backdrop-blur-sm transition-all duration-300 
-        border-[1px] border-[#99728D] rounded-[0px]`}
+        border-[1px] border-[#99728D] rounded-[5px]`}
     >
       <div className="px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -67,7 +67,7 @@ export default function Navbar() {
             <div className=" md:block">
               <div className="text-white">
                 <div className="text-sm font-medium">Google Developer Student Clubs</div>
-                <div className="text-xs opacity-90">Vellore Institute of Technology</div>
+                <div className="text-xs opacity-90 font-">Vellore Institute of Technology</div>
               </div>
             </div>
           </motion.div>
