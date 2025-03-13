@@ -13,20 +13,31 @@ function App() {
   return (
     <>
     <div className="custom-cursor bg-background">
-      <Navbar />
-      <HeroSection/>
-      <AboutSection />
-      <AboutGDSC/>
-      <SwipeAnimation/>
-      {/* <AboutVIT/> */}
-      
-      <Spons/>
-      <FaqSection />
-      
-      
-      <DinoScroll/>
+    <Navbar />
+    <div id="home">
+          <HeroSection />
+        </div>
 
-    <ContactSection/>
+        
+        <div id="about">
+          <AboutSection />
+          <AboutGDSC />
+        </div>
+
+        <SwipeAnimation />
+        <Spons />
+
+        
+        <div id="faq">
+          <FaqSection />
+        </div>
+
+        <DinoScroll />
+
+        
+        <div id="contact">
+          <ContactSection />
+        </div>
     </div>
     
       </>

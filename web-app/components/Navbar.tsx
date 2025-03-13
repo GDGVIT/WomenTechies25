@@ -16,11 +16,18 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "FAQs", href: "/faq" },
-    { name: "Contact Us", href: "/contact" },
-  ]
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "FAQs", id: "faq" },
+    { name: "Contact Us", id: "contact" },
+  ];
+
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <motion.nav
@@ -82,8 +89,9 @@ export default function Navbar() {
             <div className="flex items-center gap-6">
               {navItems.map((item, index) => (
                 <motion.a
-                  key={item.name}
-                  href={item.href}
+                  key={item.id}
+                  onClick={() => handleScroll(item.id)}
+                  
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
