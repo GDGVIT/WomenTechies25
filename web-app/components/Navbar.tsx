@@ -66,8 +66,8 @@ export default function Navbar() {
             </div>
             <div className=" md:block">
               <div className="text-white">
-                <div className="text-sm font-medium">Google Developer Student Clubs</div>
-                <div className="text-xs opacity-90 font-">Vellore Institute of Technology</div>
+                <div className="font-[productsans] text-sm font-medium">Google Developer Student Clubs</div>
+                <div className="font-[productsans] text-xs opacity-90 font-">Vellore Institute of Technology</div>
               </div>
             </div>
           </motion.div>
