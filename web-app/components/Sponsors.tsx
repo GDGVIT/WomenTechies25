@@ -1,80 +1,58 @@
-import React from "react"
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+"use client"
 
-export default function SponsorsSection() {
-  const targetRef = useRef<HTMLElement>(null)
+import { useRef } from "react"
+import { useScroll, useTransform, motion } from "framer-motion"
+
+const Sponsors = () => {
+  return (
+    <div className="relative bg-transparent z-10">
+      <Content />
+    </div>
+  )
+}
+
+function Content() {
+  const TargetRef = useRef(null)
   const { scrollYProgress } = useScroll({
-    target: targetRef,
+    target: TargetRef,
     offset: ["start start", "end end"],
   })
 
   const rotate = useTransform(scrollYProgress, [0, 1], ["0deg", "360deg"])
 
-  // Sponsor data with exact paths from original code
-  const sponsors = [
-    {
-      name: "Devfolio",
-      cardBg: "../../spons/devfolio-card.svg",
-      logo: "../../spons/devfolio.svg",
-      rotation: -3,
-      hoverRotation: 3,
-      pinPosition: { left: "20px", top: "-15px" },
-    },
-    {
-      name: "Polygon",
-      cardBg: "../../spons/polygon-card.svg",
-      logo: "../../spons/polygon.svg",
-      rotation: 10,
-      hoverRotation: -5,
-      pinPosition: { left: "10px", top: "-8px", rotate: "-20deg" },
-    },
-    {
-      name: "ETHIndia",
-      cardBg: "../../spons/ethindia-card.svg",
-      logo: "../../spons/ethindia.svg",
-      rotation: 0,
-      hoverRotation: 5,
-      pinPosition: { left: "14px", top: "-10px" },
-    },
-  ]
+  // Check if we're on mobile
+  const isMobile = () => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth < 768
+    }
+    return false
+  }
 
   return (
-    <div className="relative bg-transparent z-10">
-      <section ref={targetRef} className="relative h-[300vh]">
-        {/* Background gradients */}
-        <div className="absolute top-0 left-0 h-full w-full overflow-hidden">
-          <div
-            className="absolute -bottom-60 -left-10 w-[200px] h-[300px] rounded-[703px] bg-[rgba(101,158,162,0.60)] -z-10"
-            style={{ filter: "blur(120px)" }}
-          />
-          <div
-            className="absolute -bottom-36 right-0 w-[300px] h-[300px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
-            style={{ filter: "blur(72.55px)" }}
-          />
-        </div>
+    <section ref={TargetRef} className="relative h-[300vh] md:h-[300vh]">
+      {/* Background elements - keep exactly as original */}
+      <div className="absolute top-0 left-0 h-full w-full overflow-hidden">
+        <div
+          className="absolute -bottom-60 -left-1 w-[200px] h-[300px] rounded-[703px] bg-[rgba(101,158,162,0.60)] -z-10"
+          style={{ filter: "blur(120px)" }}
+        />
+        <div
+          className="absolute -bottom-36 right-0 w-[300px] h-[300px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
+          style={{ filter: "blur(72.55px)" }}
+        />
+      </div>
 
-        {/* Sticky container */}
-        <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
-          {/* Background grid */}
-          <div className="absolute -bottom-40 h-[70vh] w-full justify-center z-[-10]">
-            <div className="flex justify-center h-full w-full -z-10">
-              <div
-                className="w-full h-full bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: "url(../../spons/grid.svg)" }}
-              />
-            </div>
-          </div>
-
-          {/* Content container */}
-          <div className="sticky top-0 flex flex-col justify-center h-full w-full items-center z-10">
-            <div className="absolute top-30 flex flex-col justify-center items-center w-full">
-              {/* Title */}
-              <div className="flex flex-wrap gap-4 md:gap-10 justify-center m-10 items-center w-full">
-                <h1 className="relative text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white">OUR</h1>
-                <h1 className="relative text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[#F3C3F0]">
+      {/* Main content container - conditional rendering for mobile vs desktop */}
+      {isMobile() ? (
+        // Mobile view - not sticky, 100vh height
+        <div className="flex h-full w-full items-center justify-center overflow-hidden">
+          <div className="flex-col justify-center h-full w-full items-center z-10">
+            <div className="flex-col justify-center w-full items-center pt-20">
+              {/* Title section */}
+              <div className="flex gap-2 justify-center mb-10 items-center w-full">
+                <h1 className="text-3xl font-pixel text-white">OUR</h1>
+                <h1 className="text-3xl font-pixel text-[#F3C3F0] relative">
                   SPONSORS
-                  {/* Decorative SVG paths */}
                   <svg
                     viewBox="0 0 1007 270"
                     fill="none"
@@ -84,11 +62,7 @@ export default function SponsorsSection() {
                     <motion.path
                       initial={{ pathLength: 0 }}
                       whileInView={{ pathLength: 1 }}
-                      transition={{
-                        delay: 0.5,
-                        duration: 1,
-                        ease: "easeInOut",
-                      }}
+                      transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
                       viewport={{ once: true }}
                       d="M359.397 21.7752C420.99 13.1977 482.6 7.40486 544.186 4.74983C692.608 -1.64432 846.115 3.45144 956.952 58.9082C972.917 66.8958 989.938 75.1255 998.905 86.8205C1015.07 107.903 993.153 130.877 963.122 145.968C909.223 173.05 802.514 199.112 745.541 210.53C649.635 229.754 512.227 247.445 415.608 256.331C366.296 260.865 316.971 264.016 267.878 265.977C199.651 268.699 136.827 270.433 75.5519 257.005C38.1841 248.817 19.4114 239.362 7.71159 216.291C-1.73124 197.673 1.58319 182.196 18.4041 162.844C54.0136 121.876 126.644 93.2389 189.732 72.9266C239.947 56.7595 301.214 43.304 354.209 34.0687C431.284 20.6354 420.129 26.0622 495.055 15.2126"
                       stroke="#FAC6F7"
@@ -105,11 +79,7 @@ export default function SponsorsSection() {
                     <motion.path
                       initial={{ pathLength: 0 }}
                       whileInView={{ pathLength: 1 }}
-                      transition={{
-                        delay: 0.5,
-                        duration: 1,
-                        ease: "easeInOut",
-                      }}
+                      transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
                       viewport={{ once: true }}
                       d="M359.397 21.7752C420.99 13.1977 482.6 7.40486 544.186 4.74983C692.608 -1.64432 846.115 3.45144 956.952 58.9082C972.917 66.8958 989.938 75.1255 998.905 86.8205C1015.07 107.903 993.153 130.877 963.122 145.968C909.223 173.05 802.514 199.112 745.541 210.53C649.635 229.754 512.227 247.445 415.608 256.331C366.296 260.865 316.971 264.016 267.878 265.977C199.651 268.699 136.827 270.433 75.5519 257.005C38.1841 248.817 19.4114 239.362 7.71159 216.291C-1.73124 197.673 1.58319 182.196 18.4041 162.844C54.0136 121.876 126.644 93.2389 189.732 72.9266C239.947 56.7595 301.214 43.304 354.209 34.0687C431.284 20.6354 420.129 26.0622 495.055 15.2126"
                       stroke="#FAC6F7"
@@ -120,59 +90,234 @@ export default function SponsorsSection() {
                 </h1>
               </div>
 
-              {/* Sponsor Cards - Positioned from bottom */}
-              <motion.div
-                className="absolute w-full   flex justify-center items-center p-4 md:p-10 z-70"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex flex-wrap gap-16 md:gap-20 lg:gap-24 justify-center w-full">
-                  {sponsors.map((sponsor, index) => (
-                    <div
-                      key={sponsor.name}
-                      className="relative w-[300px] sm:w-[340px] md:w-[22vw] lg:w-[20vw] h-[420px] sm:h-[460px] md:h-[65vh] lg:h-[70vh]"
+              {/* Cards section for mobile */}
+              <div className="flex flex-col items-center gap-8 px-4">
+                {/* Devfolio Card */}
+                <div
+                  className="relative"
+                  style={{
+                    backgroundImage: "url(../../spons/devfolio-card.svg)",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    height: "25vh",
+                    width: "80vw",
+                    maxWidth: "300px",
+                  }}
+                >
+                  <div
+                    className="absolute left-1/4 -top-4 z-10"
+                    style={{
+                      backgroundImage: "url(../../spons/pin.png)",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "5vh",
+                      width: "10vw",
+                    }}
+                  ></div>
+                  <div className="flex w-full h-full justify-center items-center">
+                    <motion.div
+                      whileHover={{ rotate: 3 }}
+                      className="flex justify-center items-center -rotate-3"
+                      style={{
+                        width: "70%",
+                        height: "auto",
+                      }}
                     >
-                      {/* Pin */}
-                      <div
-                        className="pin absolute z-10 w-[4vw] h-[9vh] min-w-[30px] min-h-[40px] bg-contain bg-no-repeat"
-                        style={{
-                          backgroundImage: "url(../../spons/pin.png)",
-                          left: sponsor.pinPosition.left,
-                          top: sponsor.pinPosition.top,
-                          transform: sponsor.pinPosition.rotate ? `rotate(${sponsor.pinPosition.rotate})` : "none",
-                        }}
-                      />
-
-                      {/* Card container */}
-                      <div className="flex w-full h-full justify-center">
-                        {/* Card background */}
-                        <div
-                          className="relative w-full h-full bg-contain bg-no-repeat bg-center"
-                          style={{ backgroundImage: `url(${sponsor.cardBg})` }}
-                        >
-                          {/* Card content (logo) */}
-                          <motion.div
-                            whileHover={{ rotate: sponsor.hoverRotation }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                            className="absolute top-0 left-1/2 -translate-x-1/2 w-[85%] h-[85%] bg-contain bg-no-repeat bg-center"
-                            style={{
-                              backgroundImage: `url(${sponsor.logo})`,
-                              transform: `translateY(-5%) rotate(${sponsor.rotation}deg)`,
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                      <img src="../../spons/devfolio.svg" alt="DEVFOLIO LOGO" className="w-full h-auto" />
+                    </motion.div>
+                  </div>
                 </div>
-              </motion.div>
+
+                {/* ETHIndia Card */}
+                <div
+                  className="relative"
+                  style={{
+                    backgroundImage: "url(../../spons/ethindia-card.svg)",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    height: "25vh",
+                    width: "80vw",
+                    maxWidth: "300px",
+                  }}
+                >
+                  <div
+                    className="absolute left-1/4 -top-4 z-10"
+                    style={{
+                      backgroundImage: "url(../../spons/pin.png)",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "5vh",
+                      width: "10vw",
+                    }}
+                  ></div>
+                  <div className="flex w-full h-full justify-center items-center z-10">
+                    <motion.div
+                      whileHover={{ rotate: 5 }}
+                      className="flex justify-center items-center"
+                      style={{
+                        width: "70%",
+                        height: "auto",
+                      }}
+                    >
+                      <img src="../../spons/ethindia.svg" alt="ETHINDIA LOGO" className="w-full h-auto" />
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      ) : (
+        // Desktop view - EXACTLY as original
+        <div className="sticky top-0 flex h-[100vh] align-center items-center justify-center overflow-hidden">
+          <div
+            className="absolute -bottom-40 h-[70vh] w-full 
+           justify-center z-[-10]"
+          >
+            <div className="flex justify-center h-full w-full -z-10">
+              <div
+                className="grid"
+                style={{
+                  backgroundImage: "url(../../spons/grid.svg)",
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  height: "100%",
+                  width: "80%",
+                  zIndex: 0,
+                  justifyContent: "center",
+                  justifyItems: "center",
+                }}
+              />
+            </div>
+          </div>
+          <div className="sticky top-0 flex-col justify-center h-full w-full align-center items-center z-10">
+            <div className="absolute top-30 flex-col justify-center align-center w-full items-center">
+              <div className="flex gap-10 justify-center m-10 align-center items-center w-full h-full">
+                <h1 className="relative text-4xl sm:text-6xl font-heading md:text-7xl lg:text-8xl font-pixel justify-center text-white">
+                  OUR
+                </h1>
+                <h1 className="relative text-4xl sm:text-6xl font-heading md:text-7xl lg:text-8xl font-pixel text-[#F3C3F0] justify-center">
+                  SPONSORS
+                  <svg
+                    viewBox="0 0 1007 270"
+                    fill="none"
+                    className="absolute -top-4 -left-3 -bottom-10 -right-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <motion.path
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
+                      viewport={{ once: true }}
+                      d="M359.397 21.7752C420.99 13.1977 482.6 7.40486 544.186 4.74983C692.608 -1.64432 846.115 3.45144 956.952 58.9082C972.917 66.8958 989.938 75.1255 998.905 86.8205C1015.07 107.903 993.153 130.877 963.122 145.968C909.223 173.05 802.514 199.112 745.541 210.53C649.635 229.754 512.227 247.445 415.608 256.331C366.296 260.865 316.971 264.016 267.878 265.977C199.651 268.699 136.827 270.433 75.5519 257.005C38.1841 248.817 19.4114 239.362 7.71159 216.291C-1.73124 197.673 1.58319 182.196 18.4041 162.844C54.0136 121.876 126.644 93.2389 189.732 72.9266C239.947 56.7595 301.214 43.304 354.209 34.0687C431.284 20.6354 420.129 26.0622 495.055 15.2126"
+                      stroke="#FAC6F7"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <svg
+                    viewBox="0 0 1007 270"
+                    fill="none"
+                    className="absolute -top-5 -left-2 -bottom-10 -right-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <motion.path
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
+                      viewport={{ once: true }}
+                      d="M359.397 21.7752C420.99 13.1977 482.6 7.40486 544.186 4.74983C692.608 -1.64432 846.115 3.45144 956.952 58.9082C972.917 66.8958 989.938 75.1255 998.905 86.8205C1015.07 107.903 993.153 130.877 963.122 145.968C909.223 173.05 802.514 199.112 745.541 210.53C649.635 229.754 512.227 247.445 415.608 256.331C366.296 260.865 316.971 264.016 267.878 265.977C199.651 268.699 136.827 270.433 75.5519 257.005C38.1841 248.817 19.4114 239.362 7.71159 216.291C-1.73124 197.673 1.58319 182.196 18.4041 162.844C54.0136 121.876 126.644 93.2389 189.732 72.9266C239.947 56.7595 301.214 43.304 354.209 34.0687C431.284 20.6354 420.129 26.0622 495.055 15.2126"
+                      stroke="#FAC6F7"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </h1>
+              </div>
+              <div className="relative flex h-fit w-full justify-center items-center p-10 z-70">
+                {/* Card Component - EXACTLY as original */}
+                <motion.div className="sticky top-0 flex gap-0 h-fit w-[80vw] m-8 justify-evenly z-10">
+                  <div
+                    className="card1 relative w-fit h-fit justify-center"
+                    style={{
+                      backgroundImage: "url(../../spons/devfolio-card.svg)",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "60vh",
+                      width: "18vw",
+                      zIndex: 10,
+                    }}
+                  >
+                    <div
+                      className="pin absolute left-20 -top-15 z-10"
+                      style={{
+                        backgroundImage: "url(../../spons/pin.png)",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                        height: "9vh",
+                        width: "4vw",
+                      }}
+                    ></div>
+                    <div className="flex w-full h-full justify-center">
+                      <motion.div
+                        whileHover={{ rotate: 3 }}
+                        className="inner-card1 absolute -top-5 justify-center -rotate-3"
+                        style={{
+                          alignItems: "center",
+                          justifyContent: "center",
+                          height: "50vh",
+                          width: "15.5vw",
+                        }}
+                      >
+                        <img src="../../spons/devfolio.svg" alt="DEVFOLIO LOGO" />
+                      </motion.div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="card3 relative w-fit h-fit justify-center"
+                    style={{
+                      backgroundImage: "url(../../spons/ethindia-card.svg)",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "70vh",
+                      width: "18vw",
+                    }}
+                  >
+                    <div
+                      className="pin absolute left-14 -top-10 z-10"
+                      style={{
+                        backgroundImage: "url(../../spons/pin.png)",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                        height: "9vh",
+                        width: "4vw",
+                      }}
+                    ></div>
+                    <div className="flex w-full h-full justify-center z-10">
+                      <motion.div
+                        whileHover={{ rotate: 5 }}
+                        className="inner-card3 absolute -top- justify-center"
+                        style={{
+                          height: "50vh",
+                          width: "14vw",
+                        }}
+                      >
+                        <img src="../../spons/ethindia.svg" alt="ETHINDIA LOGO" />
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
   )
 }
+
+export default Sponsors
 

@@ -8,7 +8,8 @@ import AboutSection from "../components/AboutWT";
 import DinoScroll from "../components/dino-scroll/horizontal-scroll-dino";
 import ContactSection from "../components/Contact";
 import SwipeAnimation from "../components/swipe";
-import Spons from "../components/spons/Spons";
+// import Spons from "../components/spons/Spons";
+import Sponsors from "../components/Sponsors";
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
         </div>
 
         <SwipeAnimation />
-        <Spons />
+        {/* <Spons /> */}
+        <Sponsors />
 
         <div id="faq">
           <FaqSection />
