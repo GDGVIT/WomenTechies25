@@ -29,7 +29,7 @@ function Content() {
   }
 
   return (
-    <section ref={TargetRef} className="relative h-[300vh] md:h-[300vh]">
+    <section ref={TargetRef} className="relative h-[100vh] md:h-[300vh]">
       {/* Background elements - keep exactly as original */}
       <div className="absolute top-0 left-0 h-full w-full overflow-hidden">
         <div

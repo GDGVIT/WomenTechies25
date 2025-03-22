@@ -1,56 +1,56 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+"use client"
+
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { Menu, X } from "lucide-react"
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setHasScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      setHasScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "FAQs", id: "faq" },
     { name: "Contact Us", id: "contact" },
-  ];
+  ]
 
   const handleScroll = (id: string) => {
-    const element = document.getElementById(id);
+    const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth" })
     }
-  };
+  }
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://apply.devfolio.co/v2/sdk.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+    const script = document.createElement("script")
+    script.src = "https://apply.devfolio.co/v2/sdk.js"
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
     return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+      document.body.removeChild(script)
+    }
+  }, [])
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      // Simplified to just a fade-in effect as requested
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
-        duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1], // Cubic bezier for smoother easing
-        opacity: { duration: 0.6 },
+        duration: 0.7,
+        ease: "easeOut",
       }}
-      className={`fixed ${
-        hasScrolled ? "top-4" : "top-10"
-      } left-0 right-0 z-999999 w-[90vw] mx-auto
+      className={`fixed ${hasScrolled ? "top-4" : "top-10"} left-0 right-0 z-999999 w-[90vw] mx-auto
         bg-[rgba(25,28,28,0.36)] backdrop-blur-sm transition-all duration-300 
         border-[1px] border-[#99728D] rounded-[5px]`}
     >
@@ -60,17 +60,15 @@ export default function Navbar() {
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            transition={{
+              duration: 0.5,
+              delay: 0.2,
+              ease: [0.25, 0.1, 0.25, 1], // Smoother cubic bezier
+            }}
             className="flex items-center gap-3"
           >
             <div className="flex-shrink-0">
-              <svg
-                width="49"
-                height="24"
-                viewBox="0 0 49 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="49" height="24" viewBox="0 0 49 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M19.2441 16.0762L5.75348 8.36206C5.31605 8.11307 4.83343 7.95193 4.33319 7.88784C3.83294 7.82376 3.32485 7.85798 2.83795 7.98857C2.35105 8.11915 1.89486 8.34355 1.49543 8.64893C1.096 8.95431 0.761141 9.33469 0.509989 9.76837C0.258837 10.202 0.0963014 10.6805 0.0316651 11.1765C-0.0329713 11.6724 0.00156277 12.1762 0.133283 12.6589C0.265002 13.1416 0.491331 13.5939 0.799354 13.9899C1.10738 14.3859 1.49106 14.7179 1.92849 14.9669L15.4191 22.681C16.3004 23.1854 17.3478 23.3221 18.3308 23.0609C19.3137 22.7998 20.1518 22.1622 20.6606 21.2884C21.1694 20.4147 21.3073 19.3763 21.0438 18.4017C20.7804 17.4272 20.1373 16.5963 19.256 16.0919L19.2441 16.0762Z"
                   fill="white"
@@ -91,12 +89,8 @@ export default function Navbar() {
             </div>
             <div className=" md:block">
               <div className="text-white">
-                <div className="font-[productsans] text-sm font-medium">
-                  Google Developer Student Clubs
-                </div>
-                <div className="font-[productsans] text-xs opacity-90 font-">
-                  Vellore Institute of Technology
-                </div>
+                <div className="font-[productsans] text-sm font-medium">Google Developer Student Clubs</div>
+                <div className="font-[productsans] text-xs opacity-90 font-">Vellore Institute of Technology</div>
               </div>
             </div>
           </motion.div>
@@ -105,7 +99,11 @@ export default function Navbar() {
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            transition={{
+              duration: 0.6,
+              delay: 0.3,
+              ease: [0.25, 0.1, 0.25, 1], // Smoother cubic bezier
+            }}
             className="hidden md:block"
           >
             <div className="flex items-center gap-6">
@@ -120,7 +118,7 @@ export default function Navbar() {
                     delay: 0.3 + index * 0.1,
                     ease: "easeOut",
                   }}
-                  className="text-white hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway"
+                  className="text-white hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway cursor-pointer"
                 >
                   {item.name}
                 </motion.a>
@@ -145,13 +143,15 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Improved animation */}
       <motion.div
         initial={false}
-        animate={
-          isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
-        }
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{
+          duration: 0.3,
+          ease: [0.25, 0.1, 0.25, 1], // Smoother cubic bezier
+          opacity: { duration: 0.2 }, // Separate duration for opacity
+        }}
         className="md:hidden overflow-hidden"
       >
         <div className="px-4 py-3 space-y-3">
@@ -159,17 +159,17 @@ export default function Navbar() {
             <motion.a
               key={item.name}
               onClick={() => {
-                setIsOpen(false);
-                handleScroll(item.id);
+                setIsOpen(false)
+                handleScroll(item.id)
               }}
               initial={{ x: -20, opacity: 0 }}
               animate={isOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
               transition={{
-                duration: 0.3,
-                delay: isOpen ? 0.1 * index : 0,
+                duration: 0.25, // Slightly faster for smoother feel
+                delay: isOpen ? 0.05 * index : 0, // Reduced delay for quicker response
                 ease: "easeOut",
               }}
-              className="block text-white/90 hover:text-white transition-colors text-sm"
+              className="block text-white/90 hover:text-white transition-colors text-sm cursor-pointer"
             >
               {item.name}
             </motion.a>
@@ -177,5 +177,6 @@ export default function Navbar() {
         </div>
       </motion.div>
     </motion.nav>
-  );
+  )
 }
+
