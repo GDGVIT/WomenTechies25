@@ -56,34 +56,34 @@ const ScrollAnimation: React.FC = () => {
             }}
           > 
             <motion.div 
-              className="w-100 h-150 rounded-lg overflow-hidden relative"
+              className="w-100 h-150 md:w-100 md:h-150 rounded-lg overflow-hidden relative"
               style={{ rotate: card1Rotate,opacity:opacity1
                 
                }}
               
             >
               <img 
-                src="/swipe/devjams.svg" 
+                src="/swipe/devjams-jpeg.jpg" 
                 alt="DevJams 2024" 
                 className="w-full h-full object-cover" 
               />
             </motion.div> 
             <motion.div 
-              className="w-110 h-160 rounded-lg overflow-hidden relative"
+              className="w-110 h-160  md:w-100 md:h-150 rounded-lg overflow-hidden relative"
               style={{ rotate: card2Rotate,opacity:opacity3 }}
             >
               <img 
-                src="/swipe/wt.svg" 
+                src="/swipe/wt-jpeg.jpg" 
                 alt="Hexathon" 
                 className="w-full h-full object-cover" 
               />
             </motion.div> 
             <motion.div 
-              className="w-100 h-150 rounded-lg overflow-hidden relative "
+              className="w-100 h-150 md:w-100 md:h-150 rounded-lg overflow-hidden relative "
               style={{ rotate: card3Rotate,opacity:opacity2 }}
             >
               <img 
-                src="/swipe/hexathon.svg" 
+                src="/swipe/hex-jpeg.jpg" 
                 alt="Women Techies 2025" 
                 className="w-full h-full object-cover" 
               />

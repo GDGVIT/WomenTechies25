@@ -164,7 +164,7 @@ const HeroSection: React.FC = () => {
           </div>
         </h1>
 
-        <a
+        {/* <a
           href="#register"
           className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border text-[#7CFFC4] hover:bg-[#7CFFC4]/10 transition-colors duration-300 font-heading text-lg xl:text-2xl md:text-lg"
           style={{
@@ -172,9 +172,9 @@ const HeroSection: React.FC = () => {
             borderImage: "linear-gradient(to right, #FFE29D, #78BFC2) 1",
           }}
         >
-          REGISTER NOW
+          REGISTRATIONS OPEN SOON
           <span className="ml-2 md:ml-24">-&gt;</span>
-        </a>
+        </a> */}
       </div>
 
       <div
