@@ -11,7 +11,7 @@ const DiamondShapes: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="167" height="159" viewBox="0 0 167 159" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="167" height="159" viewBox="0 0 167 159" fill="none" >
           <g clipPath="url(#clip0_306_1336)">
             <path d="M82.8383 125.981L66.3239 141.73L82.8384 157.478L99.3528 141.73L82.8383 125.981Z" fill="#FFE29D" />
             <path

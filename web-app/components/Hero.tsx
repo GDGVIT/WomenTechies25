@@ -52,26 +52,31 @@ const HeroSection: React.FC = () => {
         <img
           src="/hero/grid.svg"
           alt="Background Grid"
+          loading="lazy"
           className="w-full h-auto object-cover opacity-50"
         />
         <img
           src="/hero/bottomshape.svg"
           alt="Background Grid"
+          loading="lazy"
           className="absolute bottom-0 right-0 w-[40vw] h-auto object-cover transform scale-x-[-1]"
         />
         <img
           src="/hero/bottomshape.svg"
           alt="Background Grid"
+          loading="lazy"
           className="absolute top-0 left-0 w-[25vw] h-auto object-cover"
         />
          <img
           src="/hero/pixelleft.svg"
           alt="Background Grid"
+          loading="lazy"
           className="absolute top-[60%] left-10 w-[23px] h-auto object-cover"
         />
          <img
           src="/hero/pixelright.svg"
           alt="Background Grid"
+          loading="lazy"
           className="absolute top-[60%] right-10 w-[15px] h-auto object-cover"
         />
          <div className="absolute top-[30vh] right-0 w-[25vw] h-[25vw]">
@@ -117,6 +122,7 @@ const HeroSection: React.FC = () => {
           <img
             src="/hero/water.svg"
             alt="Water base"
+            loading="lazy"
             className="absolute bottom-0   z-9999  object-contain mx-auto"
           />
         </div>
@@ -124,6 +130,7 @@ const HeroSection: React.FC = () => {
           <img
             src="/hero/waterleft.svg"
             alt="Water base"
+            loading="lazy"
             className="absolute bottom-0   z-9999  object-contain mx-auto"
           />
         </div>
@@ -133,16 +140,19 @@ const HeroSection: React.FC = () => {
           <img
             src="/hero/moon.svg"
             alt="Moon"
+            loading="lazy"
             className="absolute top-[5vh] right-[15%] w-[25vw] xl:w-[15vw] max-w-[150px] h-auto"
           />
           <img
             src="/hero/cloud.svg"
             alt="Cloud 1"
+            loading="lazy"
             className="absolute top-[20vh] left-1/3 w-[7vw]   h-[3vh]"
           />
           <img
             src="/hero/cloud.svg"
             alt="Cloud 2"
+            loading="lazy"
             className="absolute top-[30vh] right-[25%] w-[7vw] h-[3vh]"
           />
         </div>
@@ -185,6 +195,7 @@ const HeroSection: React.FC = () => {
         <div className="relative w-[50vw] sm:w-[40vw] md:w-[35vw] lg:w-[30vw] flex items-center justify-center ">
           <img
             src="/hero/girl.svg"
+            loading="lazy"
             alt="Girl with VR headset"
             className="w-[70vw] xl:w-[18vw] z-999 object-contain"
           />
@@ -193,6 +204,7 @@ const HeroSection: React.FC = () => {
           <motion.img
             src="/hero/textbox.svg"
             alt="Text scrolls"
+            loading="lazy"
             className="absolute -top-[20%] xl:-top-[40%] left-1/2 -translate-x-1/2 w-[70vw] xl:w-[40vw] object-contain z-9999"
             style={{
               x: textboxX,
@@ -230,6 +242,7 @@ const HeroSection: React.FC = () => {
                 src="/hero/Flowers.svg"
                 alt="Flowers"
                 className="w-[12vw] h-auto"
+                loading="lazy"
               />
             </div>
             <div className="absolute bottom-[0vh] right-[30%] z-20">
@@ -237,6 +250,7 @@ const HeroSection: React.FC = () => {
                 src="/hero/plantright.svg"
                 alt="Flowers"
                 className="w-[5vw] h-auto"
+                loading="lazy"
               />
             </div>
           </>
