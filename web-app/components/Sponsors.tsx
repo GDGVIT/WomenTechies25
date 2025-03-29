@@ -47,7 +47,7 @@ function Content() {
         // Mobile view - not sticky, 100vh height
         <div className="flex h-full w-full items-center justify-center overflow-hidden">
           <div className="flex-col justify-center h-full w-full items-center z-10">
-            <div className="flex-col justify-center w-full items-center pt-20">
+            <div className="flex-col justify-center w-full items-center pt-20 ">
               {/* Title section */}
               <div className="flex gap-2 justify-center mb-10 items-center w-full">
                 <h1 className="text-3xl font-pixel text-white">OUR</h1>
@@ -56,7 +56,7 @@ function Content() {
                   <svg
                     viewBox="0 0 1007 270"
                     fill="none"
-                    className="absolute -top-4 -left-3 -bottom-10 -right-5"
+                    className="absolute -top-2 -left-3 -bottom-10 -right-5"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <motion.path
@@ -73,7 +73,7 @@ function Content() {
                   <svg
                     viewBox="0 0 1007 270"
                     fill="none"
-                    className="absolute -top-5 -left-2 -bottom-10 -right-5"
+                    className="absolute -top-2 -left-2 -bottom-10 -right-5"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <motion.path
@@ -91,7 +91,7 @@ function Content() {
               </div>
 
               {/* Cards section for mobile */}
-              <div className="flex flex-col items-center gap-8 px-4">
+              <div className="flex flex-col items-center gap-20 px-4">
                 {/* Devfolio Card */}
                 <div
                   className="relative"
@@ -106,7 +106,7 @@ function Content() {
                   }}
                 >
                   <div
-                    className="absolute left-1/4 -top-4 z-10"
+                    className="relative left-1/3 -top-4 z-10"
                     style={{
                       backgroundImage: "url(../../spons/pin.png)",
                       backgroundSize: "contain",
@@ -118,9 +118,9 @@ function Content() {
                   <div className="flex w-full h-full justify-center items-center">
                     <motion.div
                       whileHover={{ rotate: 3 }}
-                      className="flex justify-center items-center -rotate-3"
+                      className="relative -top-15 justify-center items-center -rotate-3"
                       style={{
-                        width: "70%",
+                        width: "40%",
                         height: "auto",
                       }}
                     >
@@ -143,7 +143,7 @@ function Content() {
                   }}
                 >
                   <div
-                    className="absolute left-1/4 -top-4 z-10"
+                    className="absolute left-1/3 -top-4 z-10"
                     style={{
                       backgroundImage: "url(../../spons/pin.png)",
                       backgroundSize: "contain",
@@ -155,9 +155,9 @@ function Content() {
                   <div className="flex w-full h-full justify-center items-center z-10">
                     <motion.div
                       whileHover={{ rotate: 5 }}
-                      className="flex justify-center items-center"
+                      className="relative -top-5 justify-center items-center"
                       style={{
-                        width: "70%",
+                        width: "36%",
                         height: "auto",
                       }}
                     >
@@ -236,9 +236,9 @@ function Content() {
                   </svg>
                 </h1>
               </div>
-              <div className="relative flex h-fit w-full justify-center items-center p-10 z-70">
+              <div className="relative flex h-fit w-full justify-center items-center p-[5vh] z-70">
                 {/* Card Component - EXACTLY as original */}
-                <motion.div className="sticky top-0 flex gap-0 h-fit w-[80vw] m-8 justify-evenly z-10">
+                <motion.div className="sticky top-0 flex gap-20 h-fit w-[50vw] m-8 justify-evenly z-10">
                   <div
                     className="card1 relative w-fit h-fit justify-center"
                     style={{
@@ -251,7 +251,7 @@ function Content() {
                     }}
                   >
                     <div
-                      className="pin absolute left-20 -top-15 z-10"
+                      className="pin absolute left-20 -top-9 z-10"
                       style={{
                         backgroundImage: "url(../../spons/pin.png)",
                         backgroundSize: "contain",
@@ -262,13 +262,14 @@ function Content() {
                     ></div>
                     <div className="flex w-full h-full justify-center">
                       <motion.div
-                        whileHover={{ rotate: 3 }}
+                        whileHover={{ rotate: -10 }}
                         className="inner-card1 absolute -top-5 justify-center -rotate-3"
                         style={{
                           alignItems: "center",
                           justifyContent: "center",
                           height: "50vh",
                           width: "15.5vw",
+                          rotate: -15,
                         }}
                       >
                         <img src="../../spons/devfolio.svg" alt="DEVFOLIO LOGO" />
@@ -287,7 +288,7 @@ function Content() {
                     }}
                   >
                     <div
-                      className="pin absolute left-14 -top-10 z-10"
+                      className="pin absolute left-14 -top-8 z-10"
                       style={{
                         backgroundImage: "url(../../spons/pin.png)",
                         backgroundSize: "contain",
