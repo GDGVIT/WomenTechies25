@@ -151,12 +151,12 @@ const AboutSection: React.FC = () => {
 
         <div className="stars" style={{ position: "absolute", width: "100%", height: "100%", zIndex: 1 }}>
           {[
-            { top: "55%", left: "5%" },
+            // { top: "55%", left: "5%" },
             { top: "23%", left: "25%" },
-            { top: "35%", left: "35%" },
+            // { top: "35%", left: "35%" },
             { top: "21%", right: "15%" },
             { top: "10%", right: "25%" },
-            { top: "30%", right: "35%" },
+            // { top: "30%", right: "35%" },
             { top: "15%", left: "50%", transform: "translateX(-50%)" },
           ].map((style, index) => (
             <img

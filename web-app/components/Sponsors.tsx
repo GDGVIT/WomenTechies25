@@ -193,12 +193,12 @@ function Content() {
             </div>
           </div>
           <div className="sticky top-0 flex-col justify-center h-full w-full align-center items-center z-10">
-            <div className="absolute top-30 flex-col justify-center align-center w-full items-center">
+            <div className="absolute top-24 flex-col justify-center align-center w-full items-center">
               <div className="flex gap-10 justify-center m-10 align-center items-center w-full h-full">
-                <h1 className="relative text-4xl sm:text-6xl font-heading md:text-7xl lg:text-8xl font-pixel justify-center text-white">
+                <h1 className="relative text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-Raleway font-semibold justify-center text-white">
                   OUR
                 </h1>
-                <h1 className="relative text-4xl sm:text-6xl font-heading md:text-7xl lg:text-8xl font-pixel text-[#F3C3F0] justify-center">
+                <h1 className="relative text-4xl sm:text-6xl font-heading md:text-7xl lg:text-8xl  text-[#F3C3F0] justify-center">
                   SPONSORS
                   <svg
                     viewBox="0 0 1007 270"
@@ -242,7 +242,7 @@ function Content() {
                   <div
                     className="card1 relative w-fit h-fit justify-center"
                     style={{
-                      backgroundImage: "url(../../spons/devfolio-card.svg)",
+                      backgroundImage: "url(../../spons/pega-card.png)",
                       backgroundSize: "contain",
                       backgroundRepeat: "no-repeat",
                       height: "60vh",
@@ -272,7 +272,7 @@ function Content() {
                           rotate: -15,
                         }}
                       >
-                        <img src="../../spons/devfolio.svg" alt="DEVFOLIO LOGO" />
+                        <img src="../../spons/pega.png" alt="DEVFOLIO LOGO" />
                       </motion.div>
                     </div>
                   </div>
@@ -280,7 +280,7 @@ function Content() {
                   <div
                     className="card3 relative w-fit h-fit justify-center"
                     style={{
-                      backgroundImage: "url(../../spons/ethindia-card.svg)",
+                      backgroundImage: "url(../../spons/xyz-card.png)",
                       backgroundSize: "contain",
                       backgroundRepeat: "no-repeat",
                       height: "70vh",
@@ -306,7 +306,7 @@ function Content() {
                           width: "14vw",
                         }}
                       >
-                        <img src="../../spons/ethindia.svg" alt="ETHINDIA LOGO" />
+                        <img src="../../spons/xyz.png" alt="ETHINDIA LOGO" />
                       </motion.div>
                     </div>
                   </div>
