@@ -96,7 +96,7 @@ function Content() {
                 <div
                   className="relative"
                   style={{
-                    backgroundImage: "url(../../spons/devfolio-card.svg)",
+                    backgroundImage: "url(../../spons/pega-card.png)",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
@@ -124,7 +124,7 @@ function Content() {
                         height: "auto",
                       }}
                     >
-                      <img src="../../spons/devfolio.svg" alt="DEVFOLIO LOGO" className="w-full h-auto" />
+                      <img src="../../spons/pega.png" alt="DEVFOLIO LOGO" className="w-full h-auto" />
                     </motion.div>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ function Content() {
                 <div
                   className="relative"
                   style={{
-                    backgroundImage: "url(../../spons/ethindia-card.svg)",
+                    backgroundImage: "url(../../spons/xyz-card.png)",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
@@ -161,7 +161,7 @@ function Content() {
                         height: "auto",
                       }}
                     >
-                      <img src="../../spons/ethindia.svg" alt="ETHINDIA LOGO" className="w-full h-auto" />
+                      <img src="../../spons/xyz.png" alt="ETHINDIA LOGO" className="w-full h-auto" />
                     </motion.div>
                   </div>
                 </div>
