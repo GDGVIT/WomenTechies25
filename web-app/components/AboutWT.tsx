@@ -210,8 +210,11 @@ const AboutSection: React.FC = () => {
           decoding="async"
           style={{
             position: "absolute",
-            top: "10%",
+            // top: "10%",
+            top: isMobile ? "12%" : "11%",
+
             left: "7%",
+          
             width: getResponsiveSize(360) + "px",
             zIndex: 1,
             opacity: textOpacity,
@@ -387,12 +390,12 @@ const AboutSection: React.FC = () => {
         <motion.div
           style={{
             position: "absolute",
-            top: isMobile ? "22%" : "20%",
+            top: isMobile ? "30%" : "20%",
             left: "50%",
             transform: "translateX(-50%)",
             minWidth: isMobile ? "90%" : isTablet ? "80%" : "40%",
             color: "white",
-            zIndex: 5,
+            zIndex: 500,
             textAlign: "center",
             padding: "0 20px",
             height: isMobile ? "auto" : "auto",
@@ -403,15 +406,15 @@ const AboutSection: React.FC = () => {
           initial={{ opacity: 0 }}
         >
          <p
-  className="font-Raleway"
+  className="font-Raleway flex items-center justify-center"
   style={{
-    fontSize: isMobile ? "0.9rem" : isTablet ? "1.1rem" : "1.2rem",
+    fontSize: isMobile ? "1rem" : isTablet ? "1.1rem" : "1.2rem",
     lineHeight: isMobile ? 1.4 : 1.6,
     textAlign: isMobile || isTablet ? "center" : "left",
   }}
 >
   A 36-hour adrenaline-fueled hackathon. Celebrating the unstoppable force of female coders as they innovate,
-  collaborate, and push the limits of technology. A space to create, compete, and inspire the future of tech.
+  collaborate, and push the limits of technology. A space to create, compete, and inspire the future of tech. 
 </p>
         </motion.div>
       </div>

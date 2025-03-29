@@ -30,16 +30,16 @@ export default function Navbar() {
     }
   }
 
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.src = "https://apply.devfolio.co/v2/sdk.js"
-    script.async = true
-    script.defer = true
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
+  // useEffect(() => {
+  //   const script = document.createElement("script")
+  //   script.src = "https://apply.devfolio.co/v2/sdk.js"
+  //   script.async = true
+  //   script.defer = true
+  //   document.body.appendChild(script)
+  //   return () => {
+  //     document.body.removeChild(script)
+  //   }
+  // }, [])
 
   return (
     <motion.nav
@@ -123,12 +123,12 @@ export default function Navbar() {
                   {item.name}
                 </motion.a>
               ))}
-              <div
+              {/* <div
                 className="apply-button"
                 data-hackathon-slug="womentechies25"
                 data-button-theme="dark-inverted"
                 style={{ height: "44px", width: "312px" }}
-              ></div>
+              ></div> */}
             </div>
           </motion.div>
 
