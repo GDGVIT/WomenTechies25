@@ -40,15 +40,15 @@ const ScrollAnimation: React.FC = () => {
   const opacity3 = useTransform(scrollYProgress, [0.4, 0.45], [0, 1]);
 
   return (
-    <div ref={containerRef} className="h-[500vh] relative bg-background">
+    <div ref={containerRef} className="h-[400vh] relative bg-background">
       <motion.div
         className="sticky top-0 h-screen w-full overflow-hidden flex items-end justify-center align-middle"
         style={{ opacity: stickyOpacity }}
       >
-        <div className="absolute w-full h-full md:w-[100%] flex items-end justify-center pb-16">
+        <div className="absolute w-full h-full md:w-[100%] flex items-center justify-center pb-16">
  
           <motion.div
-            className="flex gap-4 relative z-10 mb-8"
+            className="flex gap-4 relative z-10 mb-8 justify-center align-center"
             style={{
               opacity: cardsOpacity,
               y: cardsY,

@@ -46,12 +46,12 @@ function Content() {
       {isMobile() ? (
         // Mobile view - not sticky, 100vh height
         <div className="flex h-full w-full items-center justify-center overflow-hidden">
-          <div className="flex-col justify-center h-full w-full items-center z-10">
-            <div className="flex-col justify-center w-full items-center pt-20 ">
+          <div className="flex-col overflow-hidden justify-center h-full w-full items-center z-10">
+            <div className="flex-col overflow-hidden justify-center w-full items-center pt-20 ">
               {/* Title section */}
-              <div className="flex gap-2 justify-center mb-10 items-center w-full">
-                <h1 className="text-3xl font-pixel text-white">OUR</h1>
-                <h1 className="text-3xl font-pixel text-[#F3C3F0] relative">
+              <div className="flex gap-10 justify-center mb-10 items-center w-full">
+                <h1 className="text-7xl font-heading font-pixel text-white">OUR</h1>
+                <h1 className="text-7xl font-heading font-pixel text-[#F3C3F0] relative">
                   SPONSORS
                   <svg
                     viewBox="0 0 1007 270"
@@ -118,9 +118,9 @@ function Content() {
                   <div className="flex w-full h-full justify-center items-center">
                     <motion.div
                       whileHover={{ rotate: 3 }}
-                      className="relative -top-15 justify-center items-center -rotate-3"
+                      className="relative -top-25 justify-center items-center -rotate-3"
                       style={{
-                        width: "40%",
+                        width: "65%",
                         height: "auto",
                       }}
                     >
@@ -155,9 +155,9 @@ function Content() {
                   <div className="flex w-full h-full justify-center items-center z-10">
                     <motion.div
                       whileHover={{ rotate: 5 }}
-                      className="relative -top-5 justify-center items-center"
+                      className="relative -top-10 justify-center items-center"
                       style={{
-                        width: "36%",
+                        width: "56%",
                         height: "auto",
                       }}
                     >
