@@ -42,10 +42,10 @@ const ScrollAnimation: React.FC = () => {
   return (
     <div ref={containerRef} className="h-[500vh] relative bg-background">
       <motion.div
-        className="sticky top-0 h-screen w-full overflow-hidden flex items-end justify-center"
+        className="sticky top-0 h-screen w-full overflow-hidden flex items-end justify-center align-middle"
         style={{ opacity: stickyOpacity }}
       >
-        <div className="relative w-full h-full flex items-end justify-center pb-16">
+        <div className="absolute w-full h-full md:w-[100%] flex items-end justify-center pb-16">
  
           <motion.div
             className="flex gap-4 relative z-10 mb-8"
@@ -56,41 +56,41 @@ const ScrollAnimation: React.FC = () => {
             }}
           > 
             <motion.div 
-              className="w-100 h-150 rounded-lg overflow-hidden relative"
+              className="w-100 h-150 sm:w-50 sm:h-80 md:w-100 md:h-150 rounded-lg overflow-hidden relative"
               style={{ rotate: card1Rotate,opacity:opacity1
                 
                }}
               
             >
               <img 
-                src="/swipe/devjams.svg" 
+                src="/swipe/devjams-jpeg.jpg" 
                 alt="DevJams 2024" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full sm:w-50 sm:h-80 md:w-100 md:h-150 object-cover" 
               />
             </motion.div> 
             <motion.div 
-              className="w-110 h-160 rounded-lg overflow-hidden relative"
+              className="w-110 h-160 sm:w-50 sm:h-80 md:w-100 md:h-150 rounded-lg overflow-hidden relative "
               style={{ rotate: card2Rotate,opacity:opacity3 }}
             >
               <img 
-                src="/swipe/wt.svg" 
+                src="/swipe/wt-jpeg.jpg" 
                 alt="Hexathon" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full sm:w-50 sm:h-80 md:w-100 md:h-150 object-cover" 
               />
             </motion.div> 
             <motion.div 
-              className="w-100 h-150 rounded-lg overflow-hidden relative "
+              className="w-100 h-150 sm:w-50 sm:h-80 md:w-100 md:h-150 rounded-lg overflow-hidden relative "
               style={{ rotate: card3Rotate,opacity:opacity2 }}
             >
               <img 
-                src="/swipe/hexathon.svg" 
+                src="/swipe/hex-jpeg.jpg" 
                 alt="Women Techies 2025" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full sm:w-50 sm:h-80 md:w-100 md:h-150 object-cover" 
               />
             </motion.div>
           </motion.div> 
           <motion.div
-            className="absolute bottom-0 left-100 w-[100%] h-[150%] z-20 pointer-events-none origin-bottom-left"
+            className="absolute bottom-0 left-[30%] w-[100%] h-[150%] sm:h-300 sm:w-400 md:w-[90%] md:h-[90%] z-20 pointer-events-none origin-bottom-left"
             style={{
               y: handY,
               x: handPushX,

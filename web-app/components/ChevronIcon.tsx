@@ -50,4 +50,3 @@ const ChevronIcon: React.FC<ChevronIconProps> = ({ className }) => {
 }
 
 export default ChevronIcon
-

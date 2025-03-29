@@ -16,4 +16,3 @@ const PixelatedFaq: React.FC<PixelatedFaqProps> = ({ highlightRef }) => {
 }
 
 export default PixelatedFaq
-

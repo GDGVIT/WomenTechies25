@@ -30,4 +30,3 @@ const PixelatedTitle: React.FC<PixelatedTitleProps> = ({
 }
 
 export default PixelatedTitle
-

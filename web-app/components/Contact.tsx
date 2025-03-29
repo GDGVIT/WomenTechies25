@@ -30,13 +30,13 @@ export default function ContactSection() {
     <section className="relative w-full overflow-hidden bg-background py-16 md:py-24 min-h-[100vh] xl:h-[120vh]">
   
       <div className="absolute -bottom-[90vh] xl:-bottom-[100vh] inset-0 z-0  ">
-        <img src="/contact/grid.svg" alt="Background grid" className="h-full w-full object-contain" />
+        <img src="/contact/grid.svg" alt="Background grid" className="h-full w-full object-contain" loading="lazy" />
       </div>
       <div className="absolute -left-48 top-[40vh] z-0">
-        <img src="/contact/cloud_left.jpg" alt="Background grid" className="h-full max-w-[20vw] object-contain" />
+        <img src="/contact/cloud_left.jpg" alt="Background grid" className="h-full max-w-[20vw] object-contain" loading="lazy"/>
       </div>
       <div className="absolute -right-28 top-[30vh] z-0">
-        <img src="/contact/cloud_right.jpg" alt="Background grid" className="h-full max-w-[20vw] object-contain" />
+        <img src="/contact/cloud_right.jpg" alt="Background grid" className="h-full max-w-[20vw] object-contain" loading="lazy" />
       </div>
 
 
@@ -76,15 +76,15 @@ export default function ContactSection() {
             }}
           >
             <div className="absolute" style={{ left: "220px", top: "300px" }}>
-              <img src="/contact/left1.svg" alt="Laptop with left hand and thread" className="h-auto w-[900px]" />
+              <img src="/contact/left1.svg" alt="Laptop with left hand and thread" className="h-auto w-[900px]" loading="lazy" />
             </div>
 
             <div className="absolute" style={{ right: "150px", top: "-170px" }}>
-              <img src="/contact/right1.svg" alt="Right hand with laptop" className="h-auto w-[900px]" />
+              <img src="/contact/right1.svg" alt="Right hand with laptop" className="h-auto w-[900px]" loading="lazy"/>
             </div>
 
             <div className="absolute" style={{ right: "280px", top: "530px", zIndex: -1 }}>
-              <img src="/contact/tag.png" alt="Contact information tag" className="h-auto w-[600px]" />
+              <img src="/contact/tag.png" alt="Contact information tag" className="h-auto w-[600px]" loading="lazy"/>
             </div>
           </div>
         </div>
@@ -92,4 +92,3 @@ export default function ContactSection() {
     </section>
   )
 }
-

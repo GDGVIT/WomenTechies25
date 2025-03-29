@@ -11,7 +11,7 @@ interface HighlightTextProps {
 const HighlightText: React.FC<HighlightTextProps> = ({
   text,
   className = "",
-  animationDuration = 2, //   2 seconds
+  animationDuration = 1.5, //   2 seconds
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, amount: 0.3 })
@@ -72,4 +72,3 @@ const HighlightText: React.FC<HighlightTextProps> = ({
 }
 
 export default HighlightText
-

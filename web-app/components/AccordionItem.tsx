@@ -54,4 +54,3 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
 }
 
 export default AccordionItem
-
