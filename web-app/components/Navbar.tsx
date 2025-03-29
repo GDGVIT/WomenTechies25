@@ -1,4 +1,5 @@
 import React from "react"
+
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
@@ -16,32 +17,54 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "FAQs", href: "/faq" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "FAQs", id: "faq" },
+    { name: "Contact Us", id: "contact" },
   ]
+
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  // useEffect(() => {
+  //   const script = document.createElement("script")
+  //   script.src = "https://apply.devfolio.co/v2/sdk.js"
+  //   script.async = true
+  //   script.defer = true
+  //   document.body.appendChild(script)
+  //   return () => {
+  //     document.body.removeChild(script)
+  //   }
+  // }, [])
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+ 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
-        duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1], // Cubic bezier for smoother easing
-        opacity: { duration: 0.6 },
+        duration: 0.7,
+        ease: "easeOut",
       }}
       className={`fixed ${hasScrolled ? "top-4" : "top-10"} left-0 right-0 z-999999 w-[90vw] mx-auto
         bg-[rgba(25,28,28,0.36)] backdrop-blur-sm transition-all duration-300 
-        border-[1px] border-[#99728D] rounded-[0px]`}
+        border-[1px] border-[#99728D] rounded-[5px]`}
     >
       <div className="px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo and Text */}
+ 
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            transition={{
+              duration: 0.5,
+              delay: 0.2,
+              ease: [0.25, 0.1, 0.25, 1], 
+            }}
             className="flex items-center gap-3"
           >
             <div className="flex-shrink-0">
@@ -66,24 +89,28 @@ export default function Navbar() {
             </div>
             <div className=" md:block">
               <div className="text-white">
-                <div className="text-sm font-medium">Google Developer Student Clubs</div>
-                <div className="text-xs opacity-90">Vellore Institute of Technology</div>
+                <div className="font-[productsans] text-sm font-medium">Google Developer Student Clubs</div>
+                <div className="font-[productsans] text-xs opacity-90 font-">Vellore Institute of Technology</div>
               </div>
             </div>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop  */}
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            transition={{
+              duration: 0.6,
+              delay: 0.3,
+              ease: [0.25, 0.1, 0.25, 1],  
+            }}
             className="hidden md:block"
           >
             <div className="flex items-center gap-6">
               {navItems.map((item, index) => (
                 <motion.a
-                  key={item.name}
-                  href={item.href}
+                  key={item.id}
+                  onClick={() => handleScroll(item.id)}
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
@@ -91,11 +118,17 @@ export default function Navbar() {
                     delay: 0.3 + index * 0.1,
                     ease: "easeOut",
                   }}
-                  className="text-white hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway"
+                  className="text-white hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway cursor-pointer"
                 >
                   {item.name}
                 </motion.a>
               ))}
+              {/* <div
+                className="apply-button"
+                data-hackathon-slug="womentechies25"
+                data-button-theme="dark-inverted"
+                style={{ height: "44px", width: "312px" }}
+              ></div> */}
             </div>
           </motion.div>
 
@@ -109,28 +142,33 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
+ 
       <motion.div
         initial={false}
         animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{
+          duration: 0.3,
+          ease: [0.25, 0.1, 0.25, 1], 
+          opacity: { duration: 0.2 },  
+        }}
         className="md:hidden overflow-hidden"
       >
         <div className="px-4 py-3 space-y-3">
           {navItems.map((item, index) => (
             <motion.a
               key={item.name}
-              href={item.href}
+              onClick={() => {
+                setIsOpen(false)
+                handleScroll(item.id)
+              }}
               initial={{ x: -20, opacity: 0 }}
               animate={isOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
               transition={{
-                duration: 0.3,
-                delay: isOpen ? 0.1 * index : 0,
+                duration: 0.25,  
+                delay: isOpen ? 0.05 * index : 0,  
                 ease: "easeOut",
               }}
-              className="block text-white/90 hover:text-white transition-colors text-sm"
-              onClick={() => setIsOpen(false)}
+              className="block text-white/90 hover:text-white transition-colors text-sm cursor-pointer"
             >
               {item.name}
             </motion.a>

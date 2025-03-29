@@ -28,7 +28,7 @@ const HorizontalScrollDino = () => {
 
     return (
         <section ref={targetRef} className="relative h-[300vh] bg-191C1C">
-            <div className="sticky top-0 flex-col h-screen w-[full] items-center justify-center overflow-hidden ">
+            <div className="  bg-background sticky top-0 flex-col h-screen w-[full] items-center justify-center overflow-hidden ">
             <div
         className="absolute -bottom-134 -left-80 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-[607px] bg-[rgba(101,158,162,0.32)]"
         style={{ filter: "blur(120px)" }}
@@ -44,7 +44,7 @@ const HorizontalScrollDino = () => {
       />
 
       <div
-        className="absolute -top-55 -left-32 w-[300px] h-[400px] rounded-full bg-[rgba(101,158,162,0.60)] -z-10"
+        className="absolute -top-59 -left-32 w-[300px] h-[400px] rounded-full bg-[rgba(101,158,162,0.60)] -z-10"
         style={{ filter: "blur(100px)" }}
       />
       <div className="relative  w-full h-[35vh]">
