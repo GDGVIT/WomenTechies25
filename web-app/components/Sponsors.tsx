@@ -1,5 +1,4 @@
-"use client"
-
+import React from "react"
 import { useRef } from "react"
 import { useScroll, useTransform, motion } from "framer-motion"
 
