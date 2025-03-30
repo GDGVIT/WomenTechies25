@@ -65,9 +65,7 @@ export default function Track6() {
               TRACK #06
             </h3>
             <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed">
-              Break free from the ordinary! Our Open Innovation track is a
-              playground for dreamers. Collaborate with die=verse minds to
-              tackle real- workd challenges and create groundbreaking solutions
+            This track is sponsored by Pegasystems. The AI track invites participants to build AI-driven solutions, such as AI for sustainability and climate change, AI for overcoming local language communication barriers, and more. Projects should focus on solving real-world challenges while ensuring ethical AI practices. Note that using Pegasystems' services in your project is not compulsory.
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
             Sponsor Track - AI
