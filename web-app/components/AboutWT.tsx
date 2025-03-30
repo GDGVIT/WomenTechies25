@@ -149,7 +149,7 @@ const AboutSection: React.FC = () => {
           <AtomIcon />
         </div> */}
 
-        <div className="stars" style={{ position: "absolute", width: "100%", height: "100%", zIndex: 1 }}>
+        <div className="stars" style={{ position: "absolute", width: "100%", height: "100%", zIndex: 1,opacity: 0.2 }}>
           {[
             // { top: "55%", left: "5%" },
             { top: "23%", left: "25%" },
@@ -190,10 +190,10 @@ const AboutSection: React.FC = () => {
             y: 0,
           }}
           transition={{
-            opacity: { duration: 2, ease: "easeOut" },
+            opacity: { duration: 8, ease: "easeOut" },
             y: {
               type: "spring",
-              stiffness: 100,
+              stiffness: 10,
               damping: 5,
               mass: 0.5,
               repeat: Number.POSITIVE_INFINITY,
@@ -410,7 +410,7 @@ const AboutSection: React.FC = () => {
   style={{
     fontSize: isMobile ? "1rem" : isTablet ? "1.1rem" : "1.2rem",
     lineHeight: isMobile ? 1.4 : 1.6,
-    textAlign: isMobile || isTablet ? "center" : "left",
+    textAlign: isMobile || isTablet ? "center" : "center",
   }}
 >
   A 36-hour adrenaline-fueled hackathon. Celebrating the unstoppable force of female coders as they innovate,
