@@ -1,46 +1,57 @@
-import "./App.css";
-import Navbar from "../components/Navbar";
-import { useEffect } from "react";
-import FaqSection from "../components/FaqSection";
-import HeroSection from "../components/Hero";
-import AboutGDSC from "../components/AboutGDSC";
-import AboutSection from "../components/AboutWT";
-import DinoScroll from "../components/dino-scroll/horizontal-scroll-dino";
-import ContactSection from "../components/Contact";
-import SwipeAnimation from "../components/swipe";
-import Spons from "../components/spons/Spons";
+import React from "react"
+import "./App.css"
+import Navbar from "../components/Navbar"
+import { useEffect } from "react"
+import HeroSection from "../components/Hero"
+import AboutGDSC from "../components/AboutGDSC"
+import AboutSection from "../components/AboutWT"
+import SwipeAnimation from "../components/swipe"
+import Sponsors from "../components/Sponsors"
+import FaqSection from "../components/FaqSection"
+import ContactSection from "../components/Contact"
+import DinoScroll from "../components/DinoScroll"
 
 function App() {
+  useEffect(() => {
+    // Preload critical assets
+    const preloadImages = ["/hero/girl.svg", "/hero/textbox.svg", "/hero/grid.svg"]
 
+    preloadImages.forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [])
 
   return (
     <>
       <div className="custom-cursor bg-background">
         <Navbar />
-        <div id="home">
-          <HeroSection />
-        </div>
+        <main>
+          <section id="home" aria-label="Hero Section">
+            <HeroSection />
+          </section>
 
-        <div id="about">
-          <AboutSection />
-          <AboutGDSC />
-        </div>
+          <section id="about" aria-label="About Section">
+            <AboutSection />
+            <AboutGDSC />
+          </section>
 
-        <SwipeAnimation />
-        <Spons />
+          <SwipeAnimation />
+          <Sponsors />
 
-        <div id="faq">
-          <FaqSection />
-        </div>
+          <section id="faq" aria-label="FAQ Section">
+            <FaqSection />
+          </section>
 
-        <DinoScroll />
+          <DinoScroll />
 
-        <div id="contact">
-          <ContactSection />
-        </div>
+          <section id="contact" aria-label="Contact Section">
+            <ContactSection />
+          </section>
+        </main>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
