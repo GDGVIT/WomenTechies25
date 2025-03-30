@@ -64,7 +64,7 @@ export default function Track2() {
             <h3 className="mb-4 text-lg md:text-xl font-bold text-white">
               TRACK #02
             </h3>
-            <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed">
+            <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed font-Raleway">
               Break free from the ordinary! Our Open Innovation track is a
               playground for dreamers. Collaborate with die=verse minds to
               tackle real- workd challenges and create groundbreaking solutions
