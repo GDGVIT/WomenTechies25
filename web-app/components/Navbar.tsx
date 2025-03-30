@@ -1,74 +1,58 @@
-import React from "react"
-
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [hasScrolled, setHasScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setHasScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
-    { name: "Home", id: "home" },
-    { name: "About", id: "about" },
-    { name: "FAQs", id: "faq" },
-    { name: "Contact Us", id: "contact" },
-  ]
+    { name: "HOME", path: "/#home",id:"home" },
+    { name: "ABOUT", path: "/#about", id: "about" },
+    { name: "FAQs", path: "/#faq", id: "faq" },
+    { name: "TRACKS", path: "/tracks" },
+    { name: "CONTACT US", path: "/#contact", id: "contact" }
+  ];
 
-  const handleScroll = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+  const handleNavClick = (id, path) => {
+    setIsOpen(false);
+    if (id) {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 700);
+      } else {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      setTimeout(() => navigate(path), 700);
     }
-  }
-
-  // useEffect(() => {
-  //   const script = document.createElement("script")
-  //   script.src = "https://apply.devfolio.co/v2/sdk.js"
-  //   script.async = true
-  //   script.defer = true
-  //   document.body.appendChild(script)
-  //   return () => {
-  //     document.body.removeChild(script)
-  //   }
-  // }, [])
+  };
 
   return (
     <motion.nav
- 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{
-        duration: 0.7,
-        ease: "easeOut",
-      }}
-      className={`fixed ${hasScrolled ? "top-4" : "top-10"} left-0 right-0 z-999999 w-[90vw] mx-auto
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className={`fixed ${hasScrolled ? "top-4" : "top-10"} left-0 right-0 z-50 w-[90vw] mx-auto
         bg-[rgba(25,28,28,0.36)] backdrop-blur-sm transition-all duration-300 
-        border-[1px] border-[#99728D] rounded-[5px]`}
+        border border-[#99728D] rounded-lg`}
     >
       <div className="px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
- 
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.2,
-              ease: [0.25, 0.1, 0.25, 1], 
-            }}
-            className="flex items-center gap-3"
-          >
-            <div className="flex-shrink-0">
-              <svg width="49" height="24" viewBox="0 0 49 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        
+        <div className="flex gap-4">
+              <svg width="49" height="24" viewBox="0 0 49 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="align-center justify-center mt-1">
                 <path
                   d="M19.2441 16.0762L5.75348 8.36206C5.31605 8.11307 4.83343 7.95193 4.33319 7.88784C3.83294 7.82376 3.32485 7.85798 2.83795 7.98857C2.35105 8.11915 1.89486 8.34355 1.49543 8.64893C1.096 8.95431 0.761141 9.33469 0.509989 9.76837C0.258837 10.202 0.0963014 10.6805 0.0316651 11.1765C-0.0329713 11.6724 0.00156277 12.1762 0.133283 12.6589C0.265002 13.1416 0.491331 13.5939 0.799354 13.9899C1.10738 14.3859 1.49106 14.7179 1.92849 14.9669L15.4191 22.681C16.3004 23.1854 17.3478 23.3221 18.3308 23.0609C19.3137 22.7998 20.1518 22.1622 20.6606 21.2884C21.1694 20.4147 21.3073 19.3763 21.0438 18.4017C20.7804 17.4272 20.1373 16.5963 19.256 16.0919L19.2441 16.0762Z"
                   fill="white"
@@ -86,95 +70,50 @@ export default function Navbar() {
                   fill="white"
                 />
               </svg>
-            </div>
-            <div className=" md:block">
+        <div className=" md:block">
               <div className="text-white">
                 <div className="font-[productsans] text-sm font-medium">Google Developer Student Clubs</div>
                 <div className="font-[productsans] text-xs opacity-90 font-">Vellore Institute of Technology</div>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Desktop  */}
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.3,
-              ease: [0.25, 0.1, 0.25, 1],  
-            }}
-            className="hidden md:block"
-          >
-            <div className="flex items-center gap-6">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.id}
-                  onClick={() => handleScroll(item.id)}
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: 0.3 + index * 0.1,
-                    ease: "easeOut",
-                  }}
-                  className="text-white hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway cursor-pointer"
-                >
-                  {item.name}
-                </motion.a>
-              ))}
-              {/* <div
-                className="apply-button"
-                data-hackathon-slug="womentechies25"
-                data-button-theme="dark-inverted"
-                style={{ height: "44px", width: "312px" }}
-              ></div> */}
-            </div>
-          </motion.div>
-
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              </div>
           </div>
+          <div className="hidden md:flex gap-8">
+            {navItems.map(({ name, path, id }) => (
+              <button
+                key={name}
+                onClick={() => handleNavClick(id, path)}
+                className="text-white font-[raleway] hover:text-gray-300 transition-colors"
+              >
+                {name}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white p-2 rounded-lg hover:bg-white/10"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
- 
-      <motion.div
-        initial={false}
-        animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-        transition={{
-          duration: 0.3,
-          ease: [0.25, 0.1, 0.25, 1], 
-          opacity: { duration: 0.2 },  
-        }}
-        className="md:hidden overflow-hidden"
-      >
-        <div className="px-4 py-3 space-y-3">
-          {navItems.map((item, index) => (
-            <motion.a
-              key={item.name}
-              onClick={() => {
-                setIsOpen(false)
-                handleScroll(item.id)
-              }}
-              initial={{ x: -20, opacity: 0 }}
-              animate={isOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
-              transition={{
-                duration: 0.25,  
-                delay: isOpen ? 0.05 * index : 0,  
-                ease: "easeOut",
-              }}
-              className="block text-white/90 hover:text-white transition-colors text-sm cursor-pointer"
+      {isOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="md:hidden bg-black bg-opacity-80 py-3"
+        >
+          {navItems.map(({ name, path, id }) => (
+            <button
+              key={name}
+              onClick={() => handleNavClick(id, path)}
+              className="block px-4 py-2 text-white hover:text-gray-300"
             >
-              {item.name}
-            </motion.a>
+              {name}
+            </button>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      )}
     </motion.nav>
-  )
+  );
 }

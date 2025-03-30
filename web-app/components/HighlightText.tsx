@@ -28,18 +28,32 @@ const HighlightText: React.FC<HighlightTextProps> = ({
     animate: {
       scaleX: 1,
       transition: {
+        delay: 0.2,
         duration: animationDuration,
         ease: "easeInOut",
       },
     },
   }
 
+  const textVariants = {
+    initial: { color: "#ffffff" }, // White
+    animate: {
+      color: "#FAC6F7", // Pink
+      transition: {
+        delay: 0.2,
+        duration: animationDuration,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div ref={containerRef} className={`relative inline-block mx-auto px-4 ${className}`}>
       {/* SVG highlight background */}
       <motion.div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-30 "
         initial="initial"
+        
         animate={controls}
         variants={highlightVariants}
         style={{
@@ -64,9 +78,19 @@ const HighlightText: React.FC<HighlightTextProps> = ({
           <rect width="3.18276" height="3.41176" transform="matrix(1 0 0 -1 0 116)" fill="#FAC6F7" />
           <rect width="3.18276" height="3.41176" transform="matrix(1 0 0 -1 0 3.41177)" fill="#FAC6F7" />
         </svg>
+        
       </motion.div>
+      
+      {/* <span className="relative z-20 bg-blend-difference">{text}</span> */}
+      <motion.span
+        className="relative z-20 font-bold"
+        initial="initial"
+        animate={controls}
+        variants={textVariants}
+      >
+        {text}
+      </motion.span>
 
-      <span className="relative z-10">{text}</span>
     </div>
   )
 }

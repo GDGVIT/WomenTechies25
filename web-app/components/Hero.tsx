@@ -163,21 +163,33 @@ const HeroSection: React.FC = () => {
 
       <div className="absolute top-[15vh] md:top-[15vh] left-[8%] z-20">
         <h1 className="font-mono">
-          <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-pink-200">
+          <span className="block text-white text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-pink-200">
             WOMEN
           </span>
-          <div className="flex items-center">
+          <div className="flex items-center -ml-5">
             <HighlightText
               text="TECHIES"
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-pink-200"
+              className="text-white font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-pink-200"
               animationDuration={1.5}
             />
-            <span className="text-5xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-pink-200 ml-2">
+            <span className="text-white text-5xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-pink-200 ml-2">
               '25
             </span>
           </div>
+          <div>
+      <a
+          href="https://tally.so/r/nPrvO1"
+          // className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border border-[#7CFFC4] text-[#7CFFC4] hover:text-[#181c1afc] transition-colors duration-300 font-mono text-base md:text-lg"
+          className="bg-gradient-to-r inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border border-[#7CFFC4] text-[#7CFFC4] hover:text-[#181c1afc] hover:from-[#74b799] hover:to-[rgb(58,174,213)] transition-colors duration-300 font-heading text-lg xl:text-2xl md:text-lg"
+        >
+          IDEA SUBMISSION
+          <span className="ml-2 md:ml-4">-&gt;</span>
+          
+        </a>
+      </div>
         </h1>
       </div>
+      
 
       <div
         className="absolute left-1/2 -translate-x-1/2 z-9999 flex items-center justify-center 
@@ -194,9 +206,18 @@ const HeroSection: React.FC = () => {
 
           {/* textbox overlay with parallax effect */}
           <motion.img
-            src="/hero/textbox.svg"
+            src="/hero/text-roll-left.svg"
             alt="Text scrolls"
-            className="absolute -top-[20%] xl:-top-[40%] left-[57%] -translate-x-1/2 w-[70vw] xl:w-[40vw] object-contain z-9999"
+            className="absolute -top-[20%] left-[5%] xl:-top-[25%] xl:left-[17%] -translate-x-1/2 w-[20vw] xl:w-[10vw] object-contain z-9999"
+            style={{
+              x: textboxX,
+              y: textboxY,
+            }}
+          />
+          <motion.img
+            src="/hero/text-roll-right.svg"
+            alt="Text scrolls"
+            className="absolute -top-[20%] -right-[40%] xl:-top-[30%] xl:-right-[23%] -translate-x-1/2 w-[20vw] xl:w-[10vw] object-contain z-0"
             style={{
               x: textboxX,
               y: textboxY,
@@ -220,7 +241,7 @@ const HeroSection: React.FC = () => {
             </>
           ) : (
             // mobile version with only mushroom
-            <div className="absolute bottom-[10vh] left-0">
+            <div className="absolute bottom-[5vh] left-0">
               <Mushroom className="w-[30vw] h-[30vw]" />
             </div>
           )}
