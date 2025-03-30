@@ -1,6 +1,5 @@
 import React from "react"
 import "./App.css"
-import Navbar from "../components/Navbar"
 import { useEffect } from "react"
 import HeroSection from "../components/Hero"
 import AboutGDSC from "../components/AboutGDSC"
@@ -25,7 +24,7 @@ function App() {
   return (
     <>
       <div className="custom-cursor bg-background">
-        <Navbar />
+    
         <main>
           <section id="home" aria-label="Hero Section">
             <HeroSection />
