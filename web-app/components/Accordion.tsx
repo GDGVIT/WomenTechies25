@@ -31,4 +31,3 @@ const Accordion: React.FC<AccordionProps> = ({ items, highlightRef }) => {
 }
 
 export default Accordion
-

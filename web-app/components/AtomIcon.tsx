@@ -38,4 +38,3 @@ const AtomIcon: React.FC = () => {
 }
 
 export default AtomIcon
-

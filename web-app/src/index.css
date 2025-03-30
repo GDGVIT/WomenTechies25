@@ -9,6 +9,14 @@
     font-display: swap;
 }
 
+@font-face {
+  font-family: "productsans";
+  src: url("/fonts/Product Sans Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
     --color-primary: #191C1C;
     --color-secondary: #ffffff;
@@ -16,18 +24,19 @@
     --font-Raleway: "Raleway", sans-serif;
     --font-heading: "VCR OSD Mono";
 }
-.custom-cursor {
-  cursor: url('/cursor.svg'), auto;
-}
 
 .bg-background {
   background-color: #191C1C;
-  background-image: url("/noise.svg");
+  background-image: url("/noise.png");
+  background-repeat: repeat;
   background-blend-mode: overlay;
-  background-size: 100vw;
-  opacity: 0.97;
+  background-size: 30vw; 
+  background-position: center; 
+  background-attachment: fixed;
+  opacity: 0.9;
   z-index: 1000;
 }
+
 
 ::-webkit-scrollbar {
   width: 10px; /* Scrollbar width */
