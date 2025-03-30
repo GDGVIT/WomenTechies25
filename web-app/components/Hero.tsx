@@ -163,16 +163,16 @@ const HeroSection: React.FC = () => {
 
       <div className="absolute top-[15vh] md:top-[15vh] left-[8%] z-20">
         <h1 className="font-mono">
-          <span className="block text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-pink-200">
+          <span className="block text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-white">
             WOMEN
           </span>
           <div className="flex items-center -ml-5">
             <HighlightText
               text="TECHIES"
-              className="font-heading text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-pink-200"
+              className="font-heading text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-white"
               animationDuration={1.5}
             />
-            <span className="text-6xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-pink-200 ml-2">
+            <span className="text-6xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-white ml-2">
               '25
             </span>
           </div>

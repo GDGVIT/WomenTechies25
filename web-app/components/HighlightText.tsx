@@ -38,7 +38,7 @@ const HighlightText: React.FC<HighlightTextProps> = ({
     <div ref={containerRef} className={`relative inline-block mx-auto px-4 ${className}`}>
       {/* SVG highlight background */}
       <motion.div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-10 mix-blend-darken"
         initial="initial"
         animate={controls}
         variants={highlightVariants}
@@ -64,9 +64,13 @@ const HighlightText: React.FC<HighlightTextProps> = ({
           <rect width="3.18276" height="3.41176" transform="matrix(1 0 0 -1 0 116)" fill="#FAC6F7" />
           <rect width="3.18276" height="3.41176" transform="matrix(1 0 0 -1 0 3.41177)" fill="#FAC6F7" />
         </svg>
+        
       </motion.div>
 
-      <span className="relative z-10 text-[#F0C0ED]">{text}</span>
+      <div className="relative inline-block">
+  
+  <span className="relative text-white mix-blend-darken z-0">{text}</span>
+</div>
     </div>
   )
 }
