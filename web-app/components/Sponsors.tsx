@@ -194,7 +194,7 @@ function Content() {
           <div className="sticky top-0 flex-col justify-center h-full w-full align-center items-center z-10">
             <div className="absolute top-24 flex-col justify-center align-center w-full items-center">
               <div className="flex gap-10 justify-center m-10 align-center items-center w-full h-full">
-                <h1 className="relative text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-Raleway font-semibold justify-center text-white">
+                <h1 className="relative text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-semibold justify-center text-white">
                   OUR
                 </h1>
                 <h1 className="relative text-4xl sm:text-6xl font-heading md:text-7xl lg:text-8xl  text-[#F3C3F0] justify-center">

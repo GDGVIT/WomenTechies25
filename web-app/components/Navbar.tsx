@@ -17,10 +17,10 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", id: "home" },
-    { name: "About", id: "about" },
+    { name: "HOME", id: "home" },
+    { name: "ABOUT", id: "about" },
     { name: "FAQs", id: "faq" },
-    { name: "Contact Us", id: "contact" },
+    { name: "CONTACT US", id: "contact" },
   ]
 
   const handleScroll = (id: string) => {
@@ -118,7 +118,7 @@ export default function Navbar() {
                     delay: 0.3 + index * 0.1,
                     ease: "easeOut",
                   }}
-                  className="text-white hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway cursor-pointer"
+                  className="text-white font-[productsans] hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway cursor-pointer"
                 >
                   {item.name}
                 </motion.a>
