@@ -64,7 +64,7 @@ export default function Track1() {
             <h3 className="mb-4 text-lg md:text-xl font-bold text-white">
               TRACK #01
             </h3>
-            <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed">
+            <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed font-Raleway">
             Diversity and Inclusion
 
 This track is about building tech that makes digital spaces more accessible and inclusive. Projects can focus on assistive tools or platforms that help bridge social and digital gaps. The aim is to create solutions that ensure equal participation and representation.

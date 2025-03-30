@@ -179,7 +179,7 @@ const HeroSection: React.FC = () => {
           <div>
       <a
           href="https://tally.so/r/nPrvO1"
-          className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border border-[#7CFFC4] text-[#7CFFC4] hover:text-[#181c1afc] transition-colors duration-300 font-mono text-base md:text-lg"
+          // className="inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border border-[#7CFFC4] text-[#7CFFC4] hover:text-[#181c1afc] transition-colors duration-300 font-mono text-base md:text-lg"
           className="bg-gradient-to-r inline-flex items-center mt-6 md:mt-8 px-4 md:px-6 py-2 border border-[#7CFFC4] text-[#7CFFC4] hover:text-[#181c1afc] hover:from-[#74b799] hover:to-[rgb(58,174,213)] transition-colors duration-300 font-heading text-lg xl:text-2xl md:text-lg"
         >
           IDEA SUBMISSION
