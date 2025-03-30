@@ -37,7 +37,7 @@ function Content() {
           style={{ filter: "blur(120px)" }}
         />
         <div
-          className="absolute -bottom-36 right-0 w-[300px] h-[300px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
+          className="absolute -bottom-36 right-0 w-[300px] h-[300px] rounded-[521px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
           style={{ filter: "blur(72.55px)" }}
         />
       </div>
@@ -49,14 +49,14 @@ function Content() {
           <div className="flex-col overflow-hidden justify-center h-full w-full items-center z-10">
             <div className="flex-col overflow-hidden justify-center w-full items-center pt-20 ">
               {/* Title section */}
-              <div className="flex gap-10 justify-center mb-10 items-center w-full">
-                <h1 className="text-7xl font-heading font-pixel text-white">OUR</h1>
-                <h1 className="text-7xl font-heading font-pixel text-[#F3C3F0] relative">
+              <div className="flex-col gap-10 justify-center mb-10 items-center w-full p-7">
+                <h1 className=" text-7xl font-heading font-pixel text-white">OUR</h1>
+                <h1 className=" text-7xl font-heading font-pixel text-[#F3C3F0] relative">
                   SPONSORS
                   <svg
                     viewBox="0 0 1007 270"
                     fill="none"
-                    className="absolute -top-2 -left-3 -bottom-10 -right-5"
+                    className="absolute -top-5 -left-5 -bottom-10 -right-5"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <motion.path
@@ -73,7 +73,7 @@ function Content() {
                   <svg
                     viewBox="0 0 1007 270"
                     fill="none"
-                    className="absolute -top-2 -left-2 -bottom-10 -right-5"
+                    className="absolute -top-5 -left-5 -bottom-10 -right-5"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <motion.path
@@ -94,7 +94,7 @@ function Content() {
               <div className="flex flex-col items-center gap-20 px-4">
                 {/* Devfolio Card */}
                 <div
-                  className="relative"
+                  className="relative "
                   style={{
                     backgroundImage: "url(../../spons/pega-card.png)",
                     backgroundSize: "contain",
@@ -115,16 +115,16 @@ function Content() {
                       width: "10vw",
                     }}
                   ></div>
-                  <div className="flex w-full h-full justify-center items-center">
+                  <div className=" flex   w-full h-full justify-center items-center ">
                     <motion.div
                       whileHover={{ rotate: 3 }}
-                      className="relative -top-25 justify-center items-center -rotate-3"
+                      className="relative -top-18 justify-center items-center -rotate-3"
                       style={{
-                        width: "65%",
+                        width: "35vw",
                         height: "auto",
                       }}
                     >
-                      <img src="../../spons/pega.png" alt="DEVFOLIO LOGO" className="w-full h-auto" />
+                      <img src="../../spons/pega.png" alt="DEVFOLIO LOGO" className="w-[40vw] h-full" />
                     </motion.div>
                   </div>
                 </div>
@@ -152,12 +152,12 @@ function Content() {
                       width: "10vw",
                     }}
                   ></div>
-                  <div className="flex w-full h-full justify-center items-center z-10">
+                  <div className="flex  w-full h-full justify-center items-center z-10 ">
                     <motion.div
                       whileHover={{ rotate: 5 }}
-                      className="relative -top-10 justify-center items-center"
+                      className="relative -top-5 justify-center items-center"
                       style={{
-                        width: "56%",
+                        width: "30vw",
                         height: "auto",
                       }}
                     >
@@ -263,7 +263,7 @@ function Content() {
                     <div className="flex w-full h-full justify-center">
                       <motion.div
                         whileHover={{ rotate: -10 }}
-                        className="inner-card1 absolute -top-5 justify-center -rotate-3"
+                        className="inner-card1 sticky -top-5 justify-center -rotate-3"
                         style={{
                           alignItems: "center",
                           justifyContent: "center",
