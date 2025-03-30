@@ -106,7 +106,7 @@ export default function Navbar() {
             }}
             className="hidden md:block"
           >
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-15">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.id}
@@ -118,7 +118,7 @@ export default function Navbar() {
                     delay: 0.3 + index * 0.1,
                     ease: "easeOut",
                   }}
-                  className="text-white font-[productsans] hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway cursor-pointer"
+                  className="text-white font-[Raleway] hover:text-gray-300 transition-colors text-sm md:text-lg xl:text-xl font-raleway cursor-pointer"
                 >
                   {item.name}
                 </motion.a>

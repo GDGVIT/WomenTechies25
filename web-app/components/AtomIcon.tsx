@@ -8,7 +8,7 @@ const AtomIcon: React.FC = () => {
       initial={{ opacity: 0.6, rotate: 0 }}
       animate={{ opacity: 0.6, rotate: 360 }}
       transition={{
-        duration: 3,
+        duration: 9,
         repeat: Number.POSITIVE_INFINITY,
         ease: "linear",
       }}

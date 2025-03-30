@@ -92,7 +92,7 @@ const FaqSection: React.FC = () => {
               </span>
 
               <div className="relative w-full flex justify-center">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-bold font-heading">
+                <h1 className=" text-7xl sm:text-9xl lg:text-6xl xl:text-8xl font-bold font-heading">
                   <HighlightText text="FAQs" />
                 </h1>
               </div>
