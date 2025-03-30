@@ -51,11 +51,7 @@ const HighlightText: React.FC<HighlightTextProps> = ({
     <div ref={containerRef} className={`relative inline-block mx-auto px-4 ${className}`}>
       {/* SVG highlight background */}
       <motion.div
-<<<<<<< Updated upstream
-        className="absolute inset-0 z-10 mix-blend-darken"
-=======
         className="absolute inset-0 z-30 "
->>>>>>> Stashed changes
         initial="initial"
         
         animate={controls}
@@ -95,13 +91,6 @@ const HighlightText: React.FC<HighlightTextProps> = ({
         {text}
       </motion.span>
 
-<<<<<<< Updated upstream
-      <div className="relative inline-block">
-  
-  <span className="relative text-white mix-blend-darken z-0">{text}</span>
-</div>
-=======
->>>>>>> Stashed changes
     </div>
   )
 }

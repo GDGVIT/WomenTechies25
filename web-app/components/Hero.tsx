@@ -163,27 +163,16 @@ const HeroSection: React.FC = () => {
 
       <div className="absolute top-[15vh] md:top-[15vh] left-[8%] z-20">
         <h1 className="font-mono">
-<<<<<<< Updated upstream
-          <span className="block text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-white">
-=======
           <span className="block text-white text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none font-heading text-pink-200">
->>>>>>> Stashed changes
             WOMEN
           </span>
           <div className="flex items-center -ml-5">
             <HighlightText
               text="TECHIES"
-<<<<<<< Updated upstream
-              className="font-heading text-6xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-white"
-              animationDuration={1.5}
-            />
-            <span className="text-6xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-white ml-2">
-=======
               className="text-white font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-none text-pink-200"
               animationDuration={1.5}
             />
             <span className="text-white text-5xl sm:text-5xl lg:text-4xl xl:text-8xl leading-none font-heading text-pink-200 ml-2">
->>>>>>> Stashed changes
               '25
             </span>
           </div>

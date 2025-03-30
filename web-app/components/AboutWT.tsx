@@ -149,11 +149,7 @@ const AboutSection: React.FC = () => {
           <AtomIcon />
         </div> */}
 
-<<<<<<< Updated upstream
-        <div className="stars" style={{ position: "absolute", width: "100%", height: "100%", zIndex: 1 ,opacity: 0.2}}>
-=======
         <div className="stars" style={{ position: "absolute", width: "100%", height: "100%", zIndex: 1,opacity: 0.2 }}>
->>>>>>> Stashed changes
           {[
             // { top: "55%", left: "5%" },
             { top: "23%", left: "25%" },
