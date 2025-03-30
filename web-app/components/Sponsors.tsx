@@ -262,7 +262,7 @@ function Content() {
                     <div className="flex w-full h-full justify-center">
                       <motion.div
                         whileHover={{ rotate: -10 }}
-                        className="inner-card1 sticky -top-5 justify-center -rotate-3"
+                        className="inner-card1 absolute -top-5 justify-center -rotate-3"
                         style={{
                           alignItems: "center",
                           justifyContent: "center",
@@ -299,7 +299,7 @@ function Content() {
                     <div className="flex w-full h-full justify-center z-10">
                       <motion.div
                         whileHover={{ rotate: 5 }}
-                        className="inner-card3 absolute -top- justify-center"
+                        className="inner-card3 absolute -top-1 justify-center"
                         style={{
                           height: "50vh",
                           width: "14vw",

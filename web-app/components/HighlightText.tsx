@@ -66,7 +66,7 @@ const HighlightText: React.FC<HighlightTextProps> = ({
         </svg>
       </motion.div>
 
-      <span className="relative z-10">{text}</span>
+      <span className="relative z-10 text-[#F0C0ED]">{text}</span>
     </div>
   )
 }
