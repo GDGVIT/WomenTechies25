@@ -26,10 +26,10 @@ export default function AboutGDSC() {
       <div className="max-w-2xl mx-auto   w-full">
        
         <div className="mb-12 ">
-          <h1 className="font-['VCR_OSD_Mono'] text-[#F3C3F0] text-6xl md:text-7xl lg:text-8xl">ABOUT</h1>
+          <h1 className="font-['VCR_OSD_Mono'] text-white text-6xl md:text-7xl lg:text-8xl">ABOUT</h1>
           <HighlightText
             text="GDSC-VIT"
-            className="font-['VCR_OSD_Mono'] text-[#F3C3F0]  text-6xl md:text-7xl lg:text-8xl"
+            className="font-['VCR_OSD_Mono'] text-white  text-6xl md:text-7xl lg:text-8xl"
           />
         </div>
         <div className="text-xl md:text-2xl lg:text-3xl text-[#8080807d] text-left font-Raleway relative">
