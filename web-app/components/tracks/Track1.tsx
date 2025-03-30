@@ -42,7 +42,7 @@ export default function Track1() {
       />
 
       <div className="container mx-auto px-4 z-9999">
-        <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:justify-between md:mt-16 md:ml-24">
+        <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:justify-between md:mt-24 md:ml-24">
            
           <motion.div
             className="w-full md:w-1/2"
@@ -65,9 +65,12 @@ export default function Track1() {
               TRACK #01
             </h3>
             <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed">
-              Break free from the ordinary! Our Open Innovation track is a
-              playground for dreamers. Collaborate with diverse minds to tackle
-              real-world challenges and create groundbreaking solutions.
+            Diversity and Inclusion
+
+This track is about building tech that makes digital spaces more accessible and inclusive. Projects can focus on assistive tools or platforms that help bridge social and digital gaps. The aim is to create solutions that ensure equal participation and representation.
+<br />
+<br />  
+This track is for anyone looking to create tools that make development faster and more efficient. Some examples could be plugins, extensions, or automation tools that improve coding, debugging, and workflow management.
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
               Dev Tools

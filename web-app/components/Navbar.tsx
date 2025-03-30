@@ -154,6 +154,7 @@ export default function Navbar() {
         className="md:hidden overflow-hidden"
       >
         <div className="px-4 py-3 space-y-3">
+          
           {navItems.map((item, index) => (
             <motion.a
               key={item.name}
