@@ -34,8 +34,9 @@ function App() {
 
           <section id="about" aria-label="About Section">
             <AboutSection />
-            <SwipeAnimation />
+            
             <AboutGDSC />
+            <SwipeAnimation />
           </section>
 
           
