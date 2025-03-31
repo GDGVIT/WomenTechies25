@@ -1,5 +1,7 @@
 import React from "react";
 import { useRef } from "react";
+import { useEffect, useState } from "react"
+import { useSpring } from "framer-motion"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import HighlightText from "./HighlightText";
 export default function AboutGDSC() {
@@ -201,52 +203,147 @@ function TextSection({
   );
 }
 
-function BackgroundElements() {
+const BackgroundElements: React.FC = () => {
+  
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0})
+  
+    const textboxX = useSpring(0, { stiffness: 50, damping: 30 })
+    const textboxY = useSpring(0, { stiffness: 50, damping: 30 })
+    useEffect(() => {
+
+      const handleMouseMove = (e: MouseEvent) => {
+        const x = e.clientX / window.innerWidth - 0.5
+        const y = e.clientY / window.innerHeight - 0.5
+        const x1 = e.clientX / window.innerWidth - 0.1
+        const y1 = e.clientY / window.innerHeight - 0.1
+  
+        setMousePosition({ x, y })
+  
+        textboxX.set(x * 50)
+        textboxY.set(y * 50)
+        
+      }
+      
+  
+      window.addEventListener("mousemove", handleMouseMove)
+      return () => window.removeEventListener("mousemove", handleMouseMove)
+    }, [textboxX, textboxY])
+
   return (
     <>
+    
+    
+
       <div className="absolute bottom-0 w-full h-[32vw] z-[1] opacity-70">
         <div className="w-full h-full bg-[url('/aboutgdsc/grid.svg')] bg-contain bg-no-repeat bg-bottom"></div>
       </div>
 
       {/* Left cloud */}
-      <div className="absolute bottom-[30vh] w-[100vw] h-[100vh] z-[7]">
-        <div className="absolute top-0 left-[-150px] w-[600px] h-full bg-[url('/aboutgdsc/cloud_left.jpg')] bg-contain bg-no-repeat opacity-60"></div>
-      </div>
-      <div className="absolute z-[3] w-[100vw] h-[100vh]">
-        <div className="absolute top-[20px] left-[20px] w-[100px] h-[100px] bg-[url('/aboutgdsc/Ellipse-31.png')] bg-contain bg-no-repeat"></div>
-      </div>
+      <motion.img
+                  
+                  alt="Text scrolls"
+                  className="absolute top-0 left-[-150px] w-[600px] h-full bg-[url('/aboutgdsc/cloud_left.jpg')] bg-contain bg-no-repeat opacity-60"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
 
-      {/* Right cloud */}
-      <div className="absolute top-0 z-[4] w-[100vw] h-[30vh]">
-        <div className="absolute top-0 right-[-100px] w-[500px] h-[400px] bg-[url('/aboutgdsc/cloud_right.jpg')] bg-contain bg-no-repeat opacity-20"></div>
-      </div>
+<motion.img
+                  src="/aboutgdsc/Ellipse-31.png"
+                  alt="Text scrolls"
+                  className="absolute top-[20px] left-[20px] w-[100px] h-[100px] bg-[url('/aboutgdsc/Ellipse-31.png')] bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
 
-      <div className="hidden lg:block absolute top-64 z-[5] w-[100vw] h-[100vh]">
-        <div className="absolute w-[100px] h-[100px] bg-[url('/aboutgdsc/square_left.jpg')] bg-contain bg-no-repeat"></div>
-      </div>
+<motion.img
+                  src="/aboutgdsc/Ellipse-31.png"
+                  alt="Text scrolls"
+                  className="absolute top-0 right-[-100px] w-[500px] h-[400px]  bg-contain bg-no-repeat opacity-20"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
+      
+      
+<motion.img
+                  src="/aboutgdsc/square_left.jpg"
+                  alt="Text scrolls"
+                  className="hidden lg:block absolute top-64 z-[5] w-[100px] h-[100px]  bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
 
-      <div className="absolute bottom-28 right-40 z-[6] w-fit h-fit">
-        <div className="w-[30px] h-[30px] bg-[url('/aboutgdsc/rects.png')] bg-contain bg-no-repeat"></div>
-      </div>
+<motion.img
+                  src="/aboutgdsc/rects.png"
+                  alt="Text scrolls"
+                  className="absolute bottom-28 right-40 z-[6] w-[30px] h-[30px] bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
 
-      <div className=" absolute top-58 right-0 z-[6] w-fit h-fit">
-        <div className="absolute top-[10%] right-0 w-[50px] h-[50px] bg-[url('/aboutgdsc/diamonds_right.png')] bg-contain bg-no-repeat"></div>
-      </div>
+      
 
-      <div className="absolute top-0 right-18 z-[2] w-30 h-30">
-        <div className="w-[150px] h-[200px] bg-[url('/aboutgdsc/star.svg')] bg-contain bg-no-repeat"></div>
-      </div>
+<motion.img
+                  src="/aboutgdsc/diamonds_right.png"
+                  alt="Text scrolls"
+                  className="absolute top-58 right-0 z-[6] w-[50px] h-[50px] bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
 
-      <div className="absolute top-30 right-0 z-[2] w-30 h-30">
-        <div className="w-[150px] h-[200px] bg-[url('/aboutgdsc/circle.svg')] bg-contain bg-no-repeat"></div>
-      </div>
+      
+<motion.img
+                  src="/aboutgdsc/star.svg"
+                  alt="Text scrolls"
+                  className="absolute top-0 right-18 z-[2] w-[150px] h-[200px] bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
+      
+      <motion.img
+                  src="/aboutgdsc/circle.svg"
+                  alt="Text scrolls"
+                  className="absolute top-30 right-0 z-[2] w-[150px] h-[200px] bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
+      <motion.img
+                  src="/aboutgdsc/yellowdiamonds.svg"
+                  alt="Text scrolls"
+                  className="absolute top-1/2 left-[10%] z-[2] w-[10px] h-[50px] bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
 
-      <div className="hidden lg:block absolute top-1/2 left-[10%] z-[2] w-fit h-fit">
-        <div className="w-[10px] h-[50px] bg-[url('/aboutgdsc/yellowdiamonds.svg')] bg-contain bg-no-repeat"></div>
-      </div>
-      <div className="hidden lg:block absolute top-1/2 right-[10%] z-[2] w-fit h-fit">
-        <div className="w-[10px] h-[50px] bg-[url('/aboutgdsc/pinkdiamonds.svg')] bg-contain bg-no-repeat"></div>
-      </div>
+      
+<motion.img
+                  src="/aboutgdsc/pinkdiamonds.svg"
+                  alt="Text scrolls"
+                  className="absolute hidden lg:block absolute top-1/2 right-[10%] z-[2] w-[10px] h-[50px] bg-contain bg-no-repeat"
+                  style={{
+                    x: textboxX,
+                    y: textboxY,
+                  }}
+                />
+      
+      
     </>
   );
 }
