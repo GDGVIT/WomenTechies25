@@ -76,11 +76,11 @@ export default function ContactSection() {
             }}
           >
             <div className="absolute" style={{ left: "220px", top: "300px" }}>
-              <img src="/contact/left1.svg" alt="Laptop with left hand and thread" className="h-auto w-[900px]" loading="lazy" />
+              <img src="/contact/left1.png" alt="Laptop with left hand and thread" className="h-auto w-[900px]" loading="lazy" />
             </div>
 
-            <div className="absolute" style={{ right: "150px", top: "-170px" }}>
-              <img src="/contact/right1.svg" alt="Right hand with laptop" className="h-auto w-[900px]" loading="lazy"/>
+            <div className="absolute" style={{ right: "250px", top: "-170px" }}>
+              <img src="/contact/right1.png" alt="Right hand with laptop" className="h-auto w-[700px]" loading="lazy"/>
             </div>
 
             <div className="absolute" style={{ right: "280px", top: "530px", zIndex: -1 }}>
