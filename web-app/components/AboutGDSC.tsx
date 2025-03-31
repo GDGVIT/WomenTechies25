@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import SwipeAnimation from "../components/swipe"
 import { useEffect, useState } from "react"
 import { useSpring } from "framer-motion"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
@@ -94,7 +95,7 @@ emphasisText=""
             emphasisText="bring ideas to life"
             emphasisColor="#FFE29D"
             afterText=", and"
-            imageUrl="/aboutgdsc/body3.svg"
+            imageUrl="/aboutgdsc/body3.png"
             imagePosition="left-4 md:left-[40%] top-36 -mt-8"
           />
 
@@ -199,6 +200,7 @@ function TextSection({
           }}
         />
       )}
+      
     </span>
   );
 }
@@ -251,8 +253,8 @@ const BackgroundElements: React.FC = () => {
     
     
 
-      <div className="absolute bottom-0 w-full h-[32vw] z-[1] opacity-70">
-        <div className="w-full h-full bg-[url('/aboutgdsc/grid.svg')] bg-contain bg-no-repeat bg-bottom"></div>
+      <div className="absolute -bottom-25 w-full h-[32vw] z-[1] opacity-40 md: bottom-0">
+        <div className="w-full h-full bg-[url('/aboutgdsc/grid.png')] bg-contain bg-no-repeat bg-bottom"></div>
       </div>
 
       {/* Left cloud */}

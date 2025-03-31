@@ -44,7 +44,7 @@ function Content() {
       {/* Main content container - conditional rendering for mobile vs desktop */}
       {isMobile() ? (
         // Mobile view - not sticky, 100vh height
-        <div className="flex h-full w-full items-center justify-center overflow-hidden">
+        <div className="flex h-[full] w-full items-center justify-center overflow-hidden">
           <div className="flex-col overflow-hidden justify-center h-full w-full items-center z-10">
             <div className="flex-col overflow-hidden justify-center w-full items-center pt-20 ">
               {/* Title section */}
@@ -90,7 +90,7 @@ function Content() {
               </div>
 
               {/* Cards section for mobile */}
-              <div className="flex flex-col items-center gap-20 px-4">
+              <div className="flex flex-col items-center gap-[5vh] px-4">
                 {/* Devfolio Card */}
                 <div
                   className="relative "
