@@ -259,15 +259,7 @@ const BackgroundElements: React.FC = () => {
                   }}
                 />
 
-<motion.img
-                  src="/aboutgdsc/Ellipse-31.png"
-                  alt="Text scrolls"
-                  className="absolute top-0 right-[-100px] w-[500px] h-[400px]  bg-contain bg-no-repeat opacity-20"
-                  style={{
-                    x: textboxX,
-                    y: textboxY,
-                  }}
-                />
+
       
       
 <motion.img
