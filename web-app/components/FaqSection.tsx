@@ -52,7 +52,7 @@ const FaqSection: React.FC = () => {
 
   return (
     <section className="relative h-[200vh] bg-191C1C">
-      <div className="sticky top-0 flex-col h-screen items-center justify-center overflow-hidden ">
+      <div className="sticky top-0 flex-col h-[100vh] items-center justify-center overflow-hidden ">
         <div
           className="relative  min-h-screen bg-background text-white px-8 py-24 overflow-hidden"
           ref={faqRef}

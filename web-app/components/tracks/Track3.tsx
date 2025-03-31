@@ -61,13 +61,13 @@ export default function Track3() {
             }}
           >
             <div className="mb-4 w-28    border-t-4 border-white" />
-            <h3 className="mb-4 text-lg md:text-xl font-bold text-white">
+            <h3 className="font-[raleway] mb-4 text-lg md:text-xl font-bold text-white">
               TRACK #03
             </h3>
             <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed font-Raleway">
-            Break free from the ordinary! Our Open Innovation track is a playground for dreamers. Collaborate with die=verse minds to tackle real- workd challenges and create groundbreaking solutions
+            Environmental responsibility and long-term sustainability can be enriched with tech. This track is for those tech-driven solutions that work towards a greener future. Whether it's tackling waste management or energy optimization, this track encourages impactful projects.
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
+            <h2 className="font-[raleway] text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
             Sustainability
             </h2>
           </motion.div>

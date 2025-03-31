@@ -65,13 +65,13 @@ export default function Track6() {
             }}
           >
             <div className="mb-4 w-28    border-t-4 border-white" />
-            <h3 className="mb-4 text-lg md:text-xl font-bold text-white">
+            <h3 className="font-[raleway] mb-4 text-lg md:text-xl font-bold text-white">
               TRACK #06
             </h3>
             <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl font-Raleway leading-relaxed">
             This track is sponsored by Pegasystems. The AI track invites participants to build AI-driven solutions, such as AI for sustainability and climate change, AI for overcoming local language communication barriers, and more. Projects should focus on solving real-world challenges while ensuring ethical AI practices. Note that using Pegasystems' services in your project is not compulsory.
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
+            <h2 className="font-[raleway] text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
             Sponsor Track - AI
             </h2>
           </motion.div>

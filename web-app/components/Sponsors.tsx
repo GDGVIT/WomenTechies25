@@ -36,10 +36,11 @@ function Content() {
           style={{ filter: "blur(120px)" }}
         />
         <div
-          className="absolute -bottom-36 right-0 w-[300px] h-[300px] rounded-[521px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
-          style={{ filter: "blur(72.55px)" }}
-        />
+            className="absolute -bottom-32 right-0 w-[300px] h-[300px] rounded-[521px] border-[19px] border-[rgba(204,241,147,0.60)] bg-[rgba(204,176,193,0.40)] -z-10"
+            style={{ filter: "blur(72.55px)" }}
+          />
       </div>
+      
 
       {/* Main content container - conditional rendering for mobile vs desktop */}
       {isMobile() ? (
