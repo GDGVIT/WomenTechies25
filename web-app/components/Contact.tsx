@@ -56,7 +56,7 @@ export default function ContactSection() {
       ></div>
 
       <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 h-full flex flex-col">
-        <h2 className="mb-16 xl:ml-28 mt-20 xl:mt-48  font-bold font-heading text-white text-5xl sm:text-5xl lg:text-6xl xl:text-7xl">
+        <h2 className="mb-16 xl:ml-28 mt-20 xl:mt-48  font-bold font-heading text-white text-7xl sm:text-6xl lg:text-6xl xl:text-7xl">
           <span>GET IN </span>
           <HighlightText text="TOUCH" className="font-heading" animationDuration={1.5} />
           <br />

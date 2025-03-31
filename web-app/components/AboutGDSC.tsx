@@ -209,6 +209,23 @@ const BackgroundElements: React.FC = () => {
   
     const textboxX = useSpring(0, { stiffness: 50, damping: 30 })
     const textboxY = useSpring(0, { stiffness: 50, damping: 30 })
+    const isMobile = () => {
+      if (typeof window !== "undefined") {
+        return window.innerWidth < 768
+      }
+      return false
+    }
+    const [isDesktop, setIsDesktop] = useState(false)
+
+    useEffect(() => {
+        const checkIfDesktop = () => {
+          setIsDesktop(window.innerWidth >= 1024)
+        }
+        checkIfDesktop()
+        window.addEventListener("resize", checkIfDesktop)
+        return () => window.removeEventListener("resize", checkIfDesktop)
+      }, [])
+
     useEffect(() => {
 
       const handleMouseMove = (e: MouseEvent) => {
@@ -314,15 +331,18 @@ const BackgroundElements: React.FC = () => {
                     y: textboxY,
                   }}
                 />
-      <motion.img
-                  src="/aboutgdsc/yellowdiamonds.svg"
-                  alt="Text scrolls"
-                  className="absolute top-1/2 left-[10%] z-[2] w-[10px] h-[50px] bg-contain bg-no-repeat"
-                  style={{
-                    x: textboxX,
-                    y: textboxY,
-                  }}
-                />
+      {isDesktop &&
+        (<motion.img
+          src="/aboutgdsc/yellowdiamonds.svg"
+          alt="Text scrolls"
+          className="absolute top-1/2 left-[10%] z-[2] w-[10px] h-[50px] bg-contain bg-no-repeat"
+          style={{
+            x: textboxX,
+            y: textboxY,
+          }}
+        />)
+      }
+      
 
       
 <motion.img
