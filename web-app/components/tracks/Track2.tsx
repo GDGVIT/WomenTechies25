@@ -61,15 +61,13 @@ export default function Track2() {
             }}
           >
             <div className="mb-4 w-28    border-t-4 border-white" />
-            <h3 className="mb-4 text-lg md:text-xl font-bold text-white">
+            <h3 className="font-[raleway] mb-4 text-lg md:text-xl font-bold text-white">
               TRACK #02
             </h3>
             <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl leading-relaxed font-Raleway">
-              Break free from the ordinary! Our Open Innovation track is a
-              playground for dreamers. Collaborate with die=verse minds to
-              tackle real- workd challenges and create groundbreaking solutions
+            If you have an idea that doesn't fit into a specific category but has the potential to break boundaries, this is the track for you! Build without limits and create a unique product with unlimited creativity and freedom across any domain.
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
+            <h2 className="font-[raleway] text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
               Open Innovation
             </h2>
           </motion.div>

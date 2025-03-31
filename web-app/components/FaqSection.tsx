@@ -52,7 +52,7 @@ const FaqSection: React.FC = () => {
 
   return (
     <section className="relative h-[200vh] bg-191C1C">
-      <div className="sticky top-0 flex-col h-screen items-center justify-center overflow-hidden ">
+      <div className="sticky top-0 flex-col h-[100vh] items-center justify-center overflow-hidden ">
         <div
           className="relative  min-h-screen bg-background text-white px-8 py-24 overflow-hidden"
           ref={faqRef}
@@ -71,8 +71,8 @@ const FaqSection: React.FC = () => {
             style={{ filter: "blur(72.55px)" }}
           />
 
-          <div
-            className="absolute -bottom-32 -right-32 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
+<div
+            className="absolute -bottom-64 -right-25 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
             style={{ filter: "blur(100px)" }}
           />
 
@@ -92,7 +92,7 @@ const FaqSection: React.FC = () => {
               </span>
 
               <div className="relative w-full flex justify-center">
-                <h1 className=" text-7xl sm:text-9xl lg:text-6xl xl:text-8xl font-bold font-heading">
+                <h1 className=" text-7xl sm:text-9xl lg:text-6xl xl:text-8xl font-bold font-heading -mt-7 mb-5">
                   <HighlightText text="FAQs" />
                 </h1>
               </div>

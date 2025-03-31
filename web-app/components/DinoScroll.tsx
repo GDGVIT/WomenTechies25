@@ -32,11 +32,11 @@ const DinoScroll: React.FC<DinoScrollProps> = ({ className }) => {
           style={{ filter: "blur(120px)" }}
         />
         <div
-          className="absolute -top-45 -right-32 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
+          className="absolute -top-35 -right-32 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
           style={{ filter: "blur(100px)" }}
         />
         <div
-        className="absolute   -top-[1vh] -left-[12vw] w-[30vw] min-w-[400px] h-[40vw] max-w-[500px] max-h-[500px] opacity-35"
+        className="absolute   -top-[16vh] -left-[12vw] w-[30vw] min-w-[400px] h-[40vw] max-w-[500px] max-h-[500px] opacity-35"
         style={{
           borderRadius: "447px",
           border: "19px solid #CCF193",

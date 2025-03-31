@@ -315,9 +315,9 @@ const BackgroundElements: React.FC = () => {
 
       
 <motion.img
-                  src="/aboutgdsc/star.svg"
+                  src="/aboutgdsc/star.png"
                   alt="Text scrolls"
-                  className="absolute top-0 right-18 z-[2] w-[150px] h-[200px] bg-contain bg-no-repeat"
+                  className="absolute top-0 right-18 z-[2] w-[150px] h-[150px] bg-contain bg-no-repeat"
                   style={{
                     x: textboxX,
                     y: textboxY,
