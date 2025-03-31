@@ -46,7 +46,7 @@ export default function Track1() {
             style={{ filter: "blur(100px)" }}
           />
       <div
-            className="absolute -top-53 -right-31 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
+            className="absolute -top-48 -right-25 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
             style={{ filter: "blur(100px)" }}
           />
       <div className="container mx-auto px-4 z-9999">

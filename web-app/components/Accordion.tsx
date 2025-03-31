@@ -15,7 +15,7 @@ const Accordion: React.FC<AccordionProps> = ({ items, highlightRef }) => {
   }
 
   return (
-    <div className="w-full -mt-10">
+    <div className="w-full -mt-15">
       {items.map((item, index) => (
         <AccordionItem
           key={index}
