@@ -141,7 +141,7 @@ const HeroSection: React.FC = () => {
 
         <div className="absolute top-0 left-0 right-0 w-full">
           <img
-            src="/hero/moon.svg"
+            src="/hero/moon.png"
             alt="Moon"
             loading="lazy"
             className="absolute top-[5vh] right-[15%] w-[25vw] xl:w-[15vw] max-w-[150px] h-auto"

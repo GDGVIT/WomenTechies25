@@ -151,7 +151,7 @@ const ScrollAnimation: React.FC = () => {
               
             >
               <img 
-                src="/swipe/devjams.svg" 
+                src="/swipe/devjams.png" 
                 alt="DevJams 2024" 
                 className="w-full h-full sm:w-50 sm:h-80 md:w-100 md:h-150 object-cover" 
               />
@@ -161,7 +161,7 @@ const ScrollAnimation: React.FC = () => {
               style={{ rotate: card2Rotate,opacity:opacity3 }}
             >
               <img 
-                src="/swipe/wt.svg" 
+                src="/swipe/wt.png" 
                 alt="Hexathon" 
                 className="w-full h-full sm:w-50 sm:h-80 md:w-100 md:h-150 object-cover" 
               />
@@ -171,7 +171,7 @@ const ScrollAnimation: React.FC = () => {
               style={{ rotate: card3Rotate,opacity:opacity2 }}
             >
               <img 
-                src="/swipe/hexathon.svg" 
+                src="/swipe/hexathon.png" 
                 alt="Women Techies 2025" 
                 className="w-full h-full sm:w-50 sm:h-80 md:w-100 md:h-150 object-cover" 
               />
