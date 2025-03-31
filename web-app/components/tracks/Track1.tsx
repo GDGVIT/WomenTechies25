@@ -40,7 +40,14 @@ export default function Track1() {
         }}
         aria-hidden="true"
       />
-
+      <div
+            className="absolute -top-39 -left-35 w-[300px] h-[400px] rounded-full bg-[rgba(101,158,162,0.60)] -z-10"
+            style={{ filter: "blur(100px)" }}
+          />
+      <div
+            className="absolute -top-53 -right-31 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
+            style={{ filter: "blur(100px)" }}
+          />
       <div className="container mx-auto px-4 z-9999">
         <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:justify-between md:mt-24 md:ml-24">
            

@@ -29,6 +29,10 @@ export default function Track6() {
         }}
         aria-hidden="true"
       />
+      <div
+          className="absolute -bottom-49 -right-32 w-[300px] h-[400px] rounded-[276px] bg-[rgba(101,158,162,0.60)] -z-10"
+          style={{ filter: "blur(100px)" }}
+        />
 
       {/* Blur shape -top left*/}
       {/* <div
