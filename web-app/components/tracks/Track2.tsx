@@ -95,7 +95,7 @@ export default function Track2() {
               {" "}
               
               <img
-                src="/tracks/track1.svg"
+                src="/tracks/track2.svg"
                 alt="Development Tools Illustration"
                 width={900}  
                 height={900}  

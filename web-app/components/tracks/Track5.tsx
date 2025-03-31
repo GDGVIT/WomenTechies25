@@ -65,9 +65,7 @@ export default function Track5() {
               TRACK #05
             </h3>
             <p className="mb-6 text-base md:text-lg lg:text-xl text-white max-w-xl font-Raleway leading-relaxed">
-              Break free from the ordinary! Our Open Innovation track is a
-              playground for dreamers. Collaborate with die=verse minds to
-              tackle real- workd challenges and create groundbreaking solutions
+            This track is for the developers passionate about gaming, storytelling, and interactive experiences. Whether it's a platformer, strategy-based design or an immersive 3D shooter, teams will have to bring their ideas to life using engines of their choice.
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white xl:text-5xl">
             Game Dev

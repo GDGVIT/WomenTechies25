@@ -126,7 +126,7 @@ const ScrollAnimation: React.FC = () => {
     </div>
           ) : (
 
-            <div ref={containerRef} className="h-[400vh] relative bg-background">
+            <div ref={containerRef} className="h-[300vh] relative bg-background">
             <motion.div
               className="sticky top-0 h-screen w-full overflow-hidden flex items-end justify-center align-middle"
               style={{ opacity: stickyOpacity }}

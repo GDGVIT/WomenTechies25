@@ -243,7 +243,7 @@ const AboutSection: React.FC = () => {
         {!isMobile ? (
           <>
             <img
-              src="/aboutWT/left1.svg"
+              src="/aboutWT/left1.png"
               alt="Left outline"
               loading="lazy"
               decoding="async"
@@ -257,11 +257,11 @@ const AboutSection: React.FC = () => {
             />
 
             <motion.img
-              src="/aboutWT/left1filled.svg"
+              src="/aboutWT/left1filled.png"
               alt="Left filled"
               style={{
                 position: "absolute",
-                left: "7%",
+                left: "7.3%",
                 bottom: "3vh",
                 height: getResponsiveSize(600) + "px",
                 zIndex: 4,
@@ -300,13 +300,13 @@ const AboutSection: React.FC = () => {
             />
 
             <img
-              src="/aboutWT/right1.svg"
+              src="/aboutWT/right1.png"
               alt="Right outline"
               loading="lazy"
               decoding="async"
               style={{
                 position: "absolute",
-                right: "7%",
+                right: "5.3%",
                 bottom: "3vh",
                 height: getResponsiveSize(550) + "px",
                 zIndex: 3,
@@ -314,7 +314,7 @@ const AboutSection: React.FC = () => {
             />
 
             <motion.img
-              src="/aboutWT/right1filled.svg"
+              src="/aboutWT/right1filled.png"
               alt="Right filled"
               style={{
                 position: "absolute",
@@ -331,7 +331,7 @@ const AboutSection: React.FC = () => {
         ) : (
           <>
             <img
-              src="/aboutWT/left1.svg"
+              src="/aboutWT/left1.png"
               alt="Left outline"
               loading="lazy"
               decoding="async"
@@ -344,7 +344,7 @@ const AboutSection: React.FC = () => {
               }}
             />
             <motion.img
-              src="/aboutWT/left1filled.svg"
+              src="/aboutWT/left1filled.png"
               alt="Left filled"
               style={{
                 position: "absolute",
@@ -358,20 +358,20 @@ const AboutSection: React.FC = () => {
               initial={{ opacity: 0 }}
             />
             <img
-              src="/aboutWT/right1.svg"
+              src="/aboutWT/right1.png"
               alt="Right outline"
               loading="lazy"
               decoding="async"
               style={{
                 position: "absolute",
-                right: "2%",
+                right: "-1.2%",
                 bottom: "2vh",
                 height: getResponsiveSize(500) + "px",
                 zIndex: 3,
               }}
             />
             <motion.img
-              src="/aboutWT/right1filled.svg"
+              src="/aboutWT/right1filled.png"
               alt="Right filled"
               style={{
                 position: "absolute",

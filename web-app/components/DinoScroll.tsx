@@ -36,9 +36,15 @@ const DinoScroll: React.FC<DinoScrollProps> = ({ className }) => {
           style={{ filter: "blur(100px)" }}
         />
         <div
-          className="absolute -top-59 -left-32 w-[300px] h-[400px] rounded-full bg-[rgba(101,158,162,0.60)] -z-10"
-          style={{ filter: "blur(100px)" }}
-        />
+        className="absolute   -top-[1vh] -left-[12vw] w-[30vw] min-w-[400px] h-[40vw] max-w-[500px] max-h-[500px] opacity-35"
+        style={{
+          borderRadius: "447px",
+          border: "19px solid #CCF193",
+          background: "#CCB0C1",
+          filter: "blur(72.55000305175781px)",
+        }}
+        aria-hidden="true"
+      />
 
         {/* Top section with dinosaurs and wheels */}
         <div className="relative w-full h-[35vh]">
