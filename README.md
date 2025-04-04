@@ -65,13 +65,13 @@ npm run dev
             </p>
         </td>
        <td>
-            Raisaa Jose
+            Raisa Jose
             <p align="center">
                 <img src="https://temp-dep.vercel.app/_next/image?url=%2Fteam%2Fdesign%2Fraisa.jpeg&w=1920&q=75" width="150" height="150" alt="Rupaak Srinivas">
             </p>
             <p align="center">
                 <a href="https://github.com/raisaaajose">
-                    <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height="36" alt="GitHub">
+                    <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height="56" alt="GitHub">
                 </a>
                 <a href="http://www.linkedin.com/in/raisa-jose">
                     <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn">
