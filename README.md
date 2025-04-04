@@ -71,7 +71,7 @@ npm run dev
             </p>
             <p align="center">
                 <a href="https://github.com/raisaaajose">
-                    <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height="56" alt="GitHub">
+                    <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height="36" alt="GitHub">
                 </a>
                 <a href="http://www.linkedin.com/in/raisa-jose">
                     <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn">
